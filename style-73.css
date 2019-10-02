@@ -211,6 +211,7 @@ body {
 .popup-box li a {
   display: block;
   padding: 8px 0;
+  cursor: pointer;
   text-decoration: none;
   color: rgb(31, 31, 36);
 }
