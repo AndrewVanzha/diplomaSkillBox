@@ -211,6 +211,7 @@ body {
 .popup-box li a {
   display: block;
   padding: 8px 0;
+  cursor: pointer;
   text-decoration: none;
   color: rgb(31, 31, 36);
 }
@@ -375,13 +376,15 @@ h1 {
   /*outline: 2px dashed darkslateblue;*/
 }
 
-/*
 .central-container__personal-authorpic {
   background:
-    url("img/man.png") no-repeat -17px -24px / 685px,
-    url("img/man-shadow.png") no-repeat -17px -24px / 685px
+    url("img/man-shadow.png") no-repeat -17px -24px / 685px,
+    url("img/crumpled-ellipse.png") no-repeat 4px 61px / 802px;
+  /*background:
+    url("img/man-shadow.png") no-repeat 47px -24px / 685px,
+    url("img/crumpled-ellipse.png") no-repeat 64px 61px / 802px;???*/
 }
-*/
+
 /*
 .central-container__personal-authorpic-position {
     position: relative;
@@ -392,101 +395,12 @@ h1 {
 */
 .central-container__personal-authorpic div {
   margin: 0;
-  padding: 0;
-  /*padding: 53px 10px 0 85px;*/
+  padding: 53px 10px 0 85px;
   /*padding: 57px 10px 0 155px;???*/
 }
 
-.central-container__personal-authorpic-wide {
-  display: block;
-  width: 800px;
-  height: 688px;
-  /*background-image: url('img/man-shadow.png');
-  background-repeat: no-repeat;
-  background-position: 40% 60%;
-  z-index: 10;*/
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: 1106px;
-    top: 138px;
-    width: 920px;
-    height: 764px;
-    z-index: 99;
-*/
-}
-
-.central-container__personal-authorpic-1024 {
-  display: none;
-  width: 530px;
-  height: 620px;
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: 477px;
-    top: 244px;
-    width: 919px;
-    height: 630px;
-    z-index: 90;
-*/
-}
-
-.central-container__personal-authorpic-320 {
-  display: none;
-  width: 320px;
-  height: 370px;
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: -58px;
-    top: 173px;
-    width: 470px;
-    height: 391px;
-    z-index: 84;
-*/
-}
-
-/*
 .central-container__personal-authorpic div img {
-  position: relative;
-  left: 112px;
-  top: -730px;
-}
-*/
-.central-container__personal-authorpic-wide_shadow {
-  /*background-size: auto;*/
-  position: relative;
-  left: 112px;
-  top: -730px;
-}
-
-.central-container__personal-authorpic-wide_pic {
-  /*background-size: auto;*/
-  position: relative;
-  left: 112px;
-  top: -1370px;
-  top: -730px;
-}
-
-.central-container__personal-authorpic-1024_pic {
-  height: 620px;
-  position: relative;
-  left: 112px;
-  top: -624px;
-}
-
-.central-container__personal-authorpic-320_pic {
-  /*margin-left: auto;
-  margin-right: auto;*/
-  position: relative;
-  left: 82px;
-  top: -336px;
+  background-size: auto;
 }
 
 .fixed-container__deal {
@@ -1161,15 +1075,6 @@ h2 {
 
 
 @media (max-width: 1250px) and (min-width: 981px) {
-  .central-container__personal-authorpic-wide {
-    display: none;
-  }
-
-  .central-container__personal-authorpic-1024 {
-    display: block;
-  }
-
-  /*
   .central-container__personal-authorpic {
     background:
       url(img/crumpled-ellipse.png) no-repeat 44px 161px / 672px;
@@ -1180,7 +1085,7 @@ h2 {
     padding-left: 140px;
     padding-top: 26px;
   }
-*/
+
   h1 {
     font-size: 54px;
   }
@@ -1235,19 +1140,14 @@ h2 {
   .central-container__personal {
     height: 1010px;
   }
-/*
+
   .central-container__personal .central-container__personal-leftcol {
     margin-top: 12px;
   }
-*/
+
   .central-container__personal .central-container__personal-rightcol {
-    margin: 0 auto;
     order: 0;
     width: 807px;
-  }
-
-  .central-container__personal-authorpic-1024_pic {
-    left: 174px;
   }
 
   .central-container__personal-button {
@@ -1260,34 +1160,6 @@ h2 {
 }
 
 @media (max-width: 980px) {
-  .central-container__personal {
-    height: 680px;
-  }
-
-  .central-container__personal-authorpic-wide {
-    display: none;
-  }
-
-  .central-container__personal-authorpic-1024 {
-    display: none;
-  }
-
-  .central-container__personal-authorpic-320 {
-    display: block;
-    width: 100%;
-  }
-
-  .central-container__personal-authorpic-320 svg {
-    padding-left: 10px;
-    /*width: 560px;*/
-    /*outline: 1px solid saddlebrown;*/
-  }
-
-  .central-container__personal .central-container__personal-rightcol {
-    margin: 0 auto;
-  }
-
-  /*
   .central-container__personal-authorpic {
     background:
       url(img/crumpled-ellipse.png) no-repeat 4px 61px / 822px;
@@ -1298,7 +1170,7 @@ h2 {
     margin: 0 auto;
     width: 460px;
   }
-*/
+
   h1 {
     font-size: 54px;
   }
@@ -1332,9 +1204,9 @@ h2 {
 }
 
 @media (max-width: 790px) {
-  /*.central-container__personal-authorpic div img {
+  .central-container__personal-authorpic div img {
     width: 424px;
-  }*/
+  }
 
   .header-line__phone-box {
     /*margin-right: 10px;*/
@@ -1347,10 +1219,6 @@ h2 {
 
   h1 {
     font-size: 30px;
-  }
-
-  .central-container__personal {
-    height: 590px;
   }
 
   .central-container__personal-showtext {
@@ -1410,7 +1278,10 @@ h2 {
 }
 
 @media (max-width: 590px) {
-  /*
+  .central-container__personal {
+    height: 650px;
+  }
+
   .central-container__personal-authorpic {
     background:
       url(img/crumpled-ellipse-320.png) no-repeat 4px 101px/580px 347px;
@@ -1419,7 +1290,7 @@ h2 {
   .central-container__personal-authorpic div img {
     width: 224px;
   }
-*/
+
   .fixed-container {
     padding: 0;
   }
@@ -1444,10 +1315,10 @@ h2 {
 
 
 @media (max-width: 470px) {
-  /*.central-container__personal-authorpic {
+  .central-container__personal-authorpic {
     background:
       url(img/crumpled-ellipse-320.png) no-repeat -62px 91px / 524px;
-  }*/
+  }
 
   .central-container__personal-showtext {
     white-space: pre-wrap;

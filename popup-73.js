@@ -146,8 +146,15 @@ function setLeftPaddingForNameLine() { // управление левым бло
     });
   } else {
     var paddingLeft = (windowWidth - 580 - 10) / 2;
+    //console.log(paddingLeft);
     $('.central-container__personal .central-container__personal-leftcol').css({
       'padding-left': paddingLeft
+    });
+    $('.central-container__personal-authorpic-320 svg').attr({
+      'width': windowWidth*.94
+    });
+    $('.central-container__personal-authorpic-320_pic').css({
+      'left': windowWidth*.3
     });
   }
   //console.log(windowWidth);
