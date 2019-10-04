@@ -1,3 +1,5 @@
+// https://nubex.ru/blogs20/postsByTag/?catId=1401
+
 var windowWidth;
 var numPic = 3;
 var rs1X;
@@ -119,43 +121,48 @@ function manageHeaderPhoneLine() { // управление телефонным 
   }
 
 }
-
+/*
 function managePersonalImg() { //  управление картинкой с автором
   if (windowWidth <= 980) {
-    $('.central-container__personal-authorpic div img').attr('src', 'img/man-320.png');
+    $('.central-container__personal-authorpic-320 img').attr('src', 'img/man-320.png');
   } else {
     $('.central-container__personal-authorpic div img').attr('src', 'img/man.png');
   }
 
 }
-
+*/
 function setLeftPaddingForNameLine() { // управление левым блоком в персональном разделе и символами
+  var leftEdge0 = 120;
   if (windowWidth > 1920) {
     var paddingLeft = (1920 - 1170) / 2;
-    $('.central-container__personal .central-container__personal-leftcol').css({ // двигаю край левого блока в персональном разделе
-      'padding-left': paddingLeft
+    var leftEdge = windowWidth / 2 + leftEdge0;
+    console.log(leftEdge);
+    $('.central-container__personal-authorpic-wide').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
     });
   } else if (windowWidth <= 1920 && windowWidth > 1170) {
     var paddingLeft = (windowWidth - 1170) / 2 - 150 * 0;
-    $('.central-container__personal .central-container__personal-leftcol').css({
-      'padding-left': paddingLeft
+    var leftEdge = windowWidth / 2 + leftEdge0;
+    console.log(leftEdge);
+    $('.central-container__personal-authorpic-wide').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
     });
   } else if (windowWidth <= 1170 && windowWidth > 1005) { // 1024px
-    $('.central-container__personal .central-container__personal-leftcol').css({
+    /*$('.central-container__personal .central-container__personal-leftcol').css({
       'padding-left': '20px'
-    });
+    });*/
   } else {
     var paddingLeft = (windowWidth - 580 - 10) / 2;
     //console.log(paddingLeft);
-    $('.central-container__personal .central-container__personal-leftcol').css({
+    /*$('.central-container__personal .central-container__personal-leftcol').css({
       'padding-left': paddingLeft
-    });
-    $('.central-container__personal-authorpic-320 svg').attr({
+    });*/
+    /*$('.central-container__personal-authorpic-320 svg').attr({
       'width': windowWidth*.94
     });
     $('.central-container__personal-authorpic-320_pic').css({
       'left': windowWidth*.3
-    });
+    });*/
   }
   //console.log(windowWidth);
 }
@@ -227,7 +234,7 @@ function moveSign(class__signString, startWindowWidth, sign_startCoords, endWind
 function scatterSigns(classString) {
   var i = 0;
   var act__classString = '';
-  console.log(windowWidth);
+  //console.log(windowWidth);
 
   for (i = 0; i < signsParameters.length; i++) {
     act__classString = classString + (i + 1); // формирую строку нужного класса

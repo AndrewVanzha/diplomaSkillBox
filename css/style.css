@@ -310,13 +310,6 @@ body {
   text-decoration: none;
   list-style: none;
 }
-/*
-.header-line__phonetext a {
-  text-decoration: none;
-  list-style: none;
-  margin-left: 4px;
-}
-*/
 
 /* центральный раздел */
 .central-container {
@@ -324,27 +317,30 @@ body {
   padding: 0;
 }
 
+.central-container__personal_order {
+  order: 1;
+}
+
 .central-container__personal {
-  display: flex;
+  /*display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-between;*/
   margin: 0 auto;
   padding: 0;
-  width: 1920px;
+  /*width: 1920px;*/
   /*width: auto;*/
   height: 688px;
   overflow: hidden;
   position: relative;
-  /*outline: 1px solid sienna;*/
+  outline: 1px solid sienna;
 }
 
 .central-container__personal .central-container__personal-leftcol {
-  order: 1;
   margin: 0;
   padding: 0;
-  /*padding-left: 105px;*/
+  padding-left: 65px;
   width: 580px;
-  /*outline: 2px dashed darkgoldenrod;*/
+  outline: 2px dashed darkorchid;
 }
 
 h1 {
@@ -372,15 +368,14 @@ h1 {
   margin-top: 45px;
   padding: 0;
 }
-
+/*
 .central-container__personal .central-container__personal-rightcol {
   order: 1;
   margin: 0;
   padding: 0;
   width: 807px;
-  /*outline: 2px dashed darkslateblue;*/
 }
-
+*/
 /*
 .central-container__personal-authorpic {
   background:
@@ -395,81 +390,20 @@ h1 {
     height: 725px;
     outline: 1px dashed darkred;
 }
-*/
+
 .central-container__personal-authorpic div {
   margin: 0;
   padding: 0;
-  /*padding: 53px 10px 0 85px;*/
-  /*padding: 57px 10px 0 155px;???*/
 }
-
+*/
 .central-container__personal-authorpic-wide {
   display: block;
   width: 800px;
   height: 688px;
-  /*background-image: url('img/man-shadow.png');
-  background-repeat: no-repeat;
-  background-position: 40% 60%;
-  z-index: 10;*/
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: 1106px;
-    top: 138px;
-    width: 920px;
-    height: 764px;
-    z-index: 99;
-*/
-}
-
-.central-container__personal-authorpic-1024 {
-  display: none;
-  width: 530px;
-  height: 620px;
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: 477px;
-    top: 244px;
-    width: 919px;
-    height: 630px;
-    z-index: 90;
-*/
-}
-
-.central-container__personal-authorpic-320 {
-  display: none;
-  width: 320px;
-  height: 370px;
-  /*
-    background-image: -moz-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -webkit-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    background-image: -ms-linear-gradient( 77deg, rgb(255,143,90) 0%, rgb(255,47,150) 99%);
-    position: absolute;
-    left: -58px;
-    top: 173px;
-    width: 470px;
-    height: 391px;
-    z-index: 84;
-*/
-}
-
-/*
-.central-container__personal-authorpic div img {
-  position: relative;
-  left: 112px;
-  top: -730px;
-}
-*/
-.central-container__personal-authorpic-wide_shadow {
-  /*background-size: auto;*/
-  position: relative;
-  left: 112px;
-  top: -730px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  outline: 2px dashed darkslateblue;
 }
 
 .central-container__personal-authorpic-wide_pic {
@@ -478,21 +412,55 @@ h1 {
   left: 112px;
   top: -1370px;
   top: -730px;
+  /*position: absolute;
+  top: 10px;
+  left: 10px;*/
+}
+
+.central-container__personal-authorpic-wide_shadow {
+  /*background-size: auto;*/
+  position: relative;
+  left: 112px;
+  top: -730px;
+}
+
+.central-container__personal-authorpic-1024 {
+  display: none;
+  width: 530px;
+  height: 620px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .central-container__personal-authorpic-1024_pic {
   height: 620px;
-  position: relative;
+  /*position: relative;
   left: 112px;
-  top: -624px;
+  top: -624px;*/
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.central-container__personal-authorpic-320 {
+  display: none;
+  width: 320px;
+  height: 370px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .central-container__personal-authorpic-320_pic {
   /*margin-left: auto;
   margin-right: auto;*/
-  position: relative;
+  /*position: relative;
   left: 82px;
-  top: -336px;
+  top: -336px;*/
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .fixed-container__deal {
@@ -1031,15 +999,6 @@ h2 {
     display: none;
   }
 
-  .central-container__personal {
-    flex-wrap: wrap;
-    align-items: center;
-    align-items: flex-start;
-    /*width: 1170px;*/
-    /*margin: 0 auto;*/
-    height: 663px;
-  }
-
   .fixed-container {
     padding-left: 40px;
     padding-right: 40px;
@@ -1059,6 +1018,16 @@ h2 {
     text-align: center;
   }
 
+  .central-container__personal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /*align-items: flex-start;*/
+    /*width: 1170px;*/
+    /*margin: 0 auto;*/
+    height: 1035px;
+  }
+    
   .central-container__personal-showtext {
     overflow: visible;
     margin-top: 23px;
@@ -1068,13 +1037,20 @@ h2 {
     letter-spacing: 1.6px;
   }
 
-  .fixed-container__deal-anno {
-    padding-top: 86px;
+  .central-container__personal-authorpic-1024 {
+    order: 0;
+    position: static;
+    margin: 0 auto;
+    width: auto;
   }
 
   .central-container__personal-button {
     width: 320px;
     height: 67px;
+  }
+
+  .fixed-container__deal-anno {
+    padding-top: 86px;
   }
 
   .fixed-container__dealbox a:nth-of-type(1) {
@@ -1165,10 +1141,11 @@ h2 {
     margin-top: 184px;
     width: 370px;
   }
-
+/*
   .central-container__personal .central-container__personal-rightcol {
     width: 613px;
   }
+  */
 }
 
 
@@ -1252,11 +1229,11 @@ h2 {
     margin-top: 12px;
   }
 */
-  .central-container__personal .central-container__personal-rightcol {
+/*  .central-container__personal .central-container__personal-rightcol {
     margin: 0 auto;
     order: 0;
     width: 807px;
-  }
+  }*/
 
   .central-container__personal-authorpic-1024_pic {
     left: 174px;
@@ -1273,7 +1250,7 @@ h2 {
 
 @media (max-width: 980px) {
   .central-container__personal {
-    height: 680px;
+    height: 1010px;
   }
 
   .central-container__personal-authorpic-wide {
@@ -1287,6 +1264,13 @@ h2 {
   .central-container__personal-authorpic-320 {
     display: block;
     width: 100%;
+  }
+
+  .central-container__personal-authorpic-320 {
+    order: 0;
+    position: static;
+    margin: 0 auto;
+    width: auto;
   }
 
   .central-container__personal-authorpic-320 svg {
@@ -1367,6 +1351,13 @@ h2 {
 
   .central-container__personal-showtext {
     font-size: 16px;
+  }
+
+  .central-container__personal-authorpic-320 {
+    order: 0;
+    position: static;
+    margin: 0 auto;
+    width: auto;
   }
 
   h2,
