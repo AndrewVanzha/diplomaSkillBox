@@ -198,7 +198,7 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  outline: 1px solid darkblue;
+  /*outline: 1px solid darkblue;*/
 }
 
 .popup-box {
@@ -306,15 +306,17 @@ body {
   border-radius: 50%;
   width: 21px;
   height: 21px;
-  padding: 3px;
+  padding: 5px 0px 1px 6px;
+  text-decoration: none;
+  list-style: none;
 }
-
+/*
 .header-line__phonetext a {
   text-decoration: none;
   list-style: none;
   margin-left: 4px;
 }
-
+*/
 
 /* центральный раздел */
 .central-container {
@@ -853,7 +855,7 @@ h2 {
   height: 110px;
   display: flex;
   justify-content: space-between;
-  /*outline: 1px solid rebeccapurple;*/
+  outline: 1px solid rebeccapurple;
 }
 */
 .footer-container__leftblock {
