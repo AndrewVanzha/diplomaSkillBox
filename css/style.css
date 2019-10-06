@@ -239,11 +239,11 @@ body {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  padding: 18px 2px 16px 0;
+  padding: 14px 2px 19px 0;
 }
 
 .header-line__nav ul li:not(:last-of-type) {
-  padding-right: 25px;
+  padding-right: 27px;
 }
 
 .header-line__nav li a {
@@ -263,6 +263,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   padding: 0;
+  padding-bottom: 11px;
   margin-right: 25px;
   font-size: 25px;
   font-weight: bold;
@@ -298,6 +299,7 @@ body {
 
 .header-line__phone_button {
   display: inline-block;
+  margin-top: -3px;
   padding: 0;
 }
 
@@ -335,10 +337,10 @@ body {
   outline: 1px solid sienna;
 }
 
-.central-container__personal .central-container__personal-leftcol {
+.central-container__personal .central-container__personal_leftcol {
   margin: 0;
   padding: 0;
-  padding-left: 65px;
+  padding-left: 3px;
   width: 580px;
   outline: 2px dashed darkorchid;
 }
@@ -346,7 +348,7 @@ body {
 h1 {
   margin: 0;
   padding: 0;
-  padding-top: 211px;
+  padding-top: 207px;
   font-size: 76px;
   font-weight: 900;
   letter-spacing: 2.2px;
@@ -355,7 +357,7 @@ h1 {
   color: rgb(31, 31, 36);
 }
 
-.central-container__personal-showtext {
+.central-container__personal_text {
   margin: 0;
   margin-top: 17px;
   padding: 0;
@@ -363,7 +365,7 @@ h1 {
   color: rgb(137, 147, 173);
 }
 
-.central-container__personal-button {
+.central-container__personal_button {
   margin: 0;
   margin-top: 45px;
   padding: 0;
@@ -396,7 +398,7 @@ h1 {
   padding: 0;
 }
 */
-.central-container__personal-authorpic-wide {
+.central-container__personal_pics-1930 {
   display: block;
   width: 800px;
   height: 688px;
@@ -406,7 +408,7 @@ h1 {
   outline: 2px dashed darkslateblue;
 }
 
-.central-container__personal-authorpic-wide_pic {
+.central-container__personal_pics-1930_pic {
   /*background-size: auto;*/
   position: relative;
   left: 112px;
@@ -416,15 +418,14 @@ h1 {
   top: 10px;
   left: 10px;*/
 }
-
-.central-container__personal-authorpic-wide_shadow {
-  /*background-size: auto;*/
+/*
+.central-container__personal_pics-1930_shadow {
   position: relative;
   left: 112px;
   top: -730px;
 }
-
-.central-container__personal-authorpic-1024 {
+*/
+.central-container__personal_pics-1024 {
   display: none;
   width: 530px;
   height: 620px;
@@ -433,7 +434,7 @@ h1 {
   left: 10px;
 }
 
-.central-container__personal-authorpic-1024_pic {
+.central-container__personal_pics-1024_pic {
   height: 620px;
   /*position: relative;
   left: 112px;
@@ -443,7 +444,7 @@ h1 {
   left: 10px;
 }
 
-.central-container__personal-authorpic-320 {
+.central-container__personal_pics-320 {
   display: none;
   width: 320px;
   height: 370px;
@@ -452,7 +453,7 @@ h1 {
   left: 10px;
 }
 
-.central-container__personal-authorpic-320_pic {
+.central-container__personal_pics-320_pic {
   /*margin-left: auto;
   margin-right: auto;*/
   /*position: relative;
@@ -483,7 +484,7 @@ h2 {
 }
 
 .fixed-container__deal-anno {
-  padding-top: 91px;
+  padding-top: 85px;
 }
 
 .fixed-container__dealbox {
@@ -847,7 +848,7 @@ h2 {
 .footer-container__centralblock {
   margin: 0;
   padding: 0;
-  padding-left: 50px;
+  padding-left: 65px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -896,6 +897,7 @@ h2 {
 }
 
 .footer-container__phonebutton {
+  margin-top: -2px;
   width: 245px;
 }
 
@@ -1028,7 +1030,7 @@ h2 {
     height: 1035px;
   }
     
-  .central-container__personal-showtext {
+  .central-container__personal_text {
     overflow: visible;
     margin-top: 23px;
     white-space: nowrap;
@@ -1037,14 +1039,14 @@ h2 {
     letter-spacing: 1.6px;
   }
 
-  .central-container__personal-authorpic-1024 {
+  .central-container__personal_pics-1024 {
     order: 0;
     position: static;
     margin: 0 auto;
     width: auto;
   }
 
-  .central-container__personal-button {
+  .central-container__personal_button {
     width: 320px;
     height: 67px;
   }
@@ -1137,7 +1139,7 @@ h2 {
 
 
 @media (max-width: 1250px) and (min-width: 1020px) {
-  .central-container__personal .central-container__personal-leftcol {
+  .central-container__personal .central-container__personal_leftcol {
     margin-top: 184px;
     width: 370px;
   }
@@ -1150,11 +1152,11 @@ h2 {
 
 
 @media (max-width: 1250px) and (min-width: 981px) {
-  .central-container__personal-authorpic-wide {
+  .central-container__personal_pics-1930 {
     display: none;
   }
 
-  .central-container__personal-authorpic-1024 {
+  .central-container__personal_pics-1024 {
     display: block;
   }
 
@@ -1225,7 +1227,7 @@ h2 {
     height: 1010px;
   }
 /*
-  .central-container__personal .central-container__personal-leftcol {
+  .central-container__personal .central-container__personal_leftcol {
     margin-top: 12px;
   }
 */
@@ -1235,11 +1237,11 @@ h2 {
     width: 807px;
   }*/
 
-  .central-container__personal-authorpic-1024_pic {
+  .central-container__personal_pics-1024_pic {
     left: 174px;
   }
 
-  .central-container__personal-button {
+  .central-container__personal_button {
     margin: 45px auto 0 auto;
   }
 
@@ -1253,27 +1255,27 @@ h2 {
     height: 1010px;
   }
 
-  .central-container__personal-authorpic-wide {
+  .central-container__personal_pics-1930 {
     display: none;
   }
 
-  .central-container__personal-authorpic-1024 {
+  .central-container__personal_pics-1024 {
     display: none;
   }
 
-  .central-container__personal-authorpic-320 {
+  .central-container__personal_pics-320 {
     display: block;
     width: 100%;
   }
 
-  .central-container__personal-authorpic-320 {
+  .central-container__personal_pics-320 {
     order: 0;
     position: static;
     margin: 0 auto;
     width: auto;
   }
 
-  .central-container__personal-authorpic-320 svg {
+  .central-container__personal_pics-320 svg {
     padding-left: 10px;
     /*width: 560px;*/
     /*outline: 1px solid saddlebrown;*/
@@ -1349,11 +1351,11 @@ h2 {
     height: 590px;
   }
 
-  .central-container__personal-showtext {
+  .central-container__personal_text {
     font-size: 16px;
   }
 
-  .central-container__personal-authorpic-320 {
+  .central-container__personal_pics-320 {
     order: 0;
     position: static;
     margin: 0 auto;
@@ -1452,7 +1454,7 @@ h2 {
       url(img/crumpled-ellipse-320.png) no-repeat -62px 91px / 524px;
   }*/
 
-  .central-container__personal-showtext {
+  .central-container__personal_text {
     white-space: pre-wrap;
   }
 }
