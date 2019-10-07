@@ -456,6 +456,7 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
+  outline: 1px solid #0f0a8e;
 }
 
 .central-container__personal_pics-320_pic {
@@ -464,9 +465,12 @@ body {
   /*position: relative;
   left: 82px;
   top: -336px;*/
-  position: absolute;
+  position: relative;
+  /*left: -118px;*/
+  top: -332px;
+  /*position: absolute;
   top: 10px;
-  left: 10px;
+  left: 10px;*/
 }
 
 .deal-container {
@@ -1285,6 +1289,11 @@ h2 {
     height: 1010px;
   }*/
 
+
+  .central-container__personal_order {
+    margin: 0 auto;
+  }
+
   .central-container__personal {
     display: flex;
     flex-wrap: wrap;
@@ -1306,26 +1315,25 @@ h2 {
 
   .central-container__personal_pics-320 {
     display: block;
-    width: 100%;
-  }
-
-  .central-container__personal_pics-320 {
     order: 0;
+    /*width: 100%;*/
     position: static;
     margin: 0 auto;
     width: auto;
   }
 
   .central-container__personal_pics-320 svg {
-    padding-left: 10px;
+    display: block;
+    margin: 0 auto;
+    /*padding-left: 10px;*/
     /*width: 560px;*/
     /*outline: 1px solid saddlebrown;*/
   }
-
+/*
   .central-container__personal .central-container__personal-rightcol {
     margin: 0 auto;
   }
-
+*/
   /*
   .central-container__personal-authorpic {
     background:
