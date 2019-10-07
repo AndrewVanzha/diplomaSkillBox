@@ -164,10 +164,6 @@ function setLeftPaddingForNameLine() { // управление левым бло
       'left': leftEdge
     });
   } else if (windowWidth <= 1170 && windowWidth > 981) { // 1005? 1024px
-    /*$('.central-container__personal .central-container__personal_leftcol').css({
-      'padding-left': '20px'
-    });*/
-    //var leftEdge = windowWidth / 2 - leftEdge1;
     var leftEdge = (710-404)/(1170-980)*(windowWidth-980) + 404;
     $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
       'left': leftEdge
@@ -192,7 +188,7 @@ function setLeftPaddingForNameLine() { // управление левым бло
     $('.central-container__personal_pics-320_pic').css({
       'left': windowWidth*.3
     });*/
-  } else {
+  } else if (windowWidth < 590 && windowWidth > 471) {
     var leftEdge = windowWidth / 2 + leftEdge1;
     //console.log(paddingLeft);
     var windowSVG = $('.central-container__personal_pics-320').width();
@@ -201,6 +197,15 @@ function setLeftPaddingForNameLine() { // управление левым бло
       'left': windowSVG / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '470px');
+  } else {
+    var leftEdge = windowWidth / 2 + leftEdge1;
+    //console.log(paddingLeft);
+    var windowSVG = $('.central-container__personal_pics-320').width();
+    console.log(windowSVG);
+    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
+      'left': windowSVG / 4
+    });
+    $('.central-container__personal_pics-320 svg').attr('width', '360px');
   }
   //console.log(windowWidth);
 }
