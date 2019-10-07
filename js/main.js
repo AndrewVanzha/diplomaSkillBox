@@ -107,6 +107,18 @@ function setLeftEdgePopupMenu() { // управление левым краем 
 
 }
 
+function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
+  windowWidth = $(window).width();
+  if (windowWidth <= 1250) {
+    $('.central-container__personal_order').removeClass('fixed-container');
+    //console.log(varOffset.left);
+  } else {
+    $('.central-container__personal_order').addClass('fixed-container');
+    //console.log(windowWidth);
+  }
+
+}
+
 function manageHeaderPhoneLine() { // управление телефонным блоком в заголовке
   if (windowWidth <= 790) {
     $('.header-line__phonetext').css({
@@ -147,13 +159,25 @@ function setLeftPaddingForNameLine() { // управление левым бло
     $('.central-container__personal_pics-1930').css({ // двигаю край правого блока в персональном разделе
       'left': leftEdge
     });
+    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
+    });
   } else if (windowWidth <= 1170 && windowWidth > 1005) { // 1024px
     /*$('.central-container__personal .central-container__personal_leftcol').css({
       'padding-left': '20px'
     });*/
+    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
+    });
+    $('.central-container__personal_pics-320').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
+    });
   } else {
     var paddingLeft = (windowWidth - 580 - 10) / 2;
     //console.log(paddingLeft);
+    $('.central-container__personal_pics-320').css({ // двигаю край правого блока в персональном разделе
+      'left': leftEdge
+    });
     /*$('.central-container__personal .central-container__personal_leftcol').css({
       'padding-left': paddingLeft
     });*/
@@ -323,6 +347,7 @@ $(document).ready(function () {
   }
 
   setLeftPaddingForNameLine();
+  moveFXinCentralContainer();
   setCoordsForSigns();
   manageSwiperPaginationAndButtons();
   setLeftEdgePopupMenu();
@@ -337,6 +362,7 @@ $(window).resize(function () {
   }
 
   setLeftPaddingForNameLine();
+  moveFXinCentralContainer();
   setCoordsForSigns();
   manageSwiperPaginationAndButtons();
   setLeftEdgePopupMenu();
