@@ -333,13 +333,13 @@ body {
   padding: 0;
   /*width: 1920px;*/
   /*width: auto;*/
-  height: 688px;
+  height: 658px;
   overflow: hidden;
   position: relative;
   outline: 1px solid sienna;
 }
 
-.central-container__personal .central-container__personal_leftcol {
+.central-container__personal_leftcol {
   margin: 0;
   padding: 0;
   padding-left: 3px;
@@ -437,13 +437,16 @@ body {
 }
 
 .central-container__personal_pics-1024_pic {
-  height: 620px;
+  height: 640px;
   /*position: relative;
   left: 112px;
   top: -624px;*/
-  position: absolute;
+  position: relative;
+  left: 98px;
+  top: -641px;
+  /*position: absolute;
   top: 10px;
-  left: 10px;
+  left: 10px;*/
 }
 
 .central-container__personal_pics-320 {
@@ -478,7 +481,7 @@ h2 {
   font-weight: bold;
 }
 
-.deal-container h2,
+.deal-container__anno,
 .examples-container__examples h2 {
   font-size: 54px;
   color: rgb(38, 38, 38);
@@ -503,7 +506,7 @@ h2 {
 
 .deal-container__boxes li {
   display: block;
-  margin-top: 89px;
+  margin-top: 84px;
   padding: 0;
   font-size: 20px;
   height: 150px;
@@ -556,6 +559,7 @@ h2 {
 
 .examples-container__examples h2 {
   padding-top: 192px;
+  padding-top: 195px;
 }
 
 .examples-block {
@@ -977,6 +981,12 @@ h2 {
   .header-line {
     position: relative;
   }
+    
+  .fixed-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: auto;
+  }
 
   .header-line__block {
     justify-content: space-between;
@@ -986,7 +996,7 @@ h2 {
   }
 
   .header-line__nav {
-    padding: 27px 0 48px 35px;
+    padding: 14px 0 61px 0px;
     width: 45px;
     height: 32px;
     border: none;
@@ -995,7 +1005,7 @@ h2 {
     background-color: transparent;
     background-image: url("../img/burger-colored.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50% 45%;
     /*border: 1px solid salmon;*/
   }
 
@@ -1003,10 +1013,16 @@ h2 {
     display: none;
   }
 
-  .fixed-container {
-    padding-left: 40px;
-    padding-right: 40px;
-    width: auto;
+  .header-line__phone {
+    padding: 0px 1px 0px 1px;
+  }
+
+  .header-line__phone-box {
+    margin-right: 25px;
+  }
+
+  .header-line__phone_button {
+    padding: 0px 1px 0px 1px;
   }
 
   .examples-container {
@@ -1049,7 +1065,7 @@ h2 {
 
   .deal-container__boxes li:nth-of-type(1) {
     /*padding: 0 96px;*/
-    padding: 0 76px;
+    padding: 0 51px 0 105px;
     width: 247px;
   }
 
@@ -1071,6 +1087,7 @@ h2 {
 
   .deal-container__boxes_button {
     margin-top: 85px;
+    margin-top: 93px;
     height: 67px;
     width: 320px;
   }
@@ -1090,11 +1107,12 @@ h2 {
   }
 
   .swiper-container {
-    height: auto;
+    /*height: auto;*/
+    height: 540px;
   }
 
   .site-title {
-    padding: 8px 0 130px 0;
+    padding: 8px 35px 130px 0;
     font-size: 22px;
     letter-spacing: 1.8px;
   }
@@ -1115,7 +1133,7 @@ h2 {
   }
 
   .footer-container {
-    padding-left: 25px;
+    padding-left: 32px;
     padding-right: 25px;
     width: auto;
   }
@@ -1125,8 +1143,13 @@ h2 {
   }
 
   .footer-container__centralblock {
-    padding-left: 30px;
+    padding-left: 26px;
   }
+
+  .footer-container__rightblock {
+    padding-right: 5px;
+  }  
+
 }
 
 
@@ -1156,9 +1179,9 @@ h2 {
 }
 
 @media (max-width: 1250px) and (min-width: 981px) {
-  .central-container__personal .central-container__personal_leftcol {
-    margin-top: 184px;
-    margin-left: 37px;
+  .central-container__personal_leftcol {
+    margin-top: 201px;
+    margin-left: 28px;
     width: 370px;
   }
 
@@ -1185,7 +1208,7 @@ h2 {
 
   .deal-container {
     margin-left: 35px;
-    margin-right: 85px;
+    margin-right: 65px;
   }
 
   .deal-container__boxes {
@@ -1243,11 +1266,11 @@ h2 {
     order: 0;
     width: 807px;
   }*/
-
+/*
   .central-container__personal_pics-1024_pic {
     left: 174px;
   }
-
+*/
   .central-container__personal_button {
     margin: 45px auto 0 auto;
   }

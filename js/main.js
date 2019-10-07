@@ -145,6 +145,7 @@ function managePersonalImg() { //  управление картинкой с а
 */
 function setLeftPaddingForNameLine() { // управление левым блоком в персональном разделе и символами
   var leftEdge0 = 120;
+  var leftEdge1 = 40;
   if (windowWidth > 1920) {
     var paddingLeft = (1920 - 1170) / 2;
     var leftEdge = windowWidth / 2 + leftEdge0;
@@ -166,6 +167,8 @@ function setLeftPaddingForNameLine() { // управление левым бло
     /*$('.central-container__personal .central-container__personal_leftcol').css({
       'padding-left': '20px'
     });*/
+    //var leftEdge = windowWidth / 2 - leftEdge1;
+    var leftEdge = (710-404)/(1170-980)*(windowWidth-980) + 404;
     $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
       'left': leftEdge
     });
