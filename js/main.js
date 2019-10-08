@@ -29,27 +29,7 @@ var redSigns_narrowWindow = [ // макс=5! позиция для красны�
   [130, 45, -0.2, 0],
   [260, 35, 0.5, 1],
 ];
-/*var whiteSigns_wideWindow = [ // макс=5! позиция для белых для 1920
-  [236, 260, 0, 1],
-  [1654, 82, 0, 1],
-  [120, 67, 0, 1],
-  [1420, 307, 0.15, 1],
-  [1752, 270, -0.25, 1],
-];
-var whiteSigns_middleWindow = [ // макс=5! позиция для белых для 1024
-  [640, 45, 0, 0],
-  [860, 290, 0, 1],
-  [130, 20, -0.1, 1],
-  [495, 305, 0, 1],
-  [340, 40, 0, 0],
-];
-var whiteSigns_narrowWindow = [ // макс=5! позиция для белых для 320
-  [140, 65, 0, 0],
-  [178, 20, 0, 0],
-  [95, 140, 0, 0],
-  [60, 58, 0, 0],
-  [248, 72, 0, 0],
-];*/
+
 var whiteSigns_wideWindow = [ // макс=5! позиция для белых для 1920
   [126, -20, 0, 1],
   [1544, -192, 0, 1],
@@ -175,33 +155,22 @@ function setLeftPaddingForNameLine() { // управление левым бло
     var paddingLeft = (windowWidth - 580 - 10) / 2;
     var leftEdge = windowWidth / 2 + leftEdge1;
     var windowSVG = $('.central-container__personal_pics-320').width();
-    console.log(windowSVG);
+    //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
       'left': windowSVG / 3
     });
-    /*$('.central-container__personal .central-container__personal_leftcol').css({
-      'padding-left': paddingLeft
-    });*/
-    /*$('.central-container__personal_pics-320 svg').attr({
-      'width': windowWidth*.94
-    });
-    $('.central-container__personal_pics-320_pic').css({
-      'left': windowWidth*.3
-    });*/
   } else if (windowWidth < 590 && windowWidth > 471) {
     var leftEdge = windowWidth / 2 + leftEdge1;
-    //console.log(paddingLeft);
     var windowSVG = $('.central-container__personal_pics-320').width();
-    console.log(windowSVG);
+    //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
       'left': windowSVG / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '470px');
   } else {
     var leftEdge = windowWidth / 2 + leftEdge1;
-    //console.log(paddingLeft);
     var windowSVG = $('.central-container__personal_pics-320').width();
-    console.log(windowSVG);
+    //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
       'left': windowSVG / 4
     });
