@@ -14,7 +14,19 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="js/main.js"></script>
+  <script>
+    var numPic = 3;
+
+    var winWidth = $(window).width();
+    if (winWidth < 1250 && winWidth > 981) {
+      numPic = 2;
+    } else if (winWidth < 981) {
+      numPic = 1;
+    } else {
+      numPic = 3;
+    }
+  </script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>

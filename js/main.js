@@ -2,7 +2,7 @@
 // https://www.youtube.com/watch?v=BnWjIPii9Ac WP
 
 var windowWidth;
-var numPic = 3;
+//var numPic = 3;
 var rs1X;
 var rs1Y;
 
@@ -60,6 +60,7 @@ var signsParameters = [ // макс=5! расчетная позиция для 
   [0, 0, 0, 1],
 ];
 
+/*
 windowWidth = $(window).width();
 if (windowWidth < 1250 && windowWidth > 981) {
   numPic = 2;
@@ -68,7 +69,7 @@ if (windowWidth < 1250 && windowWidth > 981) {
 } else {
   numPic = 3;
 }
-
+*/
 function setLeftEdgePopupMenu() { // управление левым краем всплывающего меню
   windowWidth = $(window).width();
   if (windowWidth <= 1250) {
@@ -131,25 +132,25 @@ function setLeftPaddingForNameLine() { // управление левым бло
     var paddingLeft = (1920 - 1170) / 2;
     var leftEdge = windowWidth / 2 + leftEdge0;
     console.log(leftEdge);
-    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
   } else if (windowWidth <= 1920 && windowWidth > 1170) {
     var paddingLeft = (windowWidth - 1170) / 2 - 150 * 0;
     var leftEdge = windowWidth / 2 + leftEdge0;
     console.log(leftEdge);
-    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
-    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
   } else if (windowWidth <= 1170 && windowWidth > 981) { // 1005? 1024px
     var leftEdge = (710-404)/(1170-980)*(windowWidth-980) + 404;
-    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
-    $('.central-container__personal_pics-320').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-320').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
   } else if (windowWidth <= 980 && windowWidth > 591) {
@@ -157,14 +158,14 @@ function setLeftPaddingForNameLine() { // управление левым бло
     var leftEdge = windowWidth / 2 + leftEdge1;
     var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': windowSVG / 3
     });
   } else if (windowWidth < 590 && windowWidth > 471) {
     var leftEdge = windowWidth / 2 + leftEdge1;
     var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': windowSVG / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '470px');
@@ -172,7 +173,7 @@ function setLeftPaddingForNameLine() { // управление левым бло
     var leftEdge = windowWidth / 2 + leftEdge1;
     var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока в персональном разделе
+    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': windowSVG / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '360px');
@@ -335,30 +336,57 @@ $(document).ready(function () {
     });
   }
 
+  if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
+    //console.log('ww');
+    $('.header-line__nav ul')
+      .removeClass('header-line__nav-popup')
+      .addClass('header-line__nav-list');
+  }
+
   setLeftPaddingForNameLine();
   moveFXinCentralContainer();
-  setCoordsForSigns();
+  //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
-  setLeftEdgePopupMenu();
-  manageHeaderPhoneLine();
+  //setLeftEdgePopupMenu();
+  //manageHeaderPhoneLine();
   //managePersonalImg();
 });
 
 $(window).resize(function () {
   windowWidth = $(window).width();
-  if (windowWidth >= 1250 && ($('div').is('.popup-box'))) {
+  /*if (windowWidth >= 1250 && ($('div').is('.popup-box'))) {
     $('div.popup-box').remove(); // убираю popup-меню на большом экране
+  }*/
+
+  if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
+    //console.log('rr');
+    $('.header-line__nav ul')
+      .removeClass('header-line__nav-popup')
+      .addClass('header-line__nav-list');
   }
 
   setLeftPaddingForNameLine();
   moveFXinCentralContainer();
-  setCoordsForSigns();
+  //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
-  setLeftEdgePopupMenu();
-  manageHeaderPhoneLine();
+  //setLeftEdgePopupMenu();
+  //manageHeaderPhoneLine();
   //managePersonalImg();
 });
 
+$(function () {
+  $('.header-line__nav').click(function () {
+    windowWidth = $(window).width();
+    //setLeftEdgePopupMenu();
+    //console.log('burger');
+    if (windowWidth < 1250) {
+      $('.header-line__nav ul')
+        .toggleClass('header-line__nav-popup')
+        .toggleClass('header-line__nav-list');
+    }
+  });
+});
+/*
 $(function () {
   $('.header-line__nav').click(function () {
     windowWidth = $(window).width();
@@ -377,4 +405,33 @@ $(function () {
       $('div.popup-box').remove(); // убираю popup-меню на малом экране
     }
   });
+});
+*/
+let menuElements = document.querySelectorAll('.header-line__nav-popup li a');
+console.log(menuElements);
+for (let i = 0; i < menuElements.length; i++) {
+  menuElements[i].addEventListener('click', function(e){
+    e.preventDefault();
+
+    let href = this.getAttribute('href');
+    let currentSection = document.getElementById(href);
+    console.log(href);
+  });
+}
+
+function showTarget(ev) {
+  console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
+}
+
+document.querySelector('body').addEventListener('click', showTarget);
+
+
+$('body').on('click', '.header-line__nav-popup li a', function () { // обработка клика по динамической кнопке
+  console.log(this.parent());
+  console.log(this.text());
+  //$(this).parent().parent().remove();
+  if (!$('button').is('.remove-button')) {
+    $('.column-left').append('<p class="empty-list">Список пуст...</p>'); // восстанавливаю "пустую" запись
+    $('.label-name').css('padding-top', '50px'); // восстанавливаю padding
+  }
 });

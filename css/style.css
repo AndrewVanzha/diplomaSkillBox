@@ -203,8 +203,6 @@ body {
 
 .popup-box {
   position: absolute;
-  /*top: 70px;
-    left: 212px;*/
   top: 80px;
   left: 42px;
   padding: 10px 20px;
@@ -334,6 +332,7 @@ body {
 }
 
 .header-line__phonetext {
+  display: none;
   border: 1px solid rgb(255, 78, 46);
   border-radius: 50%;
   width: 21px;
@@ -1173,23 +1172,89 @@ h2 {
     background-image: url("../img/burger-colored.png");
     background-repeat: no-repeat;
     background-position: 50% 45%;
-    /*outline: 1px solid salmon;*/
+    outline: 1px solid salmon;
   }
 
-  .header-line__nav ul {
+  .header-line__nav-list {
     display: none;
   }
-/*
+
+  .header-line__nav ul li {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .header-line__nav-popup {
+    /*display: block;*/
+    position: absolute;
+    top: 80px;
+    left: 42px;
+    padding: 10px 20px;
+    list-style: none;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .header-line__nav-popup a {
+    display: block;
+    padding: 8px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(31, 31, 36);
+  }
+
+  /*.header-line__nav-popup a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0;
+    color: rgb(252, 85, 124);
+    background-color: rgb(252, 85, 124);
+  }
+  
+  .header-line__nav-popup a:hover {
+    color: rgb(252, 85, 124);
+    -webkit-transition: color .3s linear;
+    -moz-transition: color .3s linear;
+    transition: color .3s linear;
+  }
+  
+  .header-line__nav-popup a:hover::after {
+    width: 100%;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    transition: .3s linear;
+  }*/
+  /*
+  .popup-box {
+    position: absolute;
+    top: 80px;
+    left: 42px;
+    padding: 10px 20px;
+    list-style: none;
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  .popup-box li a {
+    display: block;
+    padding: 8px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(31, 31, 36);
+  }
+  */
+  /*
   .header-line__phone {
     padding: 0px 1px 0px 1px;
   }
 */
   .header-line__phone-box {
     margin-right: 25px;
+    margin-top: 22px;
   }
 
   .header-line__phone_button {
-    margin: -3px 0 0 0;
+    margin: 23px 0 0 0;
     padding: 0px 1px 0px 1px;
   }
 
@@ -1614,6 +1679,10 @@ h2 {
     display: none;
   }
 
+  .header-line__phonetext {
+    display: inline-block;
+  }
+  
   .central-container__personal_title {
     font-size: 30px;
   }
