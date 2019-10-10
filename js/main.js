@@ -1,4 +1,5 @@
 // https://nubex.ru/blogs20/postsByTag/?catId=1401
+// https://www.youtube.com/watch?v=BnWjIPii9Ac WP
 
 var windowWidth;
 var numPic = 3;
