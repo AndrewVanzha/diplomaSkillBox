@@ -2,7 +2,7 @@
 // https://www.youtube.com/watch?v=BnWjIPii9Ac WP
 
 var windowWidth;
-//var numPic = 3;
+var switchPopup = false;
 var rs1X;
 var rs1Y;
 
@@ -60,16 +60,6 @@ var signsParameters = [ // макс=5! расчетная позиция для 
   [0, 0, 0, 1],
 ];
 
-/*
-windowWidth = $(window).width();
-if (windowWidth < 1250 && windowWidth > 981) {
-  numPic = 2;
-} else if (windowWidth < 981) {
-  numPic = 1;
-} else {
-  numPic = 3;
-}
-*/
 function setLeftEdgePopupMenu() { // управление левым краем всплывающего меню
   windowWidth = $(window).width();
   if (windowWidth <= 1250) {
@@ -131,14 +121,14 @@ function setLeftPaddingForNameLine() { // управление левым бло
   if (windowWidth > 1920) {
     var paddingLeft = (1920 - 1170) / 2;
     var leftEdge = windowWidth / 2 + leftEdge0;
-    console.log(leftEdge);
+    //console.log(leftEdge);
     $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
   } else if (windowWidth <= 1920 && windowWidth > 1170) {
     var paddingLeft = (windowWidth - 1170) / 2 - 150 * 0;
     var leftEdge = windowWidth / 2 + leftEdge0;
-    console.log(leftEdge);
+    //console.log(leftEdge);
     $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': leftEdge
     });
@@ -338,10 +328,16 @@ $(document).ready(function () {
 
   if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
     //console.log('ww');
+    switchPopup = false;
     $('.header-line__nav ul')
       .removeClass('header-line__nav-popup')
       .addClass('header-line__nav-list');
-  }
+  } else {
+    switchPopup = true;
+    $('.header-line__nav ul')
+      .removeClass('header-line__nav-popup')
+      .addClass('header-line__nav-list');
+}
 
   setLeftPaddingForNameLine();
   moveFXinCentralContainer();
@@ -360,6 +356,7 @@ $(window).resize(function () {
 
   if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
     //console.log('rr');
+    switchPopup = false;
     $('.header-line__nav ul')
       .removeClass('header-line__nav-popup')
       .addClass('header-line__nav-list');
@@ -380,9 +377,12 @@ $(function () {
     //setLeftEdgePopupMenu();
     //console.log('burger');
     if (windowWidth < 1250) {
+      switchPopup = switchPopup? false : true;
       $('.header-line__nav ul')
         .toggleClass('header-line__nav-popup')
         .toggleClass('header-line__nav-list');
+    } else {
+      switchPopup = false;
     }
   });
 });
@@ -407,31 +407,43 @@ $(function () {
   });
 });
 */
-let menuElements = document.querySelectorAll('.header-line__nav-popup li a');
-console.log(menuElements);
-for (let i = 0; i < menuElements.length; i++) {
-  menuElements[i].addEventListener('click', function(e){
-    e.preventDefault();
-
-    let href = this.getAttribute('href');
-    let currentSection = document.getElementById(href);
-    console.log(href);
-  });
-}
-
+/*
 function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
 }
 
-document.querySelector('body').addEventListener('click', showTarget);
+var elLink = document.querySelector('body'); 
+elLink.addEventListener('click', showTarget);
+console.log(elLink);
+//console.log(elLink.childNodes.length);
 
-
-$('body').on('click', '.header-line__nav-popup li a', function () { // обработка клика по динамической кнопке
-  console.log(this.parent());
-  console.log(this.text());
+$('body').click(function(e) {
+  console.log(this);
+  console.log($(this).children().children().children());
+  console.log($(this).children().children().children().text());
+});
+*/
+/*
+$('body').click(function(e) {
+  var pos = $(this).offset();
+  var relativeX = e.pageX - $(this).offset().left;
+  var relativeY = e.pageY - $(this).offset().top;
+  console.log('switchPopup = ' + switchPopup);
+  if(switchPopup) {
+    console.log(e.pageX + ' // ' + e.pageY);
+    console.log(relativeX + ' // ' + relativeY);
+  }
+});
+*/
+/*
+$('ul').on('click', 'li', function () { // обработка клика по динамической кнопке
+  console.log(this);
+  console.log(this.parent);
+  console.log($(this).text());
   //$(this).parent().parent().remove();
   if (!$('button').is('.remove-button')) {
     $('.column-left').append('<p class="empty-list">Список пуст...</p>'); // восстанавливаю "пустую" запись
     $('.label-name').css('padding-top', '50px'); // восстанавливаю padding
   }
 });
+*/
