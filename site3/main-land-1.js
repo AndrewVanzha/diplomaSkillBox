@@ -1,18 +1,49 @@
 // https://tp.1c-bitrix.ru/autumn2019/nizhnynovgorod/?utm_source=moi-sklad&utm_medium=email&utm_campaign=tp_nizhnynovgorod_9-oct
 
 var windowWidth;
-var numPic = 3;
 var rs1X;
 var rs1Y;
 
-windowWidth = $(window).width();
-if (windowWidth < 1250 && windowWidth > 981) {
-  numPic = 2;
-} else if (windowWidth < 981) {
-  numPic = 1;
-} else {
-  numPic = 3;
-}
+$(document).ready(function ($) {
+
+
+  $('.form-container__form_button').click(function () {
+    $(".form-container__regform").submit(function (ev) {
+      ev.preventDefault();
+      var str = $(this).serialize();
+      console.log(str);
+
+      $.ajax({
+        type: "POST",
+        url: "contact.php",
+        data: str,
+        success: function (msg) {
+          console.log(msg);
+          /*let jsonData = JSON.parse(msg);
+          console.log(jsonData);*/
+          if (msg == 'OK') {
+            result = '<p>Ваш заказ принят</p>';
+            //$(".fields").hide();
+          } else {
+            result = msg;
+          }
+          //$('.note').html(result);
+        }
+      });
+
+      /*$.post(
+        "ask.php",
+        { p1: 'p1', p2: 33 },
+        function(data) {
+          console.log(data);
+        }
+      );*/
+
+      return false;
+    });
+  });
+});
+
 
 function setLeftEdgePopupMenu() { // управление правым краем всплывающего меню
   windowWidth = $(window).width();
@@ -32,23 +63,6 @@ function setLeftEdgePopupMenu() { // управление правым крае�
   }
 
 }
-/*
-function toggleNavClasses(windowWidth) { // функция переключения классов меню
-  if (windowWidth > 850 && ($('ul').is('.header-line__nav-popup')) && (!$('ul').is('.header-line__nav-list'))) {
-    $('ul.header-line__nav-popup').addClass('header-line__nav-list'); // оживляю основное меню на большом экране
-    $('ul.header-line__nav-list').removeClass('header-line__nav-popup'); // убираю popup-меню на большом экране
-    $('ul.header-line__nav-list').css({
-      'display': 'flex'
-    });
-    console.log(windowWidth);
-  } 
-  if (windowWidth <= 850 && (!$('ul').is('.header-line__nav-popup')) && ($('ul').is('.header-line__nav-list'))) {
-    $('ul.header-line__nav-list').addClass('header-line__nav-popup'); // оживляю popup-меню на большом экране
-    $('ul.header-line__nav-popup').removeClass('header-line__nav-list'); // убираю основное меню на большом экране
-  }
-
-}
-*/
 /*
 function manageSwiperPaginationAndButtons() { // управление окном pagination и кнопками в слайдере
   if (windowWidth > 1250) {
@@ -79,22 +93,13 @@ $(document).ready(function () {
       'background-size': 'auto'
     });
   }
-  
-  if(windowWidth > 850) {
-    $('.header-line__nav-popup').css({
+
+  if (windowWidth > 850) {
+    $('.header-line__nav-popu').css({
       'display': 'none'
-    }); 
-  } 
+    });
+  }
 
-  //toggleNavClasses(windowWidth);
-
-  //setLeftEdgePopupMenu();
-
-/*setLeftPaddingForNameLine();
-  setCoordsForSigns();
-  manageSwiperPaginationAndButtons();
-  manageHeaderPhoneLine();
-  managePersonalImg();*/
 });
 
 $(window).resize(function () {
@@ -104,19 +109,14 @@ $(window).resize(function () {
   if (windowWidth <= 850) {
     //setLeftEdgePopupMenu();
   }
-  if(windowWidth > 850) {
-    $('.header-line__nav-popup').css({
+  if (windowWidth > 850) {
+    $('.header-line__nav-popu').css({
       'display': 'none'
-    }); 
-  } 
+    });
+  }
 
-  /*setLeftPaddingForNameLine();
-  setCoordsForSigns();
-  manageSwiperPaginationAndButtons();
-  manageHeaderPhoneLine();
-  managePersonalImg();*/
 });
-
+/*
 $(function () {
   $('.header-line__nav').click(function () {
     windowWidth = $(window).width();
@@ -128,3 +128,4 @@ $(function () {
   });
   
 });
+*/

@@ -199,7 +199,6 @@ body {
   justify-content: space-between;
   align-items: center;10*/
   /*outline: 1px solid darkblue;*/
-  outline: 1px solid darkmagenta;
 }
 
 .popup-box {
@@ -332,7 +331,7 @@ body {
 .header-line__phone_button {
   display: block;/*10*/
   /*display: inline-block;10*/
-  margin-top: -3px;
+  margin-top: -1px;
   padding: 0;
 }
 
@@ -1177,7 +1176,7 @@ h2 {
     background-image: url("../img/burger-colored.png");
     background-repeat: no-repeat;
     background-position: 50% 45%;
-    outline: 1px solid salmon;
+    /*outline: 1px solid salmon;*/
   }
 
   .header-line__nav-list {
@@ -1572,7 +1571,7 @@ h2 {
 
   .deal-container__boxes li p {
     padding-top: 90px;
-    line-height: 110%;/*150*/
+    line-height: 110%;
   }
 
   .deal-container__boxes li:nth-of-type(1) {
@@ -1709,7 +1708,6 @@ h2 {
     width: auto;
   }
 
-  /*h2,*/
   .price-container__anno h2 {
     padding-left: 12px;
     padding-right: 12px;
@@ -1844,12 +1842,6 @@ h2 {
       -moz-transform: translate(100%, 100%) rotate(60deg);
     }
   }
-  /*
-  .fadeInLeft1 {
-    -moz-animation-name: fadeInLeft1;
-    -webkit-animation-name: fadeInLeft1;
-    animation-name: fadeInLeft1;
-  }*/
   
   @-webkit-keyframes fadeInLeft2 {
     from {
@@ -1884,12 +1876,6 @@ h2 {
     }
   }
   
-  /*.fadeInLeft2 {
-    -moz-animation-name: fadeInLeft2;
-    -webkit-animation-name: fadeInLeft2;
-    animation-name: fadeInLeft2;
-  }*/
-  
   @-webkit-keyframes fadeInLeft3 {
     from {
       opacity: 1;
@@ -1922,12 +1908,6 @@ h2 {
       -moz-transform: translate(400%, 950%) rotate(-15deg) scale(1.7);
     }
   }
-  
-  /*.fadeInLeft3 {
-    -moz-animation-name: fadeInLeft3;
-    -webkit-animation-name: fadeInLeft3;
-    animation-name: fadeInLeft3;
-  }*/
   
   @-webkit-keyframes fadeInLeft4 {
     from {
@@ -1962,12 +1942,6 @@ h2 {
     }
   }
   
-  /*.fadeInLeft4 {
-    -moz-animation-name: fadeInLeft4;
-    -webkit-animation-name: fadeInLeft4;
-    animation-name: fadeInLeft4;
-  }*/
-  
   @-webkit-keyframes fadeInLeft5 {
     from {
       opacity: 1;
@@ -2000,12 +1974,6 @@ h2 {
       -moz-transform: translate(350%, 750%) rotate(15deg);
     }
   }
-  
-  /*.fadeInLeft5 {
-    -moz-animation-name: fadeInLeft5;
-    -webkit-animation-name: fadeInLeft5;
-    animation-name: fadeInLeft5;
-  }*/
   
 }
 
