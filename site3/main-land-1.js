@@ -1,11 +1,23 @@
 // https://tp.1c-bitrix.ru/autumn2019/nizhnynovgorod/?utm_source=moi-sklad&utm_medium=email&utm_campaign=tp_nizhnynovgorod_9-oct
 
 var windowWidth;
-var rs1X;
-var rs1Y;
+
+
+function showOK() {
+  console.log('ok');
+  //$('.form-container__formbox')
+  $('.form-container__form_ok').css({
+    'display': 'block'
+  });
+  setTimeout(function() {
+    $('.form-container__form_ok').css({
+      'display': 'none'
+    });
+  }, 5000);
+}
+
 
 $(document).ready(function ($) {
-
 
   $('.form-container__form_button').click(function () {
     $(".form-container__regform").submit(function (ev) {
@@ -18,16 +30,10 @@ $(document).ready(function ($) {
         url: "contact.php",
         data: str,
         success: function (msg) {
-          console.log(msg);
+          //console.log(msg);
           /*let jsonData = JSON.parse(msg);
           console.log(jsonData);*/
-          if (msg == 'OK') {
-            result = '<p>Ваш заказ принят</p>';
-            //$(".fields").hide();
-          } else {
-            result = msg;
-          }
-          //$('.note').html(result);
+          showOK();
         }
       });
 
@@ -44,7 +50,7 @@ $(document).ready(function ($) {
   });
 });
 
-
+/*
 function setLeftEdgePopupMenu() { // управление правым краем всплывающего меню
   windowWidth = $(window).width();
   if (windowWidth < 850) {
@@ -63,6 +69,7 @@ function setLeftEdgePopupMenu() { // управление правым крае�
   }
 
 }
+*/
 /*
 function manageSwiperPaginationAndButtons() { // управление окном pagination и кнопками в слайдере
   if (windowWidth > 1250) {
@@ -82,7 +89,7 @@ function manageSwiperPaginationAndButtons() { // управление окном
   }
 }
 */
-
+/*
 $(document).ready(function () {
   windowWidth = $(window).width();
   //console.log(windowWidth);
@@ -101,7 +108,8 @@ $(document).ready(function () {
   }
 
 });
-
+*/
+/*
 $(window).resize(function () {
   windowWidth = $(window).width();
   //toggleNavClasses(windowWidth);
@@ -116,6 +124,7 @@ $(window).resize(function () {
   }
 
 });
+*/
 /*
 $(function () {
   $('.header-line__nav').click(function () {

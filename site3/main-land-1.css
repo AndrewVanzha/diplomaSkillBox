@@ -180,6 +180,24 @@ button {
   border-radius: 34px;
 }
 
+.button_registr {
+  display: inline-block;
+  padding: 14px 31px;
+  margin-top: 40px;
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 34px;
+}
+
+
+.button_registr:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .subject-container__registr {
   color: white;
 }
@@ -244,6 +262,7 @@ button {
 }
 
 .whatabout-container__registr {
+  margin-left: 150px;
   color: red;
 }
 
@@ -282,6 +301,7 @@ button {
 }
 
 .know-container__registr {
+  margin-left: 150px;
   color: darkorange;
 }
 
@@ -560,6 +580,7 @@ button {
 }
 
 .form-container__formbox {
+  position: relative;
   margin-top: 50px;
   padding: 30px 0 25px 0;
   border: 1px solid #ccc;
@@ -611,6 +632,21 @@ button {
   font-size: 1.3em;
   font-weight: 600;
   color: white;
+}
+
+.form-container__form_ok {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  padding: 20px 10px;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: rgb(255, 78, 46);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 30px;
 }
 
 /**/
