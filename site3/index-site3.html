@@ -7,11 +7,11 @@
   <title>Landing page</title>
   <!--<script src="jquery-3.4.0.min.js"></script>-->
   <link rel="stylesheet" href="swiper.min.css">
-  
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
   </script>
-  
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -37,7 +37,7 @@
 
 <body>
 
-  <header class="header-line container p-0 clearfix">
+  <header class="header-line container p-0 mx-auto clearfix">
     <div class="header-line__block container fixed-container d-flex justify-content-between mx-auto p-1">
       <div class="header-line__logo p-1">
         <img class="logo-img" src="img/do-pic-2.png" alt="логотип" />
@@ -69,7 +69,7 @@
   <main>
 
     <section class="central-container p-0">
-      <article class="subject-container container fixed-container" id="subject-article">
+      <article class="subject-container container fixed-container text-center" id="subject-article">
         <div class="subject-container__div row d-flex flex-wrap justify-content-center">
           <div class="subject-container__logo col-lg-1 col-sm-12 p-1 m-0">
             <img class="logo-img" src="img/do-pic-2.png" alt="логотип" />
@@ -110,7 +110,8 @@
           </p>
         </div>
 
-        <button class="subject-container__registr mx-auto" type="button" name="registr">Зарегистрироваться</button>
+        <!--<button class="subject-container__registr button_registr mx-auto" type="button" name="registr">Зарегистрироваться</button>-->
+        <a class="subject-container__registr button_registr mx-auto" href="#form-article">Зарегистрироваться</a>
       </article>
 
       <article class="invite-container container-fluid fixed-container" id="invite-article">
@@ -134,8 +135,9 @@
               <li class="p-0 col-lg-12"><span>СПИКЕРЫ-ПРАКТИКИ</span>, а не теоретики, обещающие "золотые горы"</li>
               <li class="p-0 col-lg-12"><span>КОНЦЕНТРАТ</span> опыта, знаний и мотивации</li>
             </ul>
-            <button class="whatabout-container__registr mx-auto" type="button"
-              name="registr">Зарегистрироваться</button>
+            <!--<button class="whatabout-container__registr button_registr mx-auto" type="button"
+              name="registr">Зарегистрироваться</button>-->
+            <a class="whatabout-container__registr button_registr" href="#form-article">Зарегистрироваться</a>
           </div>
         </div>
       </article>
@@ -151,7 +153,8 @@
               <li class="p-0 col-lg-12"><span>Где</span> прячутся слабые места вашей воронки продаж</li>
               <li class="p-0 col-lg-12"><span>Что</span> скрывают известные компании вашего города</li>
             </ul>
-            <button class="know-container__registr mx-auto" type="button" name="program">Посмотреть программу</button>
+            <!--<button class="know-container__registr mx-auto" type="button" name="program">Посмотреть программу</button>-->
+            <a class="know-container__registr button_registr" href="#program-article">Посмотреть программу</a>
           </div>
           <div class="know-container__img col-lg-6 p-0">
             <img src="img/pic-it7.jpg" alt="картинка цифрового форума" />
@@ -364,7 +367,9 @@
             <p class="my-3 p-0 col-sm-12">Сейчас к вам в город приезжают эксперты федерального уровня. Выступают
               практики с успешным бизнесом.</p>
             <p class="my-3 p-0 col-sm-12">Вы бесплатно забираете их знания и опыт!</p>
-            <button class="talk-container__registr mx-auto" type="button" name="registr">Зарегистрироваться</button>
+            <!--<button class="talk-container__registr button_registr mx-auto" type="button"
+              name="registr">Зарегистрироваться</button>-->
+            <a class="talk-container__registr button_registr mx-auto" href="#form-article">Зарегистрироваться</a>
           </div>
         </div>
       </article>
@@ -452,7 +457,9 @@
               </div>
               <button class="form-container__form_button mx-auto" type="submit" name="user_submit">Отправить</button>
             </form>
+            <p class="form-container__form_ok">Ваши данные зарегистрированы</p>
           </div>
+        </div>
       </article>
 
       <article class="place-container container fixed-container" id="place-article">
@@ -466,6 +473,7 @@
             <p class="p-0 col-lg-12 text-center">Адрес: г. Нижний Новгород, ул. Советская, д. 12</p>
             <p class="p-0 col-lg-12 text-center">Дата: 19 октября</p>
           </div>
+        </div>
       </article>
 
       <article class="map-container container fixed-container" id="map-article">
@@ -482,7 +490,9 @@
             <p class="my-3 p-0 col-lg-12">Вам не хватает времени для собственного развития?</p>
             <p class="my-3 p-0 col-lg-12">Посмотрите на конкурентов. У них те же 24 часа в сутках, как и у вас.</p>
             <p class="my-3 p-0 col-lg-12">Но они нашли время прокачаться.<br>Сможете и вы!</p>
-            <button class="time-container__registr mx-auto" type="button" name="registr">Зарегистрироваться</button>
+            <!--<button class="time-container__registr button_registr mx-auto" type="button"
+              name="registr">Зарегистрироваться</button>-->
+            <a class="time-container__registr button_registr mx-auto" href="#form-article">Зарегистрироваться</a>
           </div>
         </div>
       </article>

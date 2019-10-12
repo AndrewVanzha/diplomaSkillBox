@@ -13,7 +13,7 @@ function showOK() {
     $('.form-container__form_ok').css({
       'display': 'none'
     });
-  }, 5000);
+  }, 50000);
 }
 
 
@@ -89,26 +89,21 @@ function manageSwiperPaginationAndButtons() { // управление окном
   }
 }
 */
-/*
+
 $(document).ready(function () {
   windowWidth = $(window).width();
   //console.log(windowWidth);
-  if (windowWidth <= 370) {
-    $('.unit-box img').css({ // задаю размеры картинки для слайдера для узкого экрана
-      'width': '320px',
-      'height': 'auto',
-      'background-size': 'auto'
-    });
-  }
-
-  if (windowWidth > 850) {
-    $('.header-line__nav-popu').css({
-      'display': 'none'
-    });
-  }
+  $('.header-line__nav').click(function () {
+    windowWidth = $(window).width();
+    //setLeftEdgePopupMenu();
+    //console.log('burger');
+    if (windowWidth <= 850) {
+      $('.header-line__nav-popup').toggle(); 
+    }
+  });
 
 });
-*/
+
 /*
 $(window).resize(function () {
   windowWidth = $(window).width();

@@ -262,7 +262,7 @@ button {
 }
 
 .whatabout-container__registr {
-  margin-left: 150px;
+  margin-left: 120px;
   color: red;
 }
 
@@ -301,7 +301,7 @@ button {
 }
 
 .know-container__registr {
-  margin-left: 150px;
+  margin-left: 120px;
   color: darkorange;
 }
 
@@ -637,6 +637,7 @@ button {
 .form-container__form_ok {
   display: none;
   position: absolute;
+  width: 100%;
   left: 0px;
   top: 100px;
   padding: 20px 10px;
@@ -844,22 +845,38 @@ button {
     padding-left: 40px;
     /*outline: 1px solid darkorange;*/
   }
-  
+
   .whatabout-container__list li,
   .whatabout-container__list li span {
     font-size: 1.1em;
   }
-  
+
   .know-container__div {
     padding-left: 40px;
     /*outline: 1px solid darkorange;*/
   }
-    
+
   .know-container__list li,
   .know-container__list li span {
     font-size: 1.1em;
   }
+
+}
+
+
+@media (max-width: 1250px) {
+  .whatabout-container__registr {
+    margin-left: 10px;
+  }
+
+  .know-container__registr {
+    margin-left: 10px;
+  }
   
+  .swiper-slide__title {
+    padding: 8px 10px 8px 10px;
+  }
+
 }
 
 
@@ -871,15 +888,7 @@ button {
   .program-container__list_img {
     border-width: 2px;
   }
-  
-}
 
-
-@media (max-width: 1250px) {
-  .swiper-slide__title {
-    padding: 8px 10px 8px 10px;
-  }
-  
 }
 
 
@@ -895,6 +904,11 @@ button {
   .talk-container,
   .time-container {
     background-size: 100% 100%;
+  }
+
+  .form-container__form_ok {
+    font-size: 1.7em;
+    font-weight: 600;
   }
 
 }
@@ -943,6 +957,10 @@ button {
 }
 
 @media (max-width: 768px) {
+  .subject-container__div {
+    padding-top: 235px;
+  }
+
   .program-container__list_img {
     border: none;
   }
@@ -952,11 +970,15 @@ button {
     padding: 10px 0;
   }
 
+  .form-container__form_ok {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
 }
 
 
 @media (max-width: 580px) {
-
   .subject-container__info1 p span,
   .subject-container__info2 p span {
     font-size: 0.9em;
@@ -972,6 +994,31 @@ button {
 
   * h2 {
     font-size: 1.6em !important;
+  }
+
+  .form-container__form_ok {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  .subject-container__registr {
+    font-size: 1.1em;
+  }
+
+  .whatabout-container__registr {
+    font-size: 1.1em;
+  }
+
+  .know-container__registr {
+    font-size: 1.1em;
+  }
+
+  .talk-container__registr {
+    font-size: 1.1em;
+  }
+
+  .time-container__registr {
+    font-size: 1.1em;
   }
 
 }
