@@ -230,13 +230,11 @@ body {
 
 .header-line__nav {
   margin-right: auto;
-  /*10*/
 }
 
-.header-line__nav-list,
-.footer-line__nav-list {
+.header-line__nav-list {
   margin: 0;
-  padding: 0;
+  padding: 84px 0 2px 0;
   cursor: pointer;
 }
 
@@ -294,18 +292,26 @@ body {
   /*display: inline-block;
   vertical-align: middle;10*/
   padding: 0;
-  padding-top: 5px;
-  /*10*/
-  padding-bottom: 11px;
-  margin-right: 25px;
+  padding-top: 60px;
+  margin: 0px;
+  /*font-size: 25px;
+  font-weight: bold;*/
+  color: rgb(31, 31, 36);
+}
+
+.header-line__phone-box p {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 0 11px 0;
+  margin-right: 22px;
   font-size: 25px;
   font-weight: bold;
   color: rgb(31, 31, 36);
 }
 
 .telbook-call {
-  height: 45px;
-  width: 208px;
+  height: 42px;
+  width: 205px;
   cursor: pointer;
   outline: none;
   border: 1px solid rgb(248, 35, 112);
@@ -331,14 +337,25 @@ body {
 }
 
 .header-line__phone_button {
-  display: block;
-  /*10*/
-  /*display: inline-block;10*/
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
   margin-top: -1px;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
+  /*font-size: 25px;
+  font-weight: bold;*/
 }
 
-.header-line__phonetext {
+.header-line__phone_button p {
+  margin: 0;
+  padding: 12px 0;
+  font: 400 16px Arial;
+  color: rgb(248, 35, 112);
+}
+
+.header-line__telsign {
   display: none;
   border: 1px solid rgb(255, 78, 46);
   border-radius: 50%;
@@ -383,7 +400,7 @@ body {
 .central-container__personal_title {
   margin: 0;
   padding: 0;
-  padding-top: 205px;
+  padding-top: 189px;
   font-size: 76px;
   font-weight: 900;
   letter-spacing: 2.2px;
@@ -419,17 +436,16 @@ body {
   height: 688px;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 0px;
   /*outline: 2px dashed darkslateblue;*/
 }
 
 .central-container__personal_pics-1930_pic {
   /*background-size: auto;*/
+  height: 635px;;
   position: relative;
   left: 112px;
-  top: -1370px;
-  top: -730px;
-  top: -655px;
+  top: -640px;
   /*position: absolute;
   top: 10px;
   left: 10px;*/
@@ -500,7 +516,7 @@ h2 {
 }
 
 .deal-container__anno {
-  padding-top: 85px;
+  padding-top: 67px;
 }
 
 .deal-container__boxes {
@@ -558,7 +574,7 @@ h2 {
 
 .deal-container__boxes_button {
   margin: 0 auto;
-  margin-top: 95px;
+  margin-top: 98px;
   padding: 0;
 }
 
@@ -570,7 +586,6 @@ h2 {
 
 .examples-container__examples h2 {
   padding-top: 192px;
-  padding-top: 195px;
 }
 
 .examples-block {
@@ -983,7 +998,7 @@ h2 {
 
   to {
     opacity: .65;
-    -webkit-transform: translate(350%, 750%) rotate(15deg);
+    -webkit-transform: translate(450%, 720%) rotate(15deg);
   }
 }
 
@@ -995,7 +1010,7 @@ h2 {
 
   to {
     opacity: .65;
-    transform: translate(350%, 750%) rotate(15deg);
+    transform: translate(450%, 720%) rotate(15deg);
   }
 }
 
@@ -1009,7 +1024,7 @@ h2 {
 
   to {
     opacity: .65;
-    -moz-transform: translate(350%, 750%) rotate(15deg);
+    -moz-transform: translate(450%, 720%) rotate(15deg);
   }
 }
 
@@ -1030,6 +1045,12 @@ h2 {
   height: 110px;
   /*width: 1170px;
   margin: 0 auto;*/
+}
+
+.footer-line__nav-list {
+  margin: 0;
+  padding: 1px 0 2px 0;
+  cursor: pointer;
 }
 
 .footer-container__leftblock {
@@ -1054,14 +1075,14 @@ h2 {
   margin: 0;
   padding: 0;
   padding-left: 65px;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around;*/
 }
 
 .footer-container__centralblock a {
   display: block;
-  margin: 2px 0 16px 6px;
+  margin: 7px 0 33px 6px;
   padding: 0;
   font-weight: bold;
   list-style: none;
@@ -1104,6 +1125,15 @@ h2 {
 .footer-container__phonebutton {
   margin-top: -2px;
   width: 245px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footer-container__phonebutton p {
+  margin: 0;
+  padding: 12px 0;
+  font: 400 16px Arial;
+  color: rgb(248, 35, 112);
 }
 
 .footer-container__contact-box {
@@ -1162,9 +1192,9 @@ h2 {
 
 .copyright-bar p {
   margin: 0;
-  padding: 32px 0 36px 0;
+  padding: 28px 0 36px 0;
   color: rgb(255, 255, 255);
-  letter-spacing: 1.4px;
+  letter-spacing: 0.95px;
   text-align: center;
 }
 
@@ -1282,7 +1312,7 @@ h2 {
     padding: 0px 1px 0px 1px;
   }
 */
-  .header-line__phone-box {
+  .header-line__phone-box p {
     margin-right: 25px;
     margin-top: 22px;
   }
@@ -2290,7 +2320,7 @@ h2 {
 }
 
 @media (max-width: 790px) {
-  .header-line__phone-box {
+  .header-line__phone-box p {
     /*margin-right: 10px;*/
     font-size: 18px;
   }

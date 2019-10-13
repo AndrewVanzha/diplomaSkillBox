@@ -91,6 +91,19 @@ function moveFXinCentralContainer() { // уборка fixed-container в central
 
 }
 
+function changeTelClasses() { // переключение классов в телефонном блоке header-line__phone-box
+  windowWidth = $(window).width();
+  if (windowWidth <= 790) {
+    $('.header-line__phone-box a').removeClass('header-line__phone_button');
+    $('.header-line__phone-box a').addClass('header-line__telsign fa fa-phone');
+  } else {
+    $('.header-line__phone-box a').removeClass('header-line__telsign fa fa-phone');
+    $('.header-line__phone-box a').addClass('header-line__phone_button');
+    //console.log(windowWidth);
+  }
+
+}
+
 function manageHeaderPhoneLine() { // управление телефонным блоком в заголовке
   if (windowWidth <= 790) {
     $('.header-line__phonetext').css({
@@ -342,6 +355,7 @@ $(document).ready(function () {
 
   setLeftPaddingForPictures();
   moveFXinCentralContainer();
+  changeTelClasses();
   //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
   //setLeftEdgePopupMenu();
@@ -365,6 +379,7 @@ $(window).resize(function () {
 
   setLeftPaddingForPictures();
   moveFXinCentralContainer();
+  changeTelClasses();
   //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
   //setLeftEdgePopupMenu();
