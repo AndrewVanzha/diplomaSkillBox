@@ -115,9 +115,13 @@ function managePersonalImg() { //  управление картинкой с а
 
 }
 */
-function setLeftPaddingForNameLine() { // управление левым блоком в персональном разделе и символами
+function setLeftPaddingForPictures() { // управление левым блоком в персональном разделе и символами
   var leftEdge0 = 120;
   var leftEdge1 = 10;
+  var windowSVG = $('.central-container__personal_pics-320').width();
+  //console.log(windowSVG);
+  //console.log(windowWidth);
+
   if (windowWidth > 1920) {
     var paddingLeft = (1920 - 1170) / 2;
     var leftEdge = windowWidth / 2 + leftEdge0;
@@ -146,29 +150,26 @@ function setLeftPaddingForNameLine() { // управление левым бло
   } else if (windowWidth <= 980 && windowWidth > 591) {
     var paddingLeft = (windowWidth - 580 - 10) / 2;
     var leftEdge = windowWidth / 2 + leftEdge1;
-    var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': windowSVG / 3
     });
   } else if (windowWidth < 590 && windowWidth > 471) {
     var leftEdge = windowWidth / 2 + leftEdge1;
-    var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
       'left': windowSVG / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '470px');
-  } else {
+  } else {  // windowWidth <= 470
     var leftEdge = windowWidth / 2 + leftEdge1;
-    var windowSVG = $('.central-container__personal_pics-320').width();
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowSVG / 4
+      'left': windowWidth / 4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '360px');
   }
-  //console.log(windowWidth);
+
 }
 
 // расчет траектории смещения для символов, class__signString:String - класс "красного"/"белого" символа
@@ -339,7 +340,7 @@ $(document).ready(function () {
       .addClass('header-line__nav-list');
 }
 
-  setLeftPaddingForNameLine();
+  setLeftPaddingForPictures();
   moveFXinCentralContainer();
   //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
@@ -362,7 +363,7 @@ $(window).resize(function () {
       .addClass('header-line__nav-list');
   }
 
-  setLeftPaddingForNameLine();
+  setLeftPaddingForPictures();
   moveFXinCentralContainer();
   //setCoordsForSigns();
   manageSwiperPaginationAndButtons();
