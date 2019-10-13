@@ -96,9 +96,15 @@ function changeTelClasses() { // переключение классов в те
   if (windowWidth <= 790) {
     $('.header-line__phone-box a').removeClass('header-line__phone_button');
     $('.header-line__phone-box a').addClass('header-line__telsign fa fa-phone');
+    $('.header-line__phone-box a p').css({
+      'display' : 'none'
+    });
   } else {
     $('.header-line__phone-box a').removeClass('header-line__telsign fa fa-phone');
     $('.header-line__phone-box a').addClass('header-line__phone_button');
+    $('.header-line__phone-box a p').css({
+      'display' : 'block'
+    });
     //console.log(windowWidth);
   }
 

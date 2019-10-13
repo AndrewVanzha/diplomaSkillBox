@@ -356,7 +356,7 @@ body {
 }
 
 .header-line__telsign {
-  display: none;
+  display: inline-block;
   border: 1px solid rgb(255, 78, 46);
   border-radius: 50%;
   width: 21px;
@@ -421,6 +421,16 @@ body {
   margin: 0;
   margin-top: 45px;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.central-container__personal_button p {
+  margin: 0;
+  padding: 21px 0;
+  font: 400 16px Arial;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1.2px;
 }
 
 /*
@@ -576,6 +586,16 @@ h2 {
   margin: 0 auto;
   margin-top: 98px;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.deal-container__boxes_button p {
+  margin: 0;
+  padding: 21px 0;
+  font: 400 16px Arial;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1.2px;
 }
 
 .examples-container__examples {
@@ -705,6 +725,16 @@ h2 {
   margin: 0 auto;
   margin-top: 63px;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.project-button-position p {
+  margin: 0;
+  padding: 21px 0;
+  font: 400 16px Arial;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1.2px;
 }
 
 .price-container {
@@ -1312,16 +1342,18 @@ h2 {
     padding: 0px 1px 0px 1px;
   }
 */
+/*
   .header-line__phone-box p {
     margin-right: 25px;
     margin-top: 22px;
   }
-
+*/
+  /*
   .header-line__phone_button {
     margin: 23px 0 0 0;
     padding: 0px 1px 0px 1px;
   }
-
+*/
   .examples-container {
     margin-left: 37px;
     margin-right: 37px;
@@ -1544,7 +1576,17 @@ h2 {
 
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1025px) {
+  .header-line__phone-box {
+    padding-top: 20px;
+  }
+
+  .header-line__phone-box p {
+    margin: 0;
+    margin-right: 26px;
+    padding-top: 11px;
+  }
+
   .central-container__personal_button {
     margin: 27px auto 0 auto;
     /*!!*/
@@ -2073,7 +2115,7 @@ h2 {
 
   .swiper-container {
     margin-top: 36px;
-    height: 350px;
+    height: 355px;
   }
 
   .swiper-slide a img {
@@ -2083,6 +2125,8 @@ h2 {
 
   .site-title {
     padding-top: 8px;
+    font-size: 20px;
+    letter-spacing: 1.2px;
   }
 
   .project-button-position {
@@ -2408,13 +2452,13 @@ h2 {
     order: 3;
     height: 136px;
   }
-
+/*
   .telbook-call {
     height: 56px;
     background-color: rgb(248, 35, 112);
     color: rgb(255, 255, 255);
   }
-
+*/
   .central-container__redtag,
   .central-container__whitetag {
     font-size: 18px;
