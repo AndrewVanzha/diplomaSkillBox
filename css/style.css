@@ -234,7 +234,7 @@ body {
 
 .header-line__nav-list {
   margin: 0;
-  padding: 84px 0 2px 0;
+  padding: 29px 0 2px 0;
   cursor: pointer;
 }
 
@@ -292,7 +292,7 @@ body {
   /*display: inline-block;
   vertical-align: middle;10*/
   padding: 0;
-  padding-top: 60px;
+  padding-top: 6px;
   margin: 0px;
   /*font-size: 25px;
   font-weight: bold;*/
@@ -351,6 +351,7 @@ body {
 .header-line__phone_button p {
   margin: 0;
   padding: 12px 0;
+  letter-spacing: 0.6px;
   font: 400 16px Arial;
   color: rgb(248, 35, 112);
 }
@@ -359,8 +360,8 @@ body {
   display: inline-block;
   border: 1px solid rgb(255, 78, 46);
   border-radius: 50%;
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   padding: 5px 0px 1px 6px;
   text-decoration: none;
   list-style: none;
@@ -480,8 +481,8 @@ body {
 .central-container__personal_pics-1024_pic {
   height: 646px;
   position: relative;
-  left: 98px;
-  top: -641px;
+  left: 75px;
+  top: -650px;
   /*position: absolute;
   top: 10px;
   left: 10px;*/
@@ -499,7 +500,6 @@ body {
 
 .central-container__personal_pics-320_pic {
   position: relative;
-  /*left: -118px;*/
   top: -332px;
   /*position: absolute;
   top: 10px;
@@ -592,7 +592,7 @@ h2 {
 
 .deal-container__boxes_button p {
   margin: 0;
-  padding: 21px 0;
+  padding: 20px 0;
   font: 400 16px Arial;
   color: rgb(255, 255, 255);
   letter-spacing: 1.2px;
@@ -731,7 +731,7 @@ h2 {
 
 .project-button-position p {
   margin: 0;
-  padding: 21px 0;
+  padding: 20px 0;
   font: 400 16px Arial;
   color: rgb(255, 255, 255);
   letter-spacing: 1.2px;
@@ -740,7 +740,7 @@ h2 {
 .price-container {
   margin: 0;
   margin-top: 100px;
-  padding: 0 110px 85px 110px;
+  padding: 0 110px 80px 110px;
   background-image: linear-gradient(to bottom left, rgb(255, 47, 150), rgb(255, 143, 90));
   position: relative;
 }
@@ -1222,7 +1222,7 @@ h2 {
 
 .copyright-bar p {
   margin: 0;
-  padding: 28px 0 36px 0;
+  padding: 29px 0 36px 0;
   color: rgb(255, 255, 255);
   letter-spacing: 0.95px;
   text-align: center;
@@ -1255,7 +1255,7 @@ h2 {
   }
 
   .header-line__nav {
-    padding: 14px 0 52px 0px;
+    padding: 30px 0 52px 18px;
     width: 45px;
     height: 32px;
     border: none;
@@ -1378,24 +1378,20 @@ h2 {
     letter-spacing: 1.6px;
   }
 
-  /*
-  .central-container__personal_pics-1024 {
-    order: 0;
-    position: static;
-    margin: 0 auto;
-    width: auto;
-  }
-*/
   .central-container__personal_button {
-    width: 320px;
+    width: 325px;
     height: 67px;
   }
 
   .deal-container__boxes_button {
-    margin-top: 85px;
     margin-top: 94px;
-    height: 67px;
+    padding: 3px 0;
+    height: 63px;
     width: 320px;
+  }
+
+  .deal-container__boxes_button p {
+    padding-top: 21px;
   }
 
   .price-container__anno {
@@ -1431,6 +1427,10 @@ h2 {
     height: 68px;
   }
 
+  .project-button-position p {
+    padding-top: 25px;
+  }
+
   .price-container {
     padding: 0 35px;
   }
@@ -1455,7 +1455,7 @@ h2 {
   }
 
   .footer-container__rightblock {
-    padding-right: 5px;
+    padding-right: 12px;
   }
 
 }
@@ -1477,14 +1477,22 @@ h2 {
 }
 
 @media (max-width: 1250px) and (min-width: 981px) {
+  .header-line__phone_button {
+    margin-right: 9px;
+  }
+
   .central-container__personal {
     height: 658px;
   }
 
   .central-container__personal_leftcol {
-    margin-top: 205px;
-    margin-left: 28px;
+    margin-top: 197px;
+    margin-left: 35px;
     width: 370px;
+  }
+
+  .central-container__personal_button p {
+    padding-top: 25px;
   }
 
   .central-container__personal_pics-1930 {
@@ -1506,7 +1514,7 @@ h2 {
   }
 
   .deal-container__anno {
-    padding-top: 90px;
+    padding-top: 82px;
   }
 
   .deal-container__boxes {
@@ -1522,12 +1530,12 @@ h2 {
   }
 
   .deal-container__boxes li:nth-of-type(1) {
-    padding: 0 51px 0 105px;
+    padding: 0 10px 0 145px;
     width: 287px;
   }
 
   .deal-container__boxes li:nth-of-type(2) {
-    padding: 0 70px;
+    padding: 0 90px 0 50px;
     width: 259px;
   }
 
@@ -1544,7 +1552,6 @@ h2 {
     padding: 0 56px;
     padding: 0 6px;
     margin-top: 98px;
-    /*margin-top: 55px;*/
     /*outline: 1px solid darkorange;*/
   }
 
@@ -1578,7 +1585,7 @@ h2 {
 
 @media (max-width: 1025px) {
   .header-line__phone-box {
-    padding-top: 20px;
+    padding-top: 27px;
   }
 
   .header-line__phone-box p {
@@ -1588,12 +1595,12 @@ h2 {
   }
 
   .central-container__personal_button {
-    margin: 27px auto 0 auto;
-    /*!!*/
+    margin: 0;
+    margin-top: 45px;
   }
 
   .price-container {
-    padding: 0 40px 87px 40px;
+    padding: 0 40px 1px 40px;
   }
 
   .price-container__anno h2 {
@@ -2007,8 +2014,8 @@ h2 {
   }
 
   .central-container__personal_text {
-    margin-top: 13px;
-    /*!!*/
+    margin-top: 8px;
+    line-height: 150%;
   }
 
   .central-container__personal_pics-1930 {
@@ -2043,7 +2050,8 @@ h2 {
   }
 
   .deal-container__anno {
-    padding-top: 50px;
+    padding-top: 45px;
+    margin: 0 auto;
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: 800;
@@ -2059,12 +2067,11 @@ h2 {
 
   .deal-container__boxes li {
     margin-top: 23px;
-    /*!!*/
     height: auto;
   }
 
   .deal-container__boxes li p {
-    padding-top: 90px;
+    padding-top: 80px;
     line-height: 110%;
   }
 
@@ -2108,13 +2115,13 @@ h2 {
   }
 
   .examples-container__examples h2 {
-    padding-top: 100px;
+    padding-top: 103px;
     font-size: 28px;
     font-weight: 800;
   }
 
   .swiper-container {
-    margin-top: 36px;
+    margin-top: 44px;
     height: 355px;
   }
 
@@ -2365,7 +2372,7 @@ h2 {
 
 @media (max-width: 790px) {
   .header-line__phone-box p {
-    /*margin-right: 10px;*/
+    margin-right: 28px;
     font-size: 18px;
   }
 
@@ -2378,13 +2385,18 @@ h2 {
     margin-top: 22px;
   }
 
+  .central-container__personal_leftcol {
+    padding-left: 0;
+  }
+
   .central-container__personal_title {
+    margin-top: 22px;
     font-size: 30px;
   }
 
   .central-container__personal {
     margin: 0 auto;
-    height: 590px;
+    height: 562px;
   }
 
   .central-container__personal_text {
@@ -2396,6 +2408,10 @@ h2 {
     position: static;
     margin: 0 auto;
     width: auto;
+  }
+
+  .deal-container__boxes li {
+    height: 145px;
   }
 
   .price-container__anno h2 {
@@ -2419,8 +2435,8 @@ h2 {
   }
 
   .examples-container__examples h2 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .footer-container {
@@ -2856,6 +2872,15 @@ h2 {
 }
 
 @media (max-width: 590px) {
+  .header-line__nav {
+    width: 10px;
+    height: 6px;
+  }
+
+  .header-line__phone-box {
+    padding-top: 18px;
+  }
+
   .fixed-container {
     padding-left: 20px;
     padding-right: 20px;
@@ -2863,6 +2888,22 @@ h2 {
 
   .central-container__personal_leftcol {
     width: auto;
+  }
+
+  .central-container__personal_button {
+    margin: 0 auto;
+    margin-top: 22px;
+    width: 280px;
+  }
+
+  .deal-container__boxes_button {
+    margin-top: 32px;
+    width: 280px;
+    height: 50px;
+  }
+
+  .deal-container__boxes_button p {
+    padding-top: 17px;
   }
 
   .examples-container {
@@ -2928,6 +2969,44 @@ h2 {
     }
   }
 
+  @-webkit-keyframes fadeInLeft4 {
+    from {
+      opacity: 1;
+      -webkit-transform: translate(2%, 10%);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate(420%, 50%) rotate(-20deg);
+    }
+  }
+
+  @keyframes fadeInLeft4 {
+    from {
+      opacity: 1;
+      transform: translate(2%, 10%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(420%, 50%) rotate(-20deg);
+    }
+  }
+
+  @-moz-keyframes fadeInLeft4 {
+
+    /** Firefox **/
+    from {
+      opacity: 1;
+      -moz-transform: translate(2%, 10%);
+    }
+
+    to {
+      opacity: 1;
+      -moz-transform: translate(420%, 50%) rotate(-20deg);
+    }
+  }
+
   @-webkit-keyframes fadeInLeft5 {
     from {
       opacity: 1;
@@ -2936,7 +3015,7 @@ h2 {
 
     to {
       opacity: .8;
-      -webkit-transform: translate(510%, 1380%) rotate(15deg);
+      -webkit-transform: translate(410%, 1380%) rotate(15deg);
     }
   }
 
@@ -2948,7 +3027,7 @@ h2 {
 
     to {
       opacity: .8;
-      transform: translate(510%, 1380%) rotate(15deg);
+      transform: translate(410%, 1380%) rotate(15deg);
     }
   }
 
@@ -2962,7 +3041,7 @@ h2 {
 
     to {
       opacity: .8;
-      -moz-transform: translate(510%, 1380%) rotate(15deg);
+      -moz-transform: translate(410%, 1380%) rotate(15deg);
     }
   }
 
