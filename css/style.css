@@ -448,7 +448,8 @@ body {
 
 .central-container__personal_pics-1930_pic {
   /*background-size: auto;*/
-  height: 635px;;
+  height: 635px;
+  ;
   position: relative;
   left: 112px;
   top: -640px;
@@ -585,6 +586,7 @@ h2 {
   /*text-decoration: none;
   list-style: none;*/
 }
+
 /*
 .deal-container__boxes_button p {
   margin: 0;
@@ -1257,6 +1259,102 @@ h2 {
 }
 
 
+/* модальные окна */
+/* https://myrusakov.ru/js-modal-boxes.html */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  animation-name: animatew;
+  animation-duration: 0.5s;
+  position: relative;
+  background-color: #E1BEE7;
+  margin: auto;
+  padding: 0;
+  border: 5px solid #7B1FA2;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #9C27B0;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #9C27B0;
+  color: white;
+}
+/*
+@keyframes animatew {
+  from {
+    top: -320px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.closew {
+  font-size: 30px;
+  font-weight: bold;
+}
+*/
+
 /* адаптивный раздел */
 @media (max-width: 1920px) {
   .central-container__personal {
@@ -1370,7 +1468,7 @@ h2 {
     padding: 0px 1px 0px 1px;
   }
 */
-/*
+  /*
   .header-line__phone {
     margin-right: 25px;
     margin-top: 22px;
@@ -2154,7 +2252,7 @@ h2 {
   }
 
   .swiper-slide a img {
-    height: 245px!important;
+    height: 245px !important;
     width: 280px;
   }
 
@@ -2515,7 +2613,8 @@ h2 {
   .swiper-container {
     height: auto;
   }
-/*
+
+  /*
   .swiper-wrapper {
     height: 400px;
   }

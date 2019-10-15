@@ -408,6 +408,35 @@ $(function () {
     }
   });
 });
+
+$(document).ready(function(){
+  $(".header-line__nav").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href');
+      var top = $(id).offset().top;
+      $('body, html').animate({scrollTop: top}, 900);
+  });
+});
+
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementsByClassName("deal-container__boxes_button")[0];
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 /*
 $(function () {
   $('.header-line__nav').click(function () {
