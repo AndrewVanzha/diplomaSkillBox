@@ -187,7 +187,7 @@ body {
 
 /* верхняя полоса */
 .header-line {
-  background-color: #eee;
+  background-color: rgb(251, 251, 251);
 }
 
 .header-line__div {
@@ -306,21 +306,19 @@ body {
 }
 
 .telbook-call {
-  /*height: 42px;*/
-  /*width: 205px;*/
   cursor: pointer;
   outline: none;
   border: 1px solid rgb(248, 35, 112);
   background-color: transparent;
   text-align: center;
   font-size: 16px;
-  letter-spacing: 1.01px;
+  letter-spacing: 0.6px;
   color: rgb(245, 63, 79);
 }
 
 .press-button {
   display: block;
-  height: 60px;
+  /*height: 60px;*/
   width: 270px;
   padding: 0;
   cursor: pointer;
@@ -336,13 +334,13 @@ body {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  margin-top: -3px;
-  padding: 12px 0 12px 0;
+  margin-top: 0px;
+  padding: 13px 0 12px 0;
   width: 205px;
   /*text-decoration: none;
   list-style: none;*/
 }
-
+/*
 .header-line__phone_button p {
   margin: 0;
   padding: 12px 0;
@@ -350,7 +348,7 @@ body {
   font: 400 16px Arial;
   color: rgb(248, 35, 112);
 }
-
+*/
 .header-line__telsign {
   display: inline-block;
   border: 1px solid rgb(255, 78, 46);
@@ -377,7 +375,7 @@ body {
   height: 688px;
   overflow: hidden;
   position: relative;
-  background-color: #eee;
+  background-color: rgb(251, 251, 251);
   /*outline: 1px solid sienna;*/
 }
 
@@ -415,8 +413,8 @@ body {
 
 .central-container__personal_button {
   margin: 0;
-  margin-top: 45px;
-  padding: 0;
+  margin-top: 44px;
+  padding: 20px 0 19px 0;
   text-decoration: none;
   list-style: none;
 }
@@ -449,7 +447,6 @@ body {
 .central-container__personal_pics-1930_pic {
   /*background-size: auto;*/
   height: 635px;
-  ;
   position: relative;
   left: 112px;
   top: -640px;
@@ -470,15 +467,16 @@ body {
   width: 530px;
   height: 643px;
   position: absolute;
-  top: 15px;
+  top: 5px;
+  left: 0px;
   /*overflow: hidden;*/
 }
 
 .central-container__personal_pics-1024_pic {
-  height: 646px;
+  height: 634px;
   position: relative;
-  left: 75px;
-  top: -650px;
+  left: 80px;
+  top: -638px;
   /*position: absolute;
   top: 10px;
   left: 10px;*/
@@ -523,7 +521,7 @@ h2 {
 }
 
 .deal-container__anno {
-  padding-top: 85px;
+  padding-top: 82px;
 }
 
 .deal-container__boxes {
@@ -540,7 +538,7 @@ h2 {
 
 .deal-container__boxes li {
   display: block;
-  margin-top: 84px;
+  margin-top: 85px;
   padding: 0;
   font-size: 20px;
   height: 150px;
@@ -549,7 +547,7 @@ h2 {
   text-decoration: none;
   background-repeat: no-repeat;
   background-position: top;
-  /*outline: 1px solid sandybrown;*/
+  outline: 1px solid sandybrown;
 }
 
 .deal-container__boxes li:nth-of-type(1) {
@@ -581,8 +579,10 @@ h2 {
 
 .deal-container__boxes_button {
   margin: 0 auto;
-  margin-top: 98px;
+  margin-top: 97px;
   padding: 0;
+  padding: 20px 0 19px 0;
+  letter-spacing: .4px;
   /*text-decoration: none;
   list-style: none;*/
 }
@@ -598,14 +598,14 @@ h2 {
 */
 
 .examples-container {
-  background-color: #eee;
+  background-color: rgb(251, 251, 251);
 }
 
 .examples-container__examples {
   width: 1230px;
   margin: 0 auto;
   overflow: hidden;
-  padding-bottom: 100px;
+  padding-bottom: 105px;
   /*outline: 1px solid darkblue;*/
 }
 
@@ -694,26 +694,28 @@ h2 {
 }
 
 .swiper-button-next {
-  right: 15px;
-  top: 155px;
+  z-index: 10;
+  right: 5px;/*15*/
+  top: 143px;/*155*/
   height: 30px;
   width: 30px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 10px dashed rgb(255, 255, 255);
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 10px rgb(255, 255, 255), 0 0 5px 17px rgb(243, 243, 243);
+  box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);
   background-image: none;
 }
 
 .swiper-button-prev {
-  left: 10px;
-  top: 155px;
+  z-index: 10;
+  left: 5px;/*10*/
+  top: 143px;/*155*/
   height: 30px;
   width: 30px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 10px dashed rgb(255, 255, 255);
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 10px rgb(255, 255, 255), 0 0 5px 17px rgb(243, 243, 243);
+  box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);
   background-image: none;
 }
 
@@ -731,10 +733,10 @@ h2 {
   display: block;
   margin: 0 auto;
   margin-top: 63px;
-  padding: 0;
-  padding: 20px 0;
+  padding: 20px 0 19px 0;
   /*text-decoration: none;
   list-style: none;*/
+  letter-spacing: .4px;
   font: 400 16px Arial;
   color: rgb(255, 255, 255);
   letter-spacing: 1.2px;
@@ -742,8 +744,7 @@ h2 {
 
 .price-container {
   margin: 0;
-  /*margin-top: 100px;*/
-  padding: 0 110px 80px 110px;
+  padding: 0 110px 82px 110px;
   background-image: linear-gradient(to bottom left, rgb(255, 47, 150), rgb(255, 143, 90));
   position: relative;
 }
@@ -765,7 +766,7 @@ h2 {
 .price-container__anno_tab {
   table-layout: fixed;
   margin: 0;
-  margin-top: 35px;
+  margin-top: 33px;
   padding: 0;
   width: 100%;
   border-collapse: collapse;
@@ -1138,7 +1139,7 @@ h2 {
 .footer-container__phonetext,
 .footer-container__mailtext {
   display: block;
-  margin: 7px 0 33px 6px;
+  margin: 7px 0 35px 6px;
   padding: 0;
   font-size: 25px;
   font-weight: bold;
@@ -1169,9 +1170,8 @@ h2 {
 
 .footer-container__rightblock {
   margin: 0;
-  margin-right: 20px;
+  margin-right: 25px;
   padding: 0;
-  padding-right: 0px;
   /*display: flex;
   flex-direction: column;
   justify-content: space-between;*/
@@ -1510,9 +1510,9 @@ h2 {
   }
 
   .deal-container__boxes_button {
-    margin-top: 94px;
-    padding: 3px 0;
-    height: 63px;
+    margin-top: 92px;
+    padding: 24px 0 22px 0;
+    /*height: 63px;*/
     width: 320px;
   }
 
@@ -1604,7 +1604,7 @@ h2 {
 
 @media (max-width: 1250px) and (min-width: 981px) {
   .header-line__phone_button {
-    margin-right: 9px;
+    margin-right: 12px;
   }
 
   .central-container__personal {
@@ -1716,8 +1716,8 @@ h2 {
 
   .header-line__phone {
     margin: 0;
-    margin-right: 26px;
-    padding-top: 11px;
+    margin-right: 23px;
+    padding-top: 9px;
   }
 
   .central-container__personal_button {
