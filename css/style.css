@@ -1483,12 +1483,12 @@ h2 {
   .examples-container__examples {
     margin-left: 37px;
     margin-right: 37px;
+    padding-bottom: 102px;
     width: auto;
   }
 
   .central-container__personal_title {
     margin-top: 4px;
-    /*!!*/
     padding-top: 0;
     letter-spacing: 0.1px;
     text-align: center;
@@ -1505,7 +1505,7 @@ h2 {
   }
 
   .central-container__personal_button {
-    width: 325px;
+    width: 323px;
     height: 67px;
   }
 
@@ -1683,6 +1683,7 @@ h2 {
 
   .swiper-slide a img {
     width: auto;
+    /*width: 465px;*/
     height: 370px;
     object-fit: fill;
   }
@@ -1730,8 +1731,30 @@ h2 {
   }
 
   .price-container__anno_header {
-    padding-left: 6px;
+    padding-left: 0px;
     padding-right: 6px;
+  }
+
+  .price-container__anno_sub {
+    padding-bottom: 83px;
+  }
+
+  .footer-container {
+    padding-left: 40px;
+    padding-right: 2px;
+  }
+
+  .footer-container__mailtext {
+    /*font-family: Roboto, "Myriad Pro", Arial;*/
+    letter-spacing: .5px;
+  }
+
+  .footer-container__phonebutton {
+    width: 248px;
+  }
+
+  .copyright-bar p {
+    letter-spacing: .5px;
   }
 
   @-webkit-keyframes fadeInLeft1 {
