@@ -320,6 +320,8 @@ body {
 .header-line__phone_sign .fa-fw {
   width: 11px;
   padding: 2px 3px;
+  font-weight: 900;
+  color: rgb(250, 23, 151);
 }
 
 .telbook-call {
@@ -564,7 +566,7 @@ h2 {
   text-decoration: none;
   background-repeat: no-repeat;
   background-position: top;
-  outline: 1px solid sandybrown;
+  /*outline: 1px solid sandybrown;*/
 }
 
 .deal-container__boxes li:nth-of-type(1) {
@@ -1147,43 +1149,70 @@ h2 {
 .footer-container__centralblock {
   margin: 0;
   padding: 0;
-  padding-left: 63px;
+  padding-left: 65px;
   /*display: flex;
   flex-direction: column;
   justify-content: space-around;*/
 }
 
-.footer-container__phonetext,
-.footer-container__mailtext {
+.footer-container__phonebox,
+.footer-container__mailbox {
   display: block;
-  margin: 7px 0 35px 6px;
+  margin: 8px 0 30px 6px;
   padding: 0;
-  font-size: 25px;
-  font-weight: bold;
   list-style: none;
   text-decoration: none;
+}
+
+.footer-container__phonebox .fa-fw {
+  display: inline-block;
+  margin-right: 19px;
+  width: 14px;
+  height: 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: rgb(250, 23, 151);
+}
+
+.footer-container__phonetext {
+  display: inline-block;
+  margin: 0;
+  letter-spacing: .6px;
+  font-stretch: ultra-condensed;
+  font-size: 24px;
   color: rgb(0, 0, 0);
 }
 
-.footer-container__phonetext span,
-.footer-container__mailtext span {
+.footer-container__mailbox .fa-fw {
   display: inline-block;
-  margin: 0;
-  /*font-family: Roboto, "Myriad Pro", Arial;*/
-  letter-spacing: .8px;
+  margin-right: 25px;
+  width: 14px;
+  height: 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: rgb(250, 8, 145);
 }
 
-.fa-phone::before {
+.footer-container__mailtext {
+  display: inline-block;
+  margin: 0;
+  letter-spacing: .6px;
+  font-stretch: ultra-condensed;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+}
+
+/*.fa-phone::before {
   padding-right: 18px;
   color: rgb(250, 23, 151);
   font-weight: 900;
-}
+}*/
 
-.fa-envelope::before {
+/*.fa-envelope::before {
   padding-right: 18px;
   color: rgb(250, 8, 145);
   font-weight: 900;
-}
+}*/
 
 .footer-container__rightblock {
   margin: 0;
@@ -1514,7 +1543,6 @@ h2 {
   .central-container__personal_text {
     overflow: visible;
     margin-top: 13px;
-    /*!!*/
     white-space: nowrap;
     text-align: center;
     font-size: 22px;
@@ -1531,6 +1559,8 @@ h2 {
     padding: 24px 0 22px 0;
     /*height: 63px;*/
     width: 320px;
+    letter-spacing: 1.8px;
+    font-stretch: extra-condensed;
   }
 
   .deal-container__boxes_button p {
@@ -1568,6 +1598,8 @@ h2 {
     margin-top: 88px;
     width: 320px;
     height: 68px;
+    letter-spacing: 1.8px;
+    font-stretch: extra-condensed;
   }
 
   .project-button-position p {
@@ -1622,6 +1654,8 @@ h2 {
 @media (max-width: 1250px) and (min-width: 981px) {
   .header-line__phone_button {
     margin-right: 12px;
+    letter-spacing: 1.8px;
+    font-stretch: extra-condensed;
   }
 
   .central-container__personal {
@@ -1741,7 +1775,7 @@ h2 {
   .central-container__personal_button {
     margin: 0;
     margin-top: 45px;
-    letter-spacing: .5px;
+    letter-spacing: 1.8px;
     font-stretch: extra-condensed;
   }
 
@@ -1763,17 +1797,25 @@ h2 {
     padding-right: 2px;
   }
 
-  .footer-container__mailtext {
-    /*font-family: Roboto, "Myriad Pro", Arial;*/
-    letter-spacing: .5px;
+  .footer-container__phonebox,
+  .footer-container__mailbox {
+    margin-top: 6px;
   }
+  
+  /*.footer-container__mailbox {
+    letter-spacing: .2px;
+    font-stretch: ultra-condensed;
+  }*/
 
   .footer-container__phonebutton {
     width: 248px;
   }
 
   .copyright-bar p {
-    letter-spacing: .5px;
+    padding: 29px 0 36px 0;
+    font-size: 12px;
+    letter-spacing: 1.0px;
+    font-stretch: ultra-condensed;
   }
 
   @-webkit-keyframes fadeInLeft1 {
@@ -2251,7 +2293,6 @@ h2 {
     margin-right: auto;
     /*padding: 0 80px;*/
     width: 317px;
-    /*width: 100%;*/
   }
 
   .deal-container__boxes li:nth-of-type(2) {
@@ -2277,11 +2318,11 @@ h2 {
 
   .deal-container__boxes_button {
     margin-top: 49px;
-    /*!!*/
   }
 
   .examples-container__examples {
     height: 595px;
+    padding-bottom: 50px;
     /*outline: 1px dashed dimgray;*/
   }
 
@@ -2331,22 +2372,22 @@ h2 {
   }
 
   .price-container__anno_sub {
-    padding-bottom: 48px;
+    padding-bottom: 41px;
     font-size: 16px;
   }
 
-  .footer-container__phonetext,
-  .footer-container__mailtext {
+  /*.footer-container__phonebox,
+  .footer-container__mailbox {
     color: rgb(168, 176, 195);
-  }
+  }*/
 
-  .footer-container__phonetext {
+  /*.footer-container__phonebox {
     font-size: 20px;
-  }
+  }*/
 
-  .footer-container__mailtext {
+  /*.footer-container__mailbox {
     font-size: 18px;
-  }
+  }*/
 
   .copyright-bar {
     margin-top: 58px;
@@ -2564,7 +2605,7 @@ h2 {
   }
 
   .footer-container__leftblock li a {
-    padding: 1px 30px 10px 0;
+    padding: 1px 30px 11px 0;
     font-size: 16px;
   }
 
@@ -2659,7 +2700,7 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     letter-spacing: .3px;
-    line-height: 175%;
+    line-height: 188%;
   }
 
   .examples-container__examples {
@@ -2700,17 +2741,46 @@ h2 {
     height: 67px;
   }
 
-  .footer-container__phonetext,
+  .footer-container__phonebox,
+  .footer-container__mailbox {
+    margin-top: 0;
+    margin-bottom: 23px;
+    margin-left: 0;
+  }
+
+  /*.footer-container__phonetext,
   .footer-container__mailtext {
-    margin-top: 3px;
-    margin-bottom: 27px;
-  }
-
-  .footer-container__phonetext span,
-  .footer-container__mailtext span {
     letter-spacing: .5px;
+  }*/
+
+  .footer-container__phonebox .fa-fw {
+    margin-right: 15px;
+    /*width: 14px;
+    height: 14px;*/
+    font-size: 16px;
+    font-weight: 700;
   }
 
+  .footer-container__phonetext {
+    letter-spacing: .2px;
+    font-stretch: ultra-condensed;
+    font-size: 20px;
+  }
+
+  .footer-container__mailbox .fa-fw {
+    margin-right: 15px;
+    /*width: 14px;
+    height: 14px;*/
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .footer-container__mailtext {
+    letter-spacing: 1.1px;
+    font-stretch: ultra-condensed;
+    font-size: 18px;
+  }
+      
   .footer-container__rightblock {
     order: 3;
     height: 146px;
@@ -2720,10 +2790,16 @@ h2 {
     height: 55px;
     width: 279px;
     margin-top: 2px;
+    background-color: rgb(255, 78, 46);
+    color: rgb(255, 255, 255);
   }
 
-  .footer-container__phonebutton span {
+  /*.footer-container__phonebutton span {
     padding-top: 20px;
+  }*/
+
+  .footer-container__contact-box {
+    margin-top: 48px;
   }
 
   .copyright-bar {
