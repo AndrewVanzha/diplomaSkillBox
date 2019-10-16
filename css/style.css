@@ -300,9 +300,26 @@ body {
   text-decoration: none;
   padding: 4px 0 11px 0;
   margin-right: 25px;
+}
+
+.header-line__phone_num {
+  display: inline-block;
   font-size: 25px;
   font-weight: bold;
   color: rgb(31, 31, 36);
+}
+
+.header-line__phone_sign {
+  display: none;
+  border: 1px solid rgb(255, 78, 46);
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.header-line__phone_sign .fa-fw {
+  width: 11px;
+  padding: 2px 3px;
 }
 
 .telbook-call {
@@ -1724,6 +1741,8 @@ h2 {
   .central-container__personal_button {
     margin: 0;
     margin-top: 45px;
+    letter-spacing: .5px;
+    font-stretch: extra-condensed;
   }
 
   .price-container {
@@ -2193,13 +2212,13 @@ h2 {
   }
 
   .deal-container {
-    height: 850px;
+    height: 830px;
     width: 100%;
     /*outline: 1px solid rebeccapurple;*/
   }
 
   .deal-container__anno {
-    padding-top: 45px;
+    padding-top: 44px;
     margin: 0 auto;
     margin-bottom: 20px;
     font-size: 28px;
@@ -2221,7 +2240,10 @@ h2 {
 
   .deal-container__boxes li p {
     padding: 80px 25px 0 25px;
-    line-height: 110%;
+    line-height: 140%;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-stretch: extra-condensed;
   }
 
   .deal-container__boxes li:nth-of-type(1) {
@@ -2264,9 +2286,11 @@ h2 {
   }
 
   .examples-container__anno {
-    padding-top: 103px;
-    font-size: 28px;
+    padding-top: 53px;
+    font-size: 29px;
     font-weight: 800;
+    font-stretch: expanded;
+    letter-spacing: 0.8px;
   }
 
   .swiper-container {
@@ -2275,7 +2299,7 @@ h2 {
   }
 
   .swiper-slide a img {
-    height: 245px !important;
+    height: 243px !important;
     width: 280px;
   }
 
@@ -2287,10 +2311,13 @@ h2 {
 
   .project-button-position {
     margin-top: 7px;
+    padding-top: 19px;
+    letter-spacing: 1.8px;
+    font-stretch: condensed;
   }
 
   .price-container {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     padding-bottom: 0;
   }
 
@@ -2545,19 +2572,27 @@ h2 {
 
 @media (max-width: 790px) {
   .header-line__phone {
-    margin-right: 28px;
+    margin-right: 1px;
+  }
+
+  .header-line__phone_num {
+    margin-right: 30px;
     font-size: 18px;
+  }
+
+  .header-line__phone_sign {
+    display: inline-block;
   }
 
   .header-line__phone_button {
     display: none;
   }
-
+/*
   .header-line__phonetext {
     display: inline-block;
     margin-top: 22px;
   }
-
+*/
   .central-container__personal_leftcol {
     padding-left: 0;
   }
@@ -2587,6 +2622,10 @@ h2 {
     position: static;
     margin: 0 auto;
     width: auto;
+  }
+
+  .deal-container {
+    height: 815px;
   }
 
   .deal-container__boxes li {
@@ -2628,9 +2667,7 @@ h2 {
   }
 
   .examples-container__anno {
-    padding-left: 20px;
-    padding-right: 20px;
-    letter-spacing: 1px;
+    padding-top: 42px;
   }
 
   .swiper-container {
@@ -3092,8 +3129,9 @@ h2 {
 
 @media (max-width: 590px) {
   .header-line__nav {
-    width: 10px;
-    height: 6px;
+    width: 7px;
+    height: 2px;
+    padding-top: 34px;
   }
 
   .header-line__phonebox {
@@ -3119,6 +3157,10 @@ h2 {
     width: auto;
   }
 
+  .central-container__personal_text {
+    margin-top: 7px;
+  }
+
   .central-container__personal_button {
     /*margin: 0 auto;*/
     margin-top: 22px;
@@ -3126,9 +3168,11 @@ h2 {
   }
 
   .deal-container__boxes_button {
-    margin-top: 32px;
+    margin-top: 34px;
+    padding: 18px 0 17px 0;
     width: 280px;
-    height: 50px;
+    font-stretch: extra-condensed;
+    letter-spacing: .9px;
   }
 
   .deal-container__boxes_button p {
@@ -3158,6 +3202,10 @@ h2 {
 @media (max-width: 470px) {
   .central-container__personal_text {
     white-space: pre-wrap;
+  }
+
+  .central-container__personal_button {
+    padding: 18px 0 30px 0;
   }
 
   @-webkit-keyframes fadeInLeft3 {

@@ -112,15 +112,19 @@ function changeTelClasses() { // переключение классов в те
 
 function manageHeaderPhoneLine() { // управление телефонным блоком в заголовке
   if (windowWidth <= 790) {
-    $('.header-line__phonetext').css({
+    $('.header-line__phone').addClass('fa fa-phone');
+    $('.header-line__phone').attr({
+      'aria-hidden': 'true'
+    });
+    /*$('.header-line__phonetext').css({
       'display': 'inline-block'
-    });
-    //console.log(varOffset.left);
+    });*/
   } else {
-    $('.header-line__phonetext').css({
+    $('.header-line__phone').removeClass('fa fa-phone');
+    $('.header-line__phone').removeAttr('aria-hidden');
+    /*$('.header-line__phonetext').css({
       'display': 'none',
-    });
-    //console.log(windowWidth);
+    });*/
   }
 
 }
