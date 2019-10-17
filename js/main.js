@@ -422,24 +422,43 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function () {
+  $('.deal-container__boxes_button').click(function (ev) {
+    //console.log(ev.target);
+    $('#modal__price').slideDown(300);
+    $('.bg_popup').fadeIn(300);
+  });
 
-var modal = document.getElementById('myModal');
-var btn = document.getElementsByClassName("deal-container__boxes_button")[0];
-var span = document.getElementsByClassName("close")[0];
+  $('.modal__price_close').click(function () {
+    $('#modal__price').slideUp(300);
+  });
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+  $('.bg_popup').click(function (ev) {
+    //console.log(ev.target);
+    $('#modal__price').slideUp(300);
+    $('.bg_popup').fadeOut(300);
+  });
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+});
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+$(document).ready(function () {
+  $('.project-button-position').click(function (ev) {
+    //console.log(ev.target);
+    $('#modal__project').slideDown(300);
+    $('.bg_popup').fadeIn(300);
+  });
+
+  $('.modal__project_close').click(function () {
+    $('#modal__project').slideUp(300);
+  });
+
+  $('.bg_popup').click(function (ev) {
+    //console.log(ev.target);
+    $('#modal__project').slideUp(300);
+    $('.bg_popup').fadeOut(300);
+  });
+
+});
 
 /*
 $(function () {
