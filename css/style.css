@@ -746,7 +746,7 @@ h2 {
   display: none;
 }
 
-.project-button-position {
+.examples-container__projectbutton {
   display: block;
   margin: 0 auto;
   margin-top: 63px;
@@ -1314,8 +1314,80 @@ h2 {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
+  /*background-color: rgb(0, 0, 0);*/
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__knowmore_content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  background-color: rgb(239, 233, 240);
+  border: 5px solid rgb(123, 31, 162);
+  width: 50%;
+  -webkit-animation-name: animateLeft;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animateLeft;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animateLeft {
+  from { left: -1000px; opacity: 0 } 
+  to { left: 0; opacity: 1}
+}
+
+@keyframes animateLeft {
+  from { left: -1000px; opacity: 0 }
+  to { left: 0; opacity: 1 }
+}
+
+.modal__knowmore_close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__knowmore_close:hover,
+.modal__knowmore_close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__knowmore_header {
+  padding: 15px 20px;
+  background-color: rgb(162, 87, 175);
+  color: rgb(255, 255, 255);
+}
+
+/*.modal__knowmore_content ul {*/
+.modal__knowmore_body {
+  padding: 2px 34px;
+  list-style-position: outside;
+  list-style-image: none;
+  list-style-type: disc;
+}
+
+.modal__knowmore_body li {
+  margin: 7px 0;
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(155, 20, 20);
+}
+
+.modal__knowmore_footer {
+  padding: 2px 14px;
+  background-color: rgb(156, 39, 176);
+  color: rgb(255, 255, 255);
+}
+
+.modal__knowmore_footer p {
+  margin: 8px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 .modal__price_content {
@@ -1357,7 +1429,7 @@ h2 {
 }
 
 .modal__price_header {
-  padding: 2px 16px;
+  padding: 15px 20px;
   background-color: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
 }
@@ -1366,10 +1438,30 @@ h2 {
   padding: 2px 16px;
 }
 
+.modal__price_body h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(255, 30, 30);
+}
+
+.modal__price_body p {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgb(255, 30, 30);
+}
+
 .modal__price_footer {
-  padding: 2px 16px;
+  padding: 2px 14px;
   background-color: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
+}
+
+.modal__price_footer p {
+  margin: 8px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 .modal__project_content {
@@ -1411,7 +1503,7 @@ h2 {
 }
 
 .modal__project_header {
-  padding: 2px 16px;
+  padding: 15px 20px;
   background-color: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
 }
@@ -1421,9 +1513,16 @@ h2 {
 }
 
 .modal__project_footer {
-  padding: 2px 16px;
+  padding: 2px 14px;
   background-color: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
+}
+
+.modal__project_footer p {
+  margin: 8px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 .bg_popup {
@@ -1631,7 +1730,7 @@ h2 {
     letter-spacing: 1.8px;
   }
 
-  .project-button-position {
+  .examples-container__projectbutton {
     margin-top: 88px;
     width: 320px;
     height: 68px;
@@ -1639,9 +1738,9 @@ h2 {
     font-stretch: extra-condensed;
   }
 
-  .project-button-position p {
+  /*.examples-container__projectbutton p {
     padding-top: 25px;
-  }
+  }*/
 
   .price-container {
     padding: 0 35px;
@@ -2429,7 +2528,7 @@ h2 {
     letter-spacing: 1.2px;
   }
 
-  .project-button-position {
+  .examples-container__projectbutton {
     margin-top: 7px;
     padding-top: 19px;
     letter-spacing: 1.8px;
@@ -2671,17 +2770,17 @@ h2 {
     letter-spacing: .5px;
   }
 
-  .project-button-position {
+  .examples-container__projectbutton {
     margin: 34px auto 0 auto;
     width: 280px;
     height: auto;
   }
 
-  .project-button-position p {
+  /*.examples-container__projectbutton p {
     padding-top: 20px;
     padding-bottom: 18px;
     letter-spacing: .5px;
-  }
+  }*/
 
   .footer-container__leftblock li a {
     padding: 1px 30px 11px 0;
