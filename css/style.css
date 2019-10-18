@@ -1304,6 +1304,63 @@ h2 {
 
 
 /* модальные окна */
+.header-line__nav-popupmenu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 83px;
+  left: 18px;
+  padding: 5px 10px;
+  list-style: none;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #f5eee1;
+  /*-webkit-animation-name: animateFold;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animateUnFold;
+  animation-duration: 0.4s;*/
+}
+
+.header-line__nav-popupmenu-list {
+  margin: 0;
+  padding: 0 12px;
+  background-color: inherit;
+  color: rgb(0, 0, 0);
+  list-style: none;
+}
+
+.header-line__nav-popupmenu-list li a {
+  display: block;
+  padding: 7px 0;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: inherit;
+  color: rgb(31, 31, 36);
+  font-size: 14px;
+}
+
+.header-line__nav-popupmenu-list li a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  color: rgb(252, 85, 124);
+  background-color: rgb(252, 85, 124);
+}
+
+.header-line__nav-popupmenu-list li a:hover {
+  color: rgb(252, 85, 124);
+  -webkit-transition: color .3s linear;
+  -moz-transition: color .3s linear;
+  transition: color .3s linear;
+}
+
+.header-line__nav-popupmenu-list li a:hover::after {
+  width: 100%;
+  -webkit-transition: .3s linear;
+  -moz-transition: .3s linear;
+  transition: .3s linear;
+}
+
 .modal {
   display: none;
   position: fixed;

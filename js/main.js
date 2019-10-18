@@ -230,6 +230,7 @@ $(document).ready(function () {
     $('.header-line__nav ul')
       .removeClass('header-line__nav-popup')
       .addClass('header-line__nav-list');
+    $('.header-line__nav-popupmenu').hide();
   } else {
     switchPopup = true;
     $('.header-line__nav ul')
@@ -258,6 +259,7 @@ $(window).resize(function () {
     $('.header-line__nav ul')
       .removeClass('header-line__nav-popup')
       .addClass('header-line__nav-list');
+    $('.header-line__nav-popupmenu').hide();
   }
 
   setLeftPaddingForPictures();
@@ -269,8 +271,9 @@ $(window).resize(function () {
   //managePersonalImg();
 });
 
-$(function () {
-  $('.header-line__nav').click(function () {
+/*
+$(function () { // работоспособная - вариант обработки)
+  $('.header-line__nav').click(function () { // переключаю классы по клику для узкого экрана
     windowWidth = $(window).width();
     //setLeftEdgePopupMenu();
     //console.log('burger');
@@ -285,12 +288,36 @@ $(function () {
   });
 });
 
-$(document).ready(function(){
-  $(".header-line__nav").on("click","a", function (event) {
+$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
+  $('.header-line__nav').on('click', 'a', function (event) {
       event.preventDefault();
       var id  = $(this).attr('href');
       var top = $(id).offset().top;
       $('body, html').animate({scrollTop: top}, 900);
+      console.log(id);
+  });
+});
+*/
+$(document).ready(function() {
+  $('.header-line__nav').click(function() { // отработка клика по бургеру
+    windowWidth = $(window).width();
+    //console.log('burger');
+    if (windowWidth < 1250) {
+      $('.header-line__nav-popupmenu').toggle(300);
+    } else {
+      $('.header-line__nav-popupmenu').hide();
+    }
+  });
+});
+
+$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
+  $('.header-line__nav-popupmenu-list').on('click', 'a', function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href');
+      var top = $(id).offset().top;
+      $('body, html').animate({ scrollTop: top }, 900);
+      $('.header-line__nav-popupmenu').hide();
+      //console.log(id);
   });
 });
 
