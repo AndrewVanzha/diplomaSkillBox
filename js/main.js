@@ -359,11 +359,11 @@ $(document).ready(function () { // обработка клика по кнопк
 
 });
 
-$(document).ready(function () { // обработка клика по кнопке examples-container__projectbutton
-  $('.examples-container__projectbutton').click(function (ev) {
+$(document).ready(function () { // обработка клика по кнопке examples-container__project-button
+  $('.examples-container__project-button').click(function (ev) {
     //console.log(ev.target);
     $('#modal__project').slideDown(300);
-    $('.bg_popup').fadeIn(300);
+    //$('.bg_popup').fadeIn(300);
   });
 
   $('.modal__project_close').click(function () {
@@ -373,9 +373,58 @@ $(document).ready(function () { // обработка клика по кнопк
   $('.bg_popup').click(function (ev) {
     //console.log(ev.target);
     $('#modal__project').slideUp(300);
-    $('.bg_popup').fadeOut(300);
+    //$('.bg_popup').fadeOut(300);
   });
 
+});
+
+function showOK() {
+  console.log('ok');
+  var formW = $('.modal__project__regform').width();
+  var noteW = $('.modal__project__regform_ok').width();
+  $('.modal__project__regform_ok').css({
+    'display': 'block',
+    'left': (formW-noteW)/2
+  });
+  setTimeout(function () {
+    $('.modal__project__regform_ok').css({
+      'display': 'none'
+    });
+    $('#modal__project').slideUp(300);
+  }, 10000);
+}
+
+$(document).ready(function ($) {
+
+  $('.modal__project__regform_button').click(function () {
+    $('.modal__project__regform').submit(function (ev) {
+      ev.preventDefault();
+      var str = $(this).serialize();
+      console.log(str);
+
+      $.ajax({
+        type: "POST",
+        url: "contact.php",
+        data: str,
+        success: function (msg) {
+          console.log(msg);
+          /*let jsonData = JSON.parse(msg);
+          console.log(jsonData);*/
+          showOK();
+        }
+      });
+
+      /*$.post(
+        "ask.php",
+        { p1: 'p1', p2: 33 },
+        function(data) {
+          console.log(data);
+        }
+      );*/
+
+      return false;
+    });
+  });
 });
 
 /*

@@ -196,7 +196,7 @@
           </div>
         </div>
 
-        <button class="press-button examples-container__projectbutton" name="project-call">Заказать проект</button>
+        <button class="press-button examples-container__project-button" name="project-call">Заказать проект</button>
       </div>
     </section>
 
@@ -315,8 +315,41 @@
         <h2>Заказать проект</h2>
       </div>
       <div class="modal__project_body">
-        <p>Название проекта.</p>
-        <p>Краткое описание проекта.</p>
+
+        <form class="modal__project__regform" action="" method="post">
+          <label>Имя:
+            <input type="text" name="user_name" />
+          </label>
+          <label>Фамилия:
+            <input type="text" name="user_surname" />
+          </label>
+          <label>Название компании:
+            <input type="text" name="user_company" />
+          </label>
+          <label>Должность:
+            <input type="text" name="user_position" />
+          </label>
+          <label>Телефон:
+            <input type="tel" name="user_phone" />
+          </label>
+          <label>E-mail:
+            <input type="email" name="user_email" />
+          </label>
+          <label>Название проекта:
+            <input type="text" name="user_project" />
+          </label>
+          <label>Краткое описание проекта:
+            <input type="text" name="user_description" />
+          </label>
+          <div class="modal__project__regform_check">
+            <input type="checkbox" name="user_personal" />
+            <p>Нажимая на кнопку, я даю согласие на обработку персональных данных
+            </p>
+          </div>
+          <button class="modal__project__regform_button" type="submit" name="user_submit">Отправить</button>
+        </form>
+
+        <p class="modal__project__regform_ok">Ваши данные зарегистрированы</p>
       </div>
       <div class="modal__project_footer">
         <p>&#169; Дмитрий Алексеев, 2016-2018</p>
