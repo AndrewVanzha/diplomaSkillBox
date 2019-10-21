@@ -635,11 +635,15 @@ h2 {
 }
 
 .swiper-container {
+  /*overflow: hidden;*/
+  box-sizing: border-box;
   margin: 0;
   margin-top: 100px;
   padding: 0 27px 0 23px;
   height: 380px;
-  /*outline: 1px solid darkorange;*/
+  height: 100%;
+  width: 100%;
+  outline: 1px solid darkorange;
 }
 
 .swiper-slide {
@@ -675,6 +679,7 @@ h2 {
   margin: 0;
   padding: 0;
   width: 365px;
+  /*width: auto;*/
   height: 290px;
   object-fit: none;
 }
@@ -712,8 +717,8 @@ h2 {
 
 .swiper-button-next {
   z-index: 10;
-  right: 5px;/*15*/
-  top: 143px;/*155*/
+  right: 5px;
+  top: 148px;
   height: 30px;
   width: 30px;
   border: 10px dashed rgb(255, 255, 255);
@@ -725,8 +730,8 @@ h2 {
 
 .swiper-button-prev {
   z-index: 10;
-  left: 5px;/*10*/
-  top: 143px;/*155*/
+  left: 5px;
+  top: 148px;
   height: 30px;
   width: 30px;
   border: 10px dashed rgb(255, 255, 255);
@@ -737,8 +742,8 @@ h2 {
 }
 
 .swiper-pagination-bullet {
-  width: 11px;
-  height: 11px;
+  width: 18px;
+  height: 18px;
   background: rgb(255, 78, 46);
 }
 
@@ -749,7 +754,7 @@ h2 {
 .examples-container__project-button {
   display: block;
   margin: 0 auto;
-  margin-top: 63px;
+  margin-top: 97px;
   padding: 20px 0 19px 0;
   /*text-decoration: none;
   list-style: none;*/
@@ -1748,7 +1753,9 @@ h2 {
   .examples-container__examples {
     margin-left: 37px;
     margin-right: 37px;
-    padding-bottom: 102px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 100px;
     width: auto;
   }
 
@@ -1808,7 +1815,7 @@ h2 {
   }
 
   .site-title {
-    padding: 5px 35px 130px 0;
+    padding: 10px 35px 130px 0;
     font-size: 22px;
     letter-spacing: 1.8px;
   }
@@ -1967,7 +1974,7 @@ h2 {
   .swiper-slide a img {
     width: auto;
     /*width: 465px;*/
-    height: 370px;
+    height: 365px;
     object-fit: fill;
   }
 
@@ -2597,11 +2604,11 @@ h2 {
 
   .swiper-container {
     margin-top: 44px;
-    height: 355px;
+    height: 353px;
   }
 
   .swiper-slide a img {
-    height: 243px !important;
+    height: 246px !important;
     width: 280px;
   }
 
@@ -2611,6 +2618,11 @@ h2 {
     letter-spacing: 1.2px;
   }
 
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  
   .examples-container__project-button {
     margin-top: 7px;
     padding-top: 19px;
@@ -2854,7 +2866,7 @@ h2 {
   }
 
   .examples-container__project-button {
-    margin: 34px auto 0 auto;
+    margin: 35px auto 0 auto;
     width: 280px;
     height: auto;
   }
@@ -3001,9 +3013,9 @@ h2 {
     line-height: 120%;
   }
 
-  .swiper-container {
+  /*.swiper-container {
     height: auto;
-  }
+  }*/
 
   /*
   .swiper-wrapper {
@@ -3073,13 +3085,13 @@ h2 {
       
   .footer-container__rightblock {
     order: 3;
-    height: 146px;
+    /*height: 146px;*/
   }
 
   .footer-container__phonebutton {
     height: 55px;
     width: 279px;
-    margin-top: 2px;
+    margin-top: 5px;
     background-color: rgb(255, 78, 46);
     color: rgb(255, 255, 255);
   }
@@ -3089,11 +3101,11 @@ h2 {
   }*/
 
   .footer-container__contact-box {
-    margin-top: 48px;
+    margin-top: 46px;
   }
 
   .copyright-bar {
-    margin-top: 41px;
+    margin-top: 49px;
   }
 
   .central-container__redtag,
