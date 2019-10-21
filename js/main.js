@@ -342,10 +342,10 @@ $(document).ready(function () { // обработка клика по кнопк
 function showTelOK() {
   console.log('tel ok');
   var formW = $('.modal__phone__regform').width();
-  var noteW = $('.modal__phone__regform_ok').width();
   $('.modal__phone__regform_ok').css({
     'display': 'block',
-    'left': (formW-noteW)/2
+    'left': formW*.1,
+    'width': formW*.8
   });
   setTimeout(function () {
     $('.modal__phone__regform_ok').css({
@@ -382,10 +382,11 @@ $(document).ready(function ($) {
 function showDataOK() {
   console.log('data ok');
   var formW = $('.modal__project__regform').width();
-  var noteW = $('.modal__project__regform_ok').width();
+  console.log(formW);
   $('.modal__project__regform_ok').css({
     'display': 'block',
-    'left': (formW-noteW)/2
+    'left': formW*.1,
+    'width': formW*.8
   });
   setTimeout(function () {
     $('.modal__project__regform_ok').css({

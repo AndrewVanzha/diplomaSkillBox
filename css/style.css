@@ -1371,7 +1371,7 @@ h2 {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
@@ -1475,7 +1475,7 @@ h2 {
   left: 0px;
   top: 100px;
   margin: 0 auto;
-  padding: 20px 25px;
+  padding: 20px 0;
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
@@ -1738,13 +1738,15 @@ h2 {
 .modal__project__regform_ok {
   display: none;
   position: absolute;
+  width: 300px;
   left: 0px;
   top: 100px;
   margin: 0 auto;
-  padding: 20px 25px;
+  padding: 20px 0;
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
   background-color: rgb(255, 78, 46);
   color: rgb(255, 255, 255);
   border: 1px solid transparent;
