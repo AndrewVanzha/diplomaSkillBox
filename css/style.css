@@ -643,7 +643,7 @@ h2 {
   height: 380px;
   height: 100%;
   width: 100%;
-  outline: 1px solid darkorange;
+  /*outline: 1px solid darkorange;*/
 }
 
 .swiper-slide {
@@ -1227,7 +1227,7 @@ h2 {
   /*outline: 1px solid darkmagenta;*/
 }
 
-.footer-container__phonebutton {
+.footer-container__phone_button {
   display: block;
   margin: 0;
   margin-top: 0px;
@@ -1379,6 +1379,124 @@ h2 {
   overflow: auto;
   /*background-color: rgb(0, 0, 0);*/
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+/**/
+.modal__phone_content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+  background-color: rgb(225, 190, 231);
+  border: 1px solid rgb(123, 31, 162);
+  -webkit-animation-name: animateDeFold;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animateDeFold;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animateDeFold {
+  from { transform: scale(0); opacity: 0 } 
+  to { transform: scale(1); opacity: 1 }
+}
+
+@keyframes animateDeFold {
+  from { transform: scale(0); opacity: 0 } 
+  to { transform: scale(1); opacity: 1 }
+}
+
+.modal__phone_close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__phone_close:hover,
+.modal__phone_close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__phone_header {
+  padding: 15px 20px;
+  background-color: rgb(156, 39, 176);
+  color: rgb(255, 255, 255);
+}
+
+.modal__phone_body {
+  padding: 4px 10px;
+}
+
+/*.modal__phone__regform {}*/
+
+.modal__phone__regform label {
+  display: block;
+  margin: 0;
+  padding-top: 12px;
+  padding-left: 20px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.modal__phone__regform label input {
+  display: block;
+  width: 95%;
+}
+
+.modal__phone__regform label:nth-of-type(2n+1) {
+  background-color: rgb(250, 245, 245);
+}
+
+.modal__phone__regform label:nth-of-type(2n) {
+  background-color: rgb(250, 235, 235);
+}
+
+.modal__phone__regform_check p {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.modal__phone__regform_button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 12px;
+  padding: 12px 45px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgb(155, 68, 68);
+  color: rgb(255, 255, 255);
+}
+
+.modal__phone__regform_ok {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  margin: 0 auto;
+  padding: 20px 25px;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(255, 78, 46);
+  color: rgb(255, 255, 255);
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
+
+.modal__phone_footer {
+  padding: 2px 14px;
+  background-color: rgb(156, 39, 176);
+  color: rgb(255, 255, 255);
+}
+
+.modal__phone_footer p {
+  margin: 8px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 /**/
@@ -1537,7 +1655,6 @@ h2 {
   width: 50%;
   background-color: rgb(225, 190, 231);
   border: 1px solid rgb(123, 31, 162);
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   -webkit-animation-name: animateUnFold;
   -webkit-animation-duration: 0.4s;
   animation-name: animateUnFold;
@@ -2054,7 +2171,7 @@ h2 {
     font-stretch: ultra-condensed;
   }*/
 
-  .footer-container__phonebutton {
+  .footer-container__phone_button {
     width: 248px;
   }
 
@@ -3088,7 +3205,7 @@ h2 {
     /*height: 146px;*/
   }
 
-  .footer-container__phonebutton {
+  .footer-container__phone_button {
     height: 55px;
     width: 279px;
     margin-top: 5px;
@@ -3096,7 +3213,7 @@ h2 {
     color: rgb(255, 255, 255);
   }
 
-  /*.footer-container__phonebutton span {
+  /*.footer-container__phone_button span {
     padding-top: 20px;
   }*/
 

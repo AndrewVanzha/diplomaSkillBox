@@ -9,57 +9,8 @@ var rs1Y;
 var desktopWidth = 1920 - 13;
 var tabletWidth = 1024 - 13; // 1024
 var telWidth = 320;
-var redSigns_wideWindow = [ // макс=5! позиция для красных для 1920 (координата x, координата y, поворот, прозрачность)
-  [240, 295, 0.3, 1],
-  [370, 595, -0.4, 1],
-  [118, 67, 0.4, 1],
-  [777, 93, -0.2, 1],
-  [955, 472, 0.5, 1],
-];
-var redSigns_middleWindow = [ // макс=5! позиция для красных для 1024
-  [45, 535, 0.3, 1],
-  [345, 480, -0.4, 1],
-  [60, 57, 0.4, 1],
-  [865, 40, -0.2, 1],
-  [410, 142, 0.5, 1],
-];
-var redSigns_narrowWindow = [ // макс=5! позиция для красных для 320
-  [35, 135, 0.3, 1],
-  [185, 5, -0.4, 1],
-  [38, 55, 0.4, 1],
-  [130, 45, -0.2, 0],
-  [260, 35, 0.5, 1],
-];
 
-var whiteSigns_wideWindow = [ // макс=5! позиция для белых для 1920
-  [126, -20, 0, 1],
-  [1544, -192, 0, 1],
-  [10, -213, 0, 1],
-  [1310, 27, 0.15, 1],
-  [1642, -10, -0.25, 1],
-];
-var whiteSigns_middleWindow = [ // макс=5! позиция для белых для 1024
-  [530, -235, 0, 0],
-  [825, -70, -0.35, 1],
-  [100, -340, 0.4, 1],
-  [460, -60, 0.4, 1],
-  [230, -240, 0, 0],
-];
-var whiteSigns_narrowWindow = [ // макс=5! позиция для белых для 320
-  [35, 35, 0, 0],
-  [178, 20, 0, 0],
-  [95, 10, 0, 0],
-  [60, 55, 0, 0],
-  [248, 5, 0, 0],
-];
-var signsParameters = [ // макс=5! расчетная позиция для элементов (координата x, координата y, поворот, прозрачность)
-  [0, 0, 0, 1],
-  [0, 0, 0, 1],
-  [0, 0, 0, 1],
-  [0, 0, 0, 1],
-  [0, 0, 0, 1],
-];
-
+/*
 function setLeftEdgePopupMenu() { // управление левым краем всплывающего меню
   windowWidth = $(window).width();
   if (windowWidth <= 1250) {
@@ -78,6 +29,7 @@ function setLeftEdgePopupMenu() { // управление левым краем 
   }
 
 }
+*/
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
@@ -110,24 +62,20 @@ function changeTelClasses() { // переключение классов в те
 
 }
 
+/*
 function manageHeaderPhoneLine() { // управление телефонным блоком в заголовке
   if (windowWidth <= 790) {
     $('.header-line__phone').addClass('fa fa-phone');
     $('.header-line__phone').attr({
       'aria-hidden': 'true'
     });
-    /*$('.header-line__phonetext').css({
-      'display': 'inline-block'
-    });*/
   } else {
     $('.header-line__phone').removeClass('fa fa-phone');
     $('.header-line__phone').removeAttr('aria-hidden');
-    /*$('.header-line__phonetext').css({
-      'display': 'none',
-    });*/
   }
 
 }
+*/
 /*
 function managePersonalImg() { //  управление картинкой с автором
   if (windowWidth <= 980) {
@@ -321,6 +269,22 @@ $(document).ready(function(){ // движение поля зрения к те�
   });
 });
 
+$(document).ready(function () {
+  $('.header-line__phone_button').click(function (ev) {
+    //console.log(ev.target);
+    $('#modal__phone').slideDown(300); // обработка клика по кнопке header-line__phone_button
+  });
+
+  $('.footer-container__phone_button').click(function (ev) {
+    $('#modal__phone').slideDown(300); // обработка клика по кнопке footer-line__phone_button
+  });
+
+  $('.modal__phone_close').click(function () {
+    $('#modal__phone').slideUp(300);
+  });
+
+});
+
 $(document).ready(function () { // обработка клика по кнопке central-container__personal_button
   $('.central-container__personal_button').click(function (ev) {
     //console.log(ev.target);
@@ -333,7 +297,6 @@ $(document).ready(function () { // обработка клика по кнопк
   });
 
   $('.bg_popup').click(function (ev) {
-    //console.log(ev.target);
     $('#modal__knowmore').slideUp(300);
     $('.bg_popup').fadeOut(300);
   });
@@ -352,7 +315,6 @@ $(document).ready(function () { // обработка клика по кнопк
   });
 
   $('.bg_popup').click(function (ev) {
-    //console.log(ev.target);
     $('#modal__price').slideUp(300);
     $('.bg_popup').fadeOut(300);
   });
@@ -370,16 +332,55 @@ $(document).ready(function () { // обработка клика по кнопк
     $('#modal__project').slideUp(300);
   });
 
-  $('.bg_popup').click(function (ev) {
-    //console.log(ev.target);
+  /*$('.bg_popup').click(function (ev) {
     $('#modal__project').slideUp(300);
-    //$('.bg_popup').fadeOut(300);
-  });
+    $('.bg_popup').fadeOut(300);
+  });*/
 
 });
 
-function showOK() {
-  console.log('ok');
+function showTelOK() {
+  console.log('tel ok');
+  var formW = $('.modal__phone__regform').width();
+  var noteW = $('.modal__phone__regform_ok').width();
+  $('.modal__phone__regform_ok').css({
+    'display': 'block',
+    'left': (formW-noteW)/2
+  });
+  setTimeout(function () {
+    $('.modal__phone__regform_ok').css({
+      'display': 'none'
+    });
+    $('#modal__phone').slideUp(300);
+  }, 10000);
+}
+
+$(document).ready(function ($) {
+  $('.modal__phone__regform_button').click(function () {
+    $('.modal__phone__regform').submit(function (ev) {
+      ev.preventDefault();
+      var str = $(this).serialize();
+      console.log(str);
+
+      $.ajax({
+        type: "POST",
+        url: "phonefix.php",
+        data: str,
+        success: function (msg) {
+          console.log(msg);
+          /*let jsonData = JSON.parse(msg);
+          console.log(jsonData);*/
+          showTelOK();
+        }
+      });
+
+      return false;
+    });
+  });
+});
+
+function showDataOK() {
+  console.log('data ok');
   var formW = $('.modal__project__regform').width();
   var noteW = $('.modal__project__regform_ok').width();
   $('.modal__project__regform_ok').css({
@@ -395,7 +396,6 @@ function showOK() {
 }
 
 $(document).ready(function ($) {
-
   $('.modal__project__regform_button').click(function () {
     $('.modal__project__regform').submit(function (ev) {
       ev.preventDefault();
@@ -410,7 +410,7 @@ $(document).ready(function ($) {
           console.log(msg);
           /*let jsonData = JSON.parse(msg);
           console.log(jsonData);*/
-          showOK();
+          showDataOK();
         }
       });
 
