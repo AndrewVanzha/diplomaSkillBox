@@ -120,20 +120,20 @@ function setLeftPaddingForPictures() { // управление левым бло
     var leftEdge = windowWidth / 2 + leftEdge1;
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowSVG / 3
+      'left': windowSVG/3
     });
   } else if (windowWidth < 590 && windowWidth > 471) {
     var leftEdge = windowWidth / 2 + leftEdge1;
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowSVG / 4
+      'left': windowSVG/4
     });
     $('.central-container__personal_pics-320 svg').attr('width', '470px');
   } else {  // windowWidth <= 470
     var leftEdge = windowWidth / 2 + leftEdge1;
     //console.log(windowSVG);
     $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowWidth / 4
+      'left': windowWidth/4-2
     });
     $('.central-container__personal_pics-320 svg').attr('width', '360px');
   }
