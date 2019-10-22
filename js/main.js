@@ -3,9 +3,6 @@
 
 var windowWidth;
 var switchPopup = false;
-var rs1X;
-var rs1Y;
-
 var desktopWidth = 1920 - 13;
 var tabletWidth = 1024 - 13; // 1024
 var telWidth = 320;
@@ -246,6 +243,17 @@ $(document).ready(function(){ // движение поля зрения к те�
   });
 });
 */
+
+$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
+  $('.header-line__nav-list').on('click', 'a', function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href');
+      var top = $(id).offset().top;
+      $('body, html').animate({ scrollTop: top }, 900);
+      //console.log(id);
+  });
+});
+
 $(document).ready(function() {
   $('.header-line__nav').click(function() { // отработка клика по бургеру
     windowWidth = $(window).width();
@@ -428,27 +436,6 @@ $(document).ready(function ($) {
   });
 });
 
-/*
-$(function () {
-  $('.header-line__nav').click(function () {
-    windowWidth = $(window).width();
-    setLeftEdgePopupMenu();
-    //console.log('burger');
-    if (windowWidth < 1250 && (!$('div').is('.popup-box'))) {
-      $('.header-line').append( // вывожу popup-меню
-        '<div class="popup-box">' +
-        '<div class="header-line__nav-list">' +
-        '<li><a href="#deal-article">Услуги</a></li>' +
-        '<li><a href="#examples-section">Портфолио</a></li>' +
-        '<li><a href="#price-section">Стоимость</a></li>' +
-        '</div>' +
-        '</div>');
-    } else {
-      $('div.popup-box').remove(); // убираю popup-меню на малом экране
-    }
-  });
-});
-*/
 /*
 function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);

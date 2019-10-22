@@ -355,7 +355,7 @@ body {
   margin: 0;
   margin-top: 0px;
   padding: 13px 0 12px 0;
-  width: 205px;
+  width: 207px;
   /*text-decoration: none;
   list-style: none;*/
 }
@@ -380,11 +380,6 @@ body {
 }
 
 /* центральный раздел */
-/*.central-container {
-  margin: 0 auto;
-  padding: 0;
-}*/
-
 .central-container__personal {
   /*display: flex;
   flex-wrap: nowrap;
@@ -446,13 +441,6 @@ body {
   letter-spacing: 1.2px;
 }
 
-/*
-.central-container__personal-authorpic {
-  background:
-    url("img/man.png") no-repeat -17px -24px / 685px,
-    url("img/man-shadow.png") no-repeat -17px -24px / 685px
-}
-*/
 .central-container__personal_pics-1930 {
   display: block;
   width: 800px;
@@ -474,13 +462,6 @@ body {
   left: 10px;*/
 }
 
-/*
-.central-container__personal_pics-1930_shadow {
-  position: relative;
-  left: 112px;
-  top: -730px;
-}
-*/
 .central-container__personal_pics-1024 {
   display: none;
   width: 530px;
@@ -652,7 +633,6 @@ h2 {
   text-align: center;
   font-size: 18px;
   background-color: inherit;
-  /* разметка по вертикали */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -724,7 +704,7 @@ h2 {
   border: 10px dashed rgb(255, 255, 255);
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);
+  /*box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);*/
   background-image: none;
 }
 
@@ -737,7 +717,7 @@ h2 {
   border: 10px dashed rgb(255, 255, 255);
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);
+  /*box-shadow: 0 0 0 1px rgb(255, 255, 255), 0 0 2px 5px rgb(243, 243, 243);*/
   background-image: none;
 }
 
@@ -988,7 +968,7 @@ h2 {
 
   to {
     opacity: 1;
-    -webkit-transform: translate(2100%, 750%) rotate(-15deg) scale(1.7);
+    -webkit-transform: translate(2900%, 800%) rotate(-15deg) scale(1.7);
   }
 }
 
@@ -1000,7 +980,7 @@ h2 {
 
   to {
     opacity: 1;
-    transform: translate(2100%, 750%) rotate(-15deg) scale(1.7);
+    transform: translate(2900%, 800%) rotate(-15deg) scale(1.7);
   }
 }
 
@@ -1014,7 +994,7 @@ h2 {
 
   to {
     opacity: 1;
-    -moz-transform: translate(2100%, 750%) rotate(-15deg) scale(1.7);
+    -moz-transform: translate(2900%, 800%) rotate(-15deg) scale(1.7);
   }
 }
 
@@ -1076,7 +1056,7 @@ h2 {
 
   to {
     opacity: .65;
-    -webkit-transform: translate(450%, 720%) rotate(15deg);
+    -webkit-transform: translate(1250%, 720%) rotate(15deg);
   }
 }
 
@@ -1088,7 +1068,7 @@ h2 {
 
   to {
     opacity: .65;
-    transform: translate(450%, 720%) rotate(15deg);
+    transform: translate(1250%, 720%) rotate(15deg);
   }
 }
 
@@ -1102,7 +1082,7 @@ h2 {
 
   to {
     opacity: .65;
-    -moz-transform: translate(450%, 720%) rotate(15deg);
+    -moz-transform: translate(1250%, 720%) rotate(15deg);
   }
 }
 
@@ -1204,18 +1184,6 @@ h2 {
   font-size: 24px;
   color: rgb(0, 0, 0);
 }
-
-/*.fa-phone::before {
-  padding-right: 18px;
-  color: rgb(250, 23, 151);
-  font-weight: 900;
-}*/
-
-/*.fa-envelope::before {
-  padding-right: 18px;
-  color: rgb(250, 8, 145);
-  font-weight: 900;
-}*/
 
 .footer-container__rightblock {
   margin: 0;
@@ -1580,7 +1548,6 @@ h2 {
   width: 50%;
   background-color: rgb(225, 190, 231);
   border: 5px solid rgb(123, 31, 162);
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   -webkit-animation-name: animateTop;
   -webkit-animation-duration: 0.4s;
   animation-name: animateTop;
@@ -2027,7 +1994,6 @@ h2 {
 
   .central-container__personal_text {
     margin-top: 24px;
-    /*!!*/
   }
 
   .deal-container {
@@ -2344,7 +2310,7 @@ h2 {
 
     to {
       opacity: .65;
-      -webkit-transform: translate(350%, 750%) rotate(15deg);
+      -webkit-transform: translate(450%, 850%) rotate(15deg);
     }
   }
 
@@ -2356,7 +2322,7 @@ h2 {
 
     to {
       opacity: .65;
-      transform: translate(350%, 750%) rotate(15deg);
+      transform: translate(450%, 850%) rotate(15deg);
     }
   }
 
@@ -2370,7 +2336,7 @@ h2 {
 
     to {
       opacity: .65;
-      -moz-transform: translate(350%, 750%) rotate(15deg);
+      -moz-transform: translate(450%, 850%) rotate(15deg);
     }
   }
 
