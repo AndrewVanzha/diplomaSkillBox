@@ -710,7 +710,7 @@ h2 {
 
 .swiper-button-prev {
   z-index: 10;
-  left: 5px;
+  left: 3px;
   top: 148px;
   height: 30px;
   width: 30px;
@@ -765,6 +765,13 @@ h2 {
   color: rgb(255, 255, 255);
 }
 
+.price-container__anno_div {
+  margin: 0;
+  margin-top: 33px;
+  padding: 0;
+  width: 100%;
+}
+
 .price-container__anno_tab {
   table-layout: fixed;
   margin: 0;
@@ -776,17 +783,18 @@ h2 {
 }
 
 .price-container__anno_sign {
-  /*display: inline-block;*/
+  display: inline-block;
   margin: 0;
   /*margin-right: 15px;*/
   padding: 0;
-  width: 1.5%;
+  width: 1.2%;
+  height: 100%;
   vertical-align: top;
   color: rgb(255, 255, 255);
 }
 
 .price-container__anno_sub {
-  /*display: inline-block;*/
+  display: inline-block;
   margin: 0;
   padding: 0;
   width: 98%;
@@ -1107,7 +1115,7 @@ h2 {
 
 .footer-line__nav-list {
   margin: 0;
-  padding: 1px 0 2px 0;
+  padding: 0 0 2px 0;
   cursor: pointer;
 }
 
@@ -1354,9 +1362,9 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  /*background-color: rgb(0, 0, 0);*/
-  background-color: rgba(0, 0, 0, 0.4);
+  /*overflow: auto;
+  overflow: hidden;*/
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /**/
@@ -1590,7 +1598,7 @@ h2 {
 
 .modal__price_header {
   padding: 15px 20px;
-  background-color: rgb(156, 39, 176);
+  background-color: rgb(162, 87, 175);
   color: rgb(255, 255, 255);
 }
 
@@ -1601,14 +1609,14 @@ h2 {
 .modal__price_body h3 {
   font-size: 22px;
   font-weight: 600;
-  color: rgb(255, 30, 30);
+  color: rgb(155, 20, 20);
 }
 
 .modal__price_body p {
   font-size: 18px;
   font-weight: 500;
   font-style: italic;
-  color: rgb(255, 30, 30);
+  color: rgb(155, 20, 20);
 }
 
 .modal__price_footer {
@@ -2132,7 +2140,8 @@ h2 {
   }
 
   .price-container__anno_sub {
-    padding-bottom: 83px;
+    padding-bottom: 79px;
+    line-height: 165%;
   }
 
   .footer-container {
@@ -2165,11 +2174,18 @@ h2 {
     font-stretch: ultra-condensed;
   }*/
   
-  .copyright-bar p {
+  /*.copyright-bar p { ???
     padding: 30px 0 36px 0;
     font-size: 14px;
     letter-spacing: 1.7px;
     font-stretch: condensed;
+  }*/
+  
+  .copyright-bar p {
+    padding: 28px 0 36px 0;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    font-stretch: ultra-condensed;
   }
 
   @-webkit-keyframes fadeInLeft1 {
@@ -2332,7 +2348,7 @@ h2 {
 
     to {
       opacity: .65;
-      -webkit-transform: translate(450%, 850%) rotate(15deg);
+      -webkit-transform: translate(450%, 820%) rotate(15deg);
     }
   }
 
@@ -2344,7 +2360,7 @@ h2 {
 
     to {
       opacity: .65;
-      transform: translate(450%, 850%) rotate(15deg);
+      transform: translate(450%, 820%) rotate(15deg);
     }
   }
 
@@ -2358,7 +2374,7 @@ h2 {
 
     to {
       opacity: .65;
-      -moz-transform: translate(450%, 850%) rotate(15deg);
+      -moz-transform: translate(450%, 820%) rotate(15deg);
     }
   }
 
@@ -3077,7 +3093,13 @@ h2 {
     padding-right: 17px;
   }
 
+  .price-container__anno_sign {
+    width: 3.6%;
+  }
+  
   .price-container__anno_sub {
+    width: 95%;
+    padding-bottom: 12px;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: .3px;

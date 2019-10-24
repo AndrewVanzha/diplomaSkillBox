@@ -280,58 +280,63 @@ $(document).ready(function(){ // движение поля зрения к те�
       var top = $(id).offset().top;
       $('body, html').animate({ scrollTop: top }, 900);
       $('.header-line__nav-popupmenu').hide();
-      //console.log(id);
   });
 });
 
 $(document).ready(function () {
   $('.header-line__phone_button').click(function (ev) {
-    //console.log(ev.target);
     $('#modal__phone').slideDown(300); // обработка клика по кнопке header-line__phone_button
+    $('body').css('overflow-y', 'hidden');
   });
 
   $('.footer-container__phone_button').click(function (ev) {
     $('#modal__phone').slideDown(300); // обработка клика по кнопке footer-line__phone_button
+    $('body').css('overflow-y', 'hidden');
   });
 
   $('.modal__phone_close').click(function () {
     $('#modal__phone').slideUp(300);
+    $('body').css('overflow-y', 'auto');
   });
 
 });
 
 $(document).ready(function () { // обработка клика по кнопке central-container__personal_button
   $('.central-container__personal_button').click(function (ev) {
-    //console.log(ev.target);
     $('#modal__knowmore').slideDown(300);
     $('.bg_popup').fadeIn(300);
+    $('body').css('overflow-y', 'hidden');
   });
 
   $('.modal__knowmore_close').click(function () {
     $('#modal__knowmore').slideUp(300);
+    $('body').css('overflow-y', 'auto');
   });
 
   $('.bg_popup').click(function (ev) {
     $('#modal__knowmore').slideUp(300);
     $('.bg_popup').fadeOut(300);
+    $('body').css('overflow-y', 'auto');
   });
 
 });
 
 $(document).ready(function () { // обработка клика по кнопке deal-container__boxes_button
   $('.deal-container__boxes_button').click(function (ev) {
-    //console.log(ev.target);
     $('#modal__price').slideDown(300);
     $('.bg_popup').fadeIn(300);
+    $('body').css('overflow-y', 'hidden');
   });
 
   $('.modal__price_close').click(function () {
     $('#modal__price').slideUp(300);
+    $('body').css('overflow-y', 'auto');
   });
 
   $('.bg_popup').click(function (ev) {
     $('#modal__price').slideUp(300);
     $('.bg_popup').fadeOut(300);
+    $('body').css('overflow-y', 'auto');
   });
 
 });
@@ -341,15 +346,18 @@ $(document).ready(function () { // обработка клика по кнопк
     //console.log(ev.target);
     $('#modal__project').slideDown(300);
     //$('.bg_popup').fadeIn(300);
+    $('body').css('overflow-y', 'hidden');
   });
 
   $('.modal__project_close').click(function () {
     $('#modal__project').slideUp(300);
+    $('body').css('overflow-y', 'auto');
   });
 
   /*$('.bg_popup').click(function (ev) {
     $('#modal__project').slideUp(300);
     $('.bg_popup').fadeOut(300);
+    $('body').css('overflow-y', 'auto');
   });*/
 
 });
