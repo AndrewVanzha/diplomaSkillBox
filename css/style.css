@@ -1353,13 +1353,13 @@ h2 {
 }
 
 /**/
-.modal {
+.modal_win {
   display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 60px;
   left: 0;
   top: 0;
+  z-index: 1;
+  padding-top: 60px;
   width: 100%;
   height: 100%;
   /*overflow: auto;
@@ -1370,6 +1370,7 @@ h2 {
 /**/
 .modal__phone_content {
   position: relative;
+  top: -160px;
   margin: auto;
   padding: 0;
   width: 50%;
@@ -1398,11 +1399,32 @@ h2 {
   font-weight: bold;
 }
 
+.modal__phone_close::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .modal__phone_close:hover,
 .modal__phone_close:focus {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal__phone_close-intA {
+	margin-left: 10px;
+	height: 20px;
+	width: 3px;
+	background-color: rgb(255, 255, 255);
+	transform: rotate(45deg);
+}
+
+.modal__phone_close-intB {
+	height: 20px;
+	width: 3px;
+	background-color: rgb(255, 255, 255);
+	transform: rotate(90deg);
 }
 
 .modal__phone_header {
@@ -1415,47 +1437,138 @@ h2 {
   padding: 4px 10px;
 }
 
-/*.modal__phone__regform {}*/
+/*.modal__phone_regform {}*/
 
-.modal__phone__regform label {
+.popup__formbox {
+	position: relative;
+	margin: 12px 0;
+	/*margin-bottom: 33px;*/
+	padding: 0;
+}
+
+/*.modal__phone_regform label {
   display: block;
   margin: 0;
   padding-top: 12px;
   padding-left: 20px;
   padding-bottom: 12px;
   text-align: left;
+}*/
+.popup__formbox-solidborder {
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 2px;
 }
 
-.modal__phone__regform label input {
+.popup__formbox-greyborder {
+	border: 1px solid rgb(225, 225, 225);
+	border-radius: 2px;
+}
+
+/*.modal__phone_regform label input {
   display: block;
   width: 95%;
+  border-radius: 3px;
+  border: 1px solid rgb(115, 115, 115);
+}*/
+.popup__formbox-input {
+	width: 99.9%;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 15px 0 14px 0;
+  font-size: 14px;
+	line-height: 1.43;
+	transition: .5s ease-out;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+}
+.popup__formbox-input:valid {
+  border: 1px solid rgb(115, 115, 115);
 }
 
-.modal__phone__regform label:nth-of-type(2n+1) {
+.popup__formbox-inputneutral {
+	background-color: rgb(249, 249, 249);
+}
+
+.popup__formbox-inputactive {
+	background-color: rgb(255, 255, 255);
+}
+
+/*.modal__phone_regform label input:valid {
+  border: 1px solid rgb(115, 115, 115);
+}*/
+.popup__formbox-text {
+	position: absolute;
+	left: 12px;
+	margin: 0;
+	padding: 0 4px;
+	font-size: 0.933em;
+  font-weight: 500;
+	transition: .5s ease-out;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+}
+
+.popup__formbox-textneutral {
+	top: 13px;
+	background-color: rgb(249, 249, 249);
+}
+
+.popup__formbox-textactive {
+	top: -13px;
+	background-color: rgb(255, 255, 255);
+}
+
+/*.modal__phone_regform label:nth-of-type(2n+1) {
   background-color: rgb(250, 245, 245);
 }
 
-.modal__phone__regform label:nth-of-type(2n) {
+.modal__phone_regform label:nth-of-type(2n) {
   background-color: rgb(250, 235, 235);
+}*/
+.popup__form_bottom {
+	padding: 4px 0 21px 0;
+	font-size: 13px;
+	background-color: rgb(255, 255, 255);
 }
 
-.modal__phone__regform_check p {
+.popup__form_button {
+  display: block;
+	margin: 18px auto 22px auto;
+	padding: 10px 25px 11px 25px;
+	background-color: rgb(0, 136, 204);
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+.popup__form_button:hover {
+	background-color: rgb(88, 141, 206);
+}
+
+/*.modal__phone_regform_check p {
   display: inline-block;
   margin-left: 5px;
-}
+}*/
 
-.modal__phone__regform_button {
+.modal__phone__regform-button {
   display: block;
   margin: 0 auto;
-  margin-top: 12px;
+  margin-top: 2px;
   padding: 12px 45px;
   font-size: 20px;
   font-weight: 600;
   background-color: rgb(155, 68, 68);
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-.modal__phone__regform_ok {
+.modal__phone_regform-ok {
   display: none;
   position: absolute;
   left: 0px;
@@ -1680,9 +1793,9 @@ h2 {
   padding: 4px 10px;
 }
 
-/*.modal__project__regform {}*/
+/*.modal__project_regform {}*/
 
-.modal__project__regform label {
+.modal__project_regform label {
   display: block;
   margin: 0;
   padding-top: 12px;
@@ -1691,36 +1804,43 @@ h2 {
   text-align: left;
 }
 
-.modal__project__regform label input {
+.modal__project_regform label input {
   display: block;
   width: 95%;
+  border-radius: 3px;
+  border: 1px solid rgb(115, 115, 115);
 }
 
-.modal__project__regform label:nth-of-type(2n+1) {
+.modal__project_regform label input:valid {
+  border: 1px solid rgb(115, 115, 115);
+}
+
+.modal__project_regform label:nth-of-type(2n+1) {
   background-color: rgb(250, 245, 245);
 }
 
-.modal__project__regform label:nth-of-type(2n) {
+.modal__project_regform label:nth-of-type(2n) {
   background-color: rgb(250, 235, 235);
 }
 
-.modal__project__regform_check p {
+.modal__project_regform-check p {
   display: inline-block;
   margin-left: 5px;
 }
 
-.modal__project__regform_button {
+.modal__project_regform-button {
   display: block;
   margin: 0 auto;
-  margin-top: 12px;
+  margin-top: 2px;
   padding: 12px 45px;
   font-size: 20px;
   font-weight: 600;
   background-color: rgb(155, 68, 68);
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-.modal__project__regform_ok {
+.modal__project_regform-ok {
   display: none;
   position: absolute;
   width: 300px;

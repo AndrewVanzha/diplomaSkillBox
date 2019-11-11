@@ -6,6 +6,7 @@ var switchPopup = false;
 var desktopWidth = 1920 - 13;
 var tabletWidth = 1024 - 13; // 1024
 var telWidth = 320;
+var delayShow = 5000; // задержка при демонстрации окон
 
 /*
 function setLeftEdgePopupMenu() { // управление левым краем всплывающего меню
@@ -283,7 +284,7 @@ $(document).ready(function(){ // движение поля зрения к те�
   });
 });
 
-$(document).ready(function () {
+/*$(document).ready(function () {
   $('.header-line__phone_button').click(function (ev) {
     $('#modal__phone').slideDown(300); // обработка клика по кнопке header-line__phone_button
     $('body').css('overflow-y', 'hidden');
@@ -299,7 +300,7 @@ $(document).ready(function () {
     $('body').css('overflow-y', 'auto');
   });
 
-});
+});*/
 
 $(document).ready(function () { // обработка клика по кнопке central-container__personal_button
   $('.central-container__personal_button').click(function (ev) {
@@ -364,36 +365,52 @@ $(document).ready(function () { // обработка клика по кнопк
 
 function showTelOK() {
   console.log('tel ok');
-  var formW = $('.modal__phone__regform').width();
-  $('.modal__phone__regform_ok').css({
+  var formW = $('.modal__phone_regform').width();
+  $('.modal__phone_regform-ok').css({
     'display': 'block',
     'left': formW*.1,
     'width': formW*.8
   });
   setTimeout(function () {
-    $('.modal__phone__regform_ok').css({
+    $('.modal__phone_regform-ok').css({
       'display': 'none'
     });
     $('#modal__phone').slideUp(300);
-  }, 10000);
+  }, delayShow);
 }
 
-$(document).ready(function ($) {
-  $('.modal__phone__regform_button').click(function () {
-    $('.modal__phone__regform').submit(function (ev) {
+$(document).ready(function ($) { // отправляю данные по телефонному звонку
+  var validFlags = {
+    validName: false,
+    validSurname: false,
+    validPhone: false,
+    validEMail: false,
+  };
+
+  var ff = $('document.forms');
+  console.log(ff);
+  $('.modal__phone__regform-button').click(function () {
+    var ff = $('document.forms');
+    console.log(ff);
+    var str = $(this);
+    console.log(str);
+    $('.modal__phone_regform').submit(function (ev) {
       ev.preventDefault();
-      var str = $(this).serialize();
+      var str = $(this);
       console.log(str);
 
       $.ajax({
         type: "POST",
         url: "phonefix.php",
-        data: str,
+        data: str.serialize(),
         success: function (msg) {
           console.log(msg);
           /*let jsonData = JSON.parse(msg);
           console.log(jsonData);*/
           showTelOK();
+          setTimeout(function() {
+            str.trigger('reset');
+          }, (delayShow+100));
         }
       });
 
@@ -404,37 +421,40 @@ $(document).ready(function ($) {
 
 function showDataOK() {
   console.log('data ok');
-  var formW = $('.modal__project__regform').width();
+  var formW = $('.modal__project_regform').width();
   console.log(formW);
-  $('.modal__project__regform_ok').css({
+  $('.modal__project_regform-ok').css({
     'display': 'block',
     'left': formW*.1,
     'width': formW*.8
   });
   setTimeout(function () {
-    $('.modal__project__regform_ok').css({
+    $('.modal__project_regform-ok').css({
       'display': 'none'
     });
     $('#modal__project').slideUp(300);
-  }, 10000);
+  }, delayShow);
 }
 
 $(document).ready(function ($) {
-  $('.modal__project__regform_button').click(function () {
-    $('.modal__project__regform').submit(function (ev) {
+  $('.modal__project_regform-button').click(function () {
+    $('.modal__project_regform').submit(function (ev) {
       ev.preventDefault();
-      var str = $(this).serialize();
+      var str = $(this);
       console.log(str);
 
       $.ajax({
         type: "POST",
         url: "contact.php",
-        data: str,
+        data: str.serialize(),
         success: function (msg) {
           console.log(msg);
           /*let jsonData = JSON.parse(msg);
           console.log(jsonData);*/
           showDataOK();
+          setTimeout(function() {
+            str.trigger('reset');
+          }, (delayShow+100));
         }
       });
 
