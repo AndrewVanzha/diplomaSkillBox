@@ -2,10 +2,9 @@
 
 $post = (!empty($_POST)) ? true : false;
 
-//var_dump($_POST);
-
-$done = 'OK';
-echo json_encode($done);
+//echo '<pre>' . print_r($_POST, 1) . '</pre>';
+//$done = 'OK-1';
+//echo json_encode($done);
 
 // Проверка телефона
 function ValidateTel($valueTel) {
@@ -18,58 +17,64 @@ function ValidateTel($valueTel) {
   return empty($string) ? true : false;
 }
 
+$admin_email = "andreww1762@gmail.com";
+$error = '';
 if($post) {
   $email = trim($_POST['user_email']);
   $email = htmlspecialchars($_POST['user_email']);
   $name = htmlspecialchars($_POST['user_name']);
-  $company = htmlspecialchars($_POST['user_company']);
-  $tel = htmlspecialchars($_POST['user_phone']);
-  $error = '';
+  $surname = htmlspecialchars($_POST['user_surname']);
+  $tel = htmlspecialchars($_POST['user_tel']);
+  $subject = htmlspecialchars($_POST['form_subject']);
 
-  if(!$name) {
-    $error .= 'Пожалуйста введите ваше имя<br />';
+  if(!$surname) {
+    $error .= 'Пожалуйста, введите ваше имя<br />';
   }
 
   if(!$email) {
-    $error .= "Пожалуйста введите email<br />";
+    $error .= "Пожалуйста, введите email<br />";
   }
   
-  if($email && !ValidateTel($email)) {
-    $error .= "Введите корректный email<br />";
+  if(!$tel) {
+    $error .= "Введите корректный номер телефона<br />";
   }
 
-  if(!$error) {
-    // (length)
+  /*if(!$error) {
     if(!$company || strlen($company) < 1) {
         $error .= "Введите ваше сообщение<br />";
     }
-  }
+  }*/
 
   if(!$error) {
     $name_tema = "=?utf-8?b?". base64_encode($name) ."?=";
 
-    $subject ="Новая заявка с сайта domain.name";
     $subject1 = "=?utf-8?b?". base64_encode($subject) ."?=";
       
-    /*$company ="\n\nСообщение: ".$company."\n\nИмя: " .$name."\n\nТелефон: ".$tel."\n\n";*/
-     
-    $company1 ="\n\nИмя: ".$name."\n\nТелефон: " .$tel."\n\nE-mail: " .$email."\n\nСообщение: ".$company."\n\n";	
+    $mess ="\n\nИмя: ".$name."\n\nФамилия: ".$surname."\n\nТелефон: " .$tel."\n\nE-mail: " .$email."\n\n";
 
-    $header = "Content-Type: text/plain; charset=utf-8\n";
+    $header = "MIME-Version: 1.0" . PHP_EOL .
+      "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+      'From: '.adopt($subject).' <'.$admin_email.'>' . PHP_EOL .
+      'Reply-To: '.$admin_email.'' . PHP_EOL;
 
-    $header .= "From: Новая заявка <example@gmail.com>\n\n";	
-    $mail = mail("example@gmail.com", $subject1, iconv ('utf-8', 'windows-1251', $company1), iconv ('utf-8', 'windows-1251', $header));
+    $mail = mail($admin_email, $subject1, $mess, $header);
 
-    if($mail) {
+    /*if($mail) {
+      echo 'OK-2';
+    }*/
+      //echo '<div class="notification_error">OK</div>';
       echo 'OK';
-    }
 
   } else {
-    echo '<div class="notification_error">'.$error.'</div>';
+    echo $error;
   }
 
-  $done = 'OK';
-  echo json_encode($done);
+  $done = 'OK-3';
+  //echo json_encode($done);
 
+}
+
+function adopt($text) {
+    return '=?UTF-8?B?'.Base64_encode($text).'?=';
 }
 ?>

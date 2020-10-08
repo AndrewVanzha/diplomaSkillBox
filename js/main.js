@@ -305,7 +305,7 @@ $(document).ready(function(){ // движение поля зрения к те�
 $(document).ready(function () { // обработка клика по кнопке central-container__personal_button
   $('.central-container__personal_button').click(function (ev) {
     $('#modal__knowmore').slideDown(300);
-    $('.bg_popup').fadeIn(300);
+    //$('.bg_popup').fadeIn(300);
     $('body').css('overflow-y', 'hidden');
   });
 
@@ -316,7 +316,7 @@ $(document).ready(function () { // обработка клика по кнопк
 
   $('.bg_popup').click(function (ev) {
     $('#modal__knowmore').slideUp(300);
-    $('.bg_popup').fadeOut(300);
+    //$('.bg_popup').fadeOut(300);
     $('body').css('overflow-y', 'auto');
   });
 
@@ -325,7 +325,7 @@ $(document).ready(function () { // обработка клика по кнопк
 $(document).ready(function () { // обработка клика по кнопке deal-container__boxes_button
   $('.deal-container__boxes_button').click(function (ev) {
     $('#modal__price').slideDown(300);
-    $('.bg_popup').fadeIn(300);
+    //$('.bg_popup').fadeIn(300);
     $('body').css('overflow-y', 'hidden');
   });
 
@@ -336,7 +336,7 @@ $(document).ready(function () { // обработка клика по кнопк
 
   $('.bg_popup').click(function (ev) {
     $('#modal__price').slideUp(300);
-    $('.bg_popup').fadeOut(300);
+    //$('.bg_popup').fadeOut(300);
     $('body').css('overflow-y', 'auto');
   });
 
@@ -363,59 +363,11 @@ $(document).ready(function () { // обработка клика по кнопк
 
 });
 
-function showTelOK() {
-  console.log('tel ok');
-  var formW = $('.modal__phone_regform').width();
-  $('.modal__phone_regform-ok').css({
-    'display': 'block',
-    'left': formW*.1,
-    'width': formW*.8
-  });
-  setTimeout(function () {
-    $('.modal__phone_regform-ok').css({
-      'display': 'none'
-    });
-    $('#modal__phone').slideUp(300);
-  }, delayShow);
-}
 
-$(document).ready(function ($) { // отправляю данные по телефонному звонку
-  var validFlags = {
-    validName: false,
-    validSurname: false,
-    validPhone: false,
-    validEMail: false,
-  };
-
-  var ff = $('document.forms');
-  console.log(ff);
-  $('.modal__phone__regform-button').click(function () {
-    var ff = $('document.forms');
-    console.log(ff);
-    var str = $(this);
-    console.log(str);
-    $('.modal__phone_regform').submit(function (ev) {
-      ev.preventDefault();
-      var str = $(this);
-      console.log(str);
-
-      $.ajax({
-        type: "POST",
-        url: "phonefix.php",
-        data: str.serialize(),
-        success: function (msg) {
-          console.log(msg);
-          /*let jsonData = JSON.parse(msg);
-          console.log(jsonData);*/
-          showTelOK();
-          setTimeout(function() {
-            str.trigger('reset');
-          }, (delayShow+100));
-        }
-      });
-
-      return false;
-    });
+$(document).ready(function(){
+  $('.tel-label input').focus(function () {
+    //console.log('zz');
+    $(this).inputmask({ "mask": "+7 (999) 999-9999" });
   });
 });
 
@@ -436,35 +388,121 @@ function showDataOK() {
   }, delayShow);
 }
 
-$(document).ready(function ($) {
-  $('.modal__project_regform-button').click(function () {
-    $('.modal__project_regform').submit(function (ev) {
+$(document).ready(function () { // отправляю данные по заказу проекта
+  $('.modal__project_regform').each(function () {
+    $(this).validate({
+      errorPlacement(error, element) {
+        return true;
+      },
+      focusInvalid: false,
+      rules: {
+        user_name: {
+          required: true,
+        },
+        user_company: {
+          required: true,
+        },
+        user_phone: {
+          required: true,
+        },
+        user_email: {
+          required: true,
+          email: true,
+        },
+        user_project: {
+          required: true,
+        },
+      },
+      messages: {
+        user_name: {
+          required: 'Это поле обязательно для заполнения',
+        },
+        user_company: {
+          required: 'Это поле обязательно для заполнения',
+        },
+        user_phone: {
+          required: 'Это поле обязательно для заполнения',
+        },
+        user_email: {
+          required: 'Это поле обязательно для заполнения',
+          email: true,
+        },
+        user_project: {
+          required: 'Это поле обязательно для заполнения',
+        },
+      },
+      submitHandler(form) {
+        let th = $(form);
+        console.log(th);
+
+        $.ajax({
+          type: 'POST',
+          url: 'mail.php',
+          data: th.serialize(),
+          // eslint-disable-next-line func-names
+        }).done((msg) => {
+
+          th.trigger('reset');
+          console.log(msg);
+          showDataOK();
+          setTimeout(function() {
+            str.trigger('reset');
+          }, (delayShow+100));
+        });
+
+        return false;
+      }
+    });
+  });
+
+});
+
+
+
+function showTelMess(message) {
+  //var formW = $('.modal__phone_regform').width();
+  if(message == 'OK') {
+    message = 'Вам перезвонят по указанному телефону';
+  }
+  var formW = message.length;// $('.modal__phone_regform').width();
+
+  $('.modal__phone_regform-ok')
+      .css({
+    'display': 'block',
+    'left': formW*.1,
+    'right': formW*.1
+  })
+      .html(message);
+  setTimeout(function () {
+    $('.modal__phone_regform-ok').css({
+      'display': 'none'
+    });
+    //$('#modal__phone').slideUp(300);
+    $('#modal__phone').removeClass('show_modal');
+  }, delayShow);
+}
+
+$(document).ready(function ($) { // отправляю данные по телефонному звонку
+  $('.popup__form_button').click(function () {
+    $('.modal__phone_regform').submit(function (ev) {
       ev.preventDefault();
       var str = $(this);
-      console.log(str);
+      //console.log(str);
 
       $.ajax({
         type: "POST",
-        url: "contact.php",
+        url: "phonefix.php",
         data: str.serialize(),
         success: function (msg) {
-          console.log(msg);
+          //console.log(msg);
           /*let jsonData = JSON.parse(msg);
           console.log(jsonData);*/
-          showDataOK();
+          showTelMess(msg);
           setTimeout(function() {
             str.trigger('reset');
           }, (delayShow+100));
         }
       });
-
-      /*$.post(
-        "ask.php",
-        { p1: 'p1', p2: 33 },
-        function(data) {
-          console.log(data);
-        }
-      );*/
 
       return false;
     });

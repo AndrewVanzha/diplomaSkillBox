@@ -4,12 +4,13 @@
 // https://learn.javascript.ru/multi-insert
 // https://learn.javascript.ru/event-delegation
 
-const elementButton = document.getElementsByClassName("footer-container__phone_button")[0]; // кнопка Заказать звонок
+//const elementButton = document.getElementsByClassName("footer-container__phone_button")[0]; // кнопка Заказать звонок
+const callButton = document.getElementsByClassName("telbook-call"); // кнопки Заказать звонок
 const elementMenu = document.getElementById("modal__phone"); // попап-меню
 let styleMenu = elementMenu.style;
 let elements = [];
 
-elementButton.addEventListener('click', function () { // обработчик кнопки Заказать звонок
+function callHandler() { // обработчик кнопки Заказать звонок
   console.log('++');
   let cont;
 
@@ -154,12 +155,17 @@ elementButton.addEventListener('click', function () { // обработчик к
   elements[21].type = 'submit';
   elements[21].value = 'Отправить';
   elements[5].appendChild(elements[21]);
-  console.log(elements);
 
-});
+  elements.push(document.createElement('div')); // #22
+  elements[22].classList.add('modal__phone_footer');
+  elements[22].innerHTML = `<p>#169; Дмитрий Алексеев, 2016-2018</p>`;
+  elements[0].appendChild(elements[22]);
+  //console.log(elements);
+}
 
 function closeFun() {
   console.log('x');
+  elements[0].removeChild(elements[22]);
 
   elements[5].removeChild(elements[21]);
   elements[18].removeChild(elements[20]);
@@ -193,27 +199,43 @@ function closeFun() {
   styleMenu.display = 'none';
 
   elements.splice(0, elements.length);
-  console.log(elements);
+  //console.log(elements);
 }
 
+callButton[0].addEventListener('click', function() {
+  document.getElementById('modal__phone').classList.add('show_modal');
+  //console.log('top');
+});
+callButton[1].addEventListener('click', function() {
+  document.getElementById('modal__phone').classList.add('show_modal');
+  //console.log('bottom');
+});
 
-console.log('**');
+document.querySelector('.modal__phone_close').addEventListener('click', function() {
+  document.getElementById('modal__phone').classList.remove('show_modal');
+});
+
+//console.log('**');
 
 let selectedInput;
-const inputSelect = document.querySelector('body');
+//const inputSelect = document.querySelector('body');
+const inputSelect = document.querySelector('.modal__phone_content');
 //let inputBoxes = document.querySelectorAll('.popup__formbox');
 //let inputSelect = document.querySelector('.popup__form_inputblock');
 //console.log(inputSelect);
 //console.log(inputBoxes);
 
-inputSelect.onclick = function (event) {
-  console.log('#');
+//inputSelect.onclick = function (event) {
+inputSelect.onmousemove = function (event) {
+  //console.log('#');
   let target = event.target; // где был клик?
+  selectedInput = target;
   //console.log(target);
   //console.log(this);
   //console.log(target.classList);
 
   //if (target.classList[2] == 'name-box') console.log(target.classList[2]);
+
   if (target.classList[0] != 'popup__formbox-input') { // click не на input? тогда убрать всю подсветку
     if (selectedInput) { // убрать существующую подсветку, если есть
       if (selectedInput.value == '') { // в исходное состояние, если пустая строка
@@ -260,15 +282,7 @@ function highlight3(box) {
 
 }
 
-
-/*function test() {
-  let elem = document.getElementById('block1');
-  let linkk = document.createElement('a');
-  //var brr = document.createElement('br');
-
-  linkk.innerHTML = 'go go';
-  linkk.href = 'http://google.com';
-
-  //elem.appendChild(br);
-  elem.appendChild(linkk);
-}*/
+Inputmask().mask(document.querySelector(".label-style input"));
+$(document).ready(function(){
+  $('.label-style input').inputmask({ "mask": "+7 (999) 999-9999" });
+});
