@@ -395,6 +395,7 @@ body {
   overflow: hidden;
   position: relative;
   background-color: rgb(251, 251, 251);
+  background-color: rgb(51, 251, 251);
   /*outline: 1px solid sienna;*/
 }
 
@@ -666,6 +667,7 @@ h2 {
 
 .examples-container {
   background-color: rgb(251, 251, 251);
+  background-color: rgb(51, 251, 251);
 }
 
 .examples-container__examples {
@@ -3198,15 +3200,20 @@ h2 {
 @media (max-width: 790px) {
   .header-line__phone {
     margin-right: 1px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .header-line__phone_num {
     margin-right: 30px;
     font-size: 18px;
+    display: block;
   }
 
   .header-line__phone_sign {
-    display: inline-block;
+    /*display: inline-block;*/
+    display: block;
   }
 
   .header-line__phone_button {
@@ -3240,6 +3247,7 @@ h2 {
     flex-direction: column;
     /*justify-content: center;*/
     align-items: center;
+    height: 100%;
   }
 
   .central-container__personal_img,
@@ -3251,7 +3259,7 @@ h2 {
     display: block;
     position: static;
     margin: 0 auto;
-    border: 1px solid cornflowerblue;
+    /*border: 1px solid cornflowerblue;*/
   }
 
   .central-container__personal_leftcol {
@@ -3260,10 +3268,12 @@ h2 {
     z-index: 5;
     margin: 0 auto;
     width: 100%;
+    height: 260px;
   }
 
   .central-container__personal_title {
-    margin-top: 22px;
+    margin-top: 2px;
+    padding-top: 20px;
     width: 100%;
     font-size: 42px;
     text-align: center;
@@ -3275,6 +3285,11 @@ h2 {
     letter-spacing: .03em;
   }
 
+  .central-container__personal_button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .central-container__personal_button p {
     padding-top: 18px;
     letter-spacing: .03em;
@@ -3282,6 +3297,9 @@ h2 {
 
   .central-container__personal_rightcol {
     order: 1;
+    z-index: 3;
+    width: 100%;
+    top: 58px;
   }
 
   /*.central-container__personal_rightcol {
@@ -3297,6 +3315,11 @@ h2 {
 
 
 
+
+  .deal-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .deal-container__boxes_button {
     margin: 0 auto;
@@ -3317,6 +3340,7 @@ h2 {
   }
 
   .deal-container__boxes li:nth-of-type(1) {
+    width: 100%;
     /*margin-top: 24px;
     margin-left: auto;
     margin-right: auto;*/
@@ -3324,6 +3348,7 @@ h2 {
   }
 
   .deal-container__boxes li:nth-of-type(2) {
+    width: 100%;
     /*margin-top: 23px;
     margin-left: auto;
     margin-right: auto;*/
@@ -3331,6 +3356,7 @@ h2 {
   }
 
   .deal-container__boxes li:nth-of-type(3) {
+    width: 100%;
     /*margin-top: 26px;
     margin-left: auto;
     margin-right: auto;*/
@@ -3338,6 +3364,7 @@ h2 {
   }
 
   .deal-container__boxes li:nth-of-type(4) {
+    width: 100%;
     /*margin-top: 26px;
     margin-left: auto;
     margin-right: auto;*/
@@ -3464,7 +3491,7 @@ h2 {
     padding: 0;
     margin-top: 45px;
     height: auto;
-    width: 320px;
+    /*width: 320px;*/
   }
 
   .footer-container__leftblock {
@@ -3525,7 +3552,7 @@ h2 {
 
   .footer-container__phone_button {
     height: 55px;
-    width: 279px;
+    /*width: 279px;*/
     margin-top: 5px;
     background-color: rgb(255, 78, 46);
     color: rgb(255, 255, 255);
@@ -3963,12 +3990,17 @@ h2 {
   }
 
   .fixed-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 0;
+    width: 100%;
   }
 
   .central-container__personal_leftcol {
     width: auto;
+  }
+
+  .central-container__personal_title {
+    font-size: 30px;
   }
 
   .central-container__personal_text {
@@ -3979,11 +4011,33 @@ h2 {
     margin-top: 22px;
     width: 280px;
     font-stretch: extra-condensed;
-    letter-spacing: .9px;
+    /*letter-spacing: .9px;*/
+  }
+
+  .deal-container__anno {
+    font-size: 28px;
   }
 
   .examples-container__examples {
     margin: 0;
+  }
+
+  .examples-container__anno {
+    font-size: 28px;
+  }
+
+  .footer-line__nav,
+  .footer-container__centralblock {
+    width: 100%;
+  }
+
+  .footer-container__rightblock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 0;
+    padding-right: 0;
   }
 
 }
