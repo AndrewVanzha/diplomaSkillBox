@@ -5,7 +5,8 @@
 // https://learn.javascript.ru/event-delegation
 
 //const elementButton = document.getElementsByClassName("footer-container__phone_button")[0]; // кнопка Заказать звонок
-const callButton = document.getElementsByClassName("telbook-call"); // кнопки Заказать звонок
+const callButton = document.getElementsByClassName("call-button"); // кнопки Заказать звонок
+//console.log(callButton);
 const elementMenu = document.getElementById("modal__phone"); // попап-меню
 let styleMenu = elementMenu.style;
 let elements = [];
@@ -207,6 +208,10 @@ callButton[0].addEventListener('click', function() {
   //console.log('top');
 });
 callButton[1].addEventListener('click', function() {
+  document.getElementById('modal__phone').classList.add('show_modal');
+  //console.log('top a');
+});
+callButton[2].addEventListener('click', function() {
   document.getElementById('modal__phone').classList.add('show_modal');
   //console.log('bottom');
 });
