@@ -195,6 +195,7 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding-top: 16px;
   /*border: 1px solid darkblue;*/
 }
 
@@ -395,7 +396,7 @@ body {
   overflow: hidden;
   position: relative;
   background-color: rgb(251, 251, 251);
-  background-color: rgb(191, 251, 251);
+  /*background-color: rgb(191, 251, 251);*/
   /*outline: 1px solid sienna;*/
 }
 
@@ -436,9 +437,9 @@ body {
   display: none;
 }
 
-.central-container__personal_order {
-  /*order: 1;*/
-}
+/*.central-container__personal_order {
+  order: 1;
+}*/
 
 .central-container__personal_leftcol {
   margin: 0;
@@ -449,7 +450,7 @@ body {
 
 .central-container__personal_title {
   margin: 0;
-  padding: 202px 0 0 0;
+  padding: 204px 0 0 0;
   font-size: 76px;
   font-weight: 900;
   letter-spacing: .03em;
@@ -515,59 +516,9 @@ body {
 }
 
 
-
-
-
-/*.central-container__personal_pics-1930 {
-  display: block;
-  width: 800px;
-  height: 688px;
-  position: absolute;
-  top: 26px;
-  left: 0px;
-}
-
-.central-container__personal_pics-1930_pic {
-  height: 635px;
-  position: relative;
-  left: 112px;
-  top: -640px;
-}
-
-.central-container__personal_pics-1024 {
-  display: none;
-  width: 530px;
-  height: 643px;
-  position: absolute;
-  top: 5px;
-  left: 0px;
-}
-
-.central-container__personal_pics-1024_pic {
-  height: 634px;
-  position: relative;
-  left: 80px;
-  top: -638px;
-}
-
-.central-container__personal_pics-320 {
-  display: none;
-  width: 320px;
-  height: 370px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.central-container__personal_pics-320_pic {
-  position: relative;
-  top: -332px;
-}*/
-
 .deal-container {
   margin: 0;
-  padding: 0;
-  padding-bottom: 96px;
+  padding: 0 0 95px 0;
   /*outline: 1px solid darkmagenta;*/
 }
 
@@ -585,7 +536,7 @@ h2 {
 }
 
 .deal-container__anno {
-  padding-top: 86px;
+  padding-top: 88px;
 }
 
 .deal-container__boxes {
@@ -667,7 +618,7 @@ h2 {
 
 .examples-container {
   background-color: rgb(251, 251, 251);
-  background-color: rgb(191, 251, 251);
+  /*background-color: rgb(191, 251, 251);*/
 }
 
 .examples-container__examples {
@@ -1358,9 +1309,9 @@ h2 {
 
 .copyright-bar p {
   margin: 0;
-  padding: 29px 0 36px 0;
+  padding: 29px 15px 36px 0;
   color: rgb(255, 255, 255);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.001em;
   text-align: center;
 }
 
@@ -2205,8 +2156,8 @@ h2 {
     margin-right: 11px;
     letter-spacing: .035em;
     font-stretch: extra-condensed;
-    padding-top: 16px;
-    padding-bottom: 9px;
+    /*padding-top: 16px;*/
+    /*padding-bottom: 9px;*/
   }
 
   .central-container__personal_leftcol {
@@ -2216,14 +2167,6 @@ h2 {
   .central-container__personal_button p {
     padding-top: 25px;
   }
-
-  /*.central-container__personal_pics-1930 {
-    display: none;
-  }
-
-  .central-container__personal_pics-1024 {
-    display: block;
-  }*/
 
   .central-container__personal_text {
     margin-top: 23px;
@@ -2847,27 +2790,6 @@ h2 {
     /*margin-top: 22px;*/
   }
 
-  /*.central-container__personal_pics-1930 {
-    display: none;
-  }
-
-  .central-container__personal_pics-1024 {
-    display: none;
-  }
-
-  .central-container__personal_pics-320 {
-    display: block;
-    order: 0;
-    position: static;
-    margin: 0 auto;
-    width: auto;
-  }
-
-  .central-container__personal_pics-320 svg {
-    display: block;
-    margin: 0 auto;
-  }*/
-
   .deal-container {
     /*height: 830px;*/
     /*width: 100%;*/
@@ -2900,11 +2822,11 @@ h2 {
 
 
 
-  .examples-container__examples {
-    /*height: 595px;
-    padding-bottom: 50px;*/
-    /*outline: 1px dashed dimgray;*/
-  }
+  /*.examples-container__examples {
+    height: 595px;
+    padding-bottom: 50px;
+    outline: 1px dashed dimgray;
+  }*/
 
   .examples-container__anno {
     font-size: 48px;
@@ -3235,9 +3157,9 @@ h2 {
   }
 */
 
-  .central-container__personal {
-    /*height: 580px;*/
-  }
+  /*.central-container__personal {
+    height: 580px;
+  }*/
 
   .central-image {
     left: 0;
