@@ -284,83 +284,40 @@ $(document).ready(function(){ // движение поля зрения к те�
   });
 });
 
-/*$(document).ready(function () {
-  $('.header-line__phone_button').click(function (ev) {
-    $('#modal__phone').slideDown(300); // обработка клика по кнопке header-line__phone_button
-    $('body').css('overflow-y', 'hidden');
-  });
 
-  $('.footer-container__phone_button').click(function (ev) {
-    $('#modal__phone').slideDown(300); // обработка клика по кнопке footer-line__phone_button
-    $('body').css('overflow-y', 'hidden');
-  });
-
-  $('.modal__phone_close').click(function () {
-    $('#modal__phone').slideUp(300);
-    $('body').css('overflow-y', 'auto');
-  });
-
-});*/
-
-$(document).ready(function () { // обработка клика по кнопке central-container__personal_button
-  $('.central-container__personal_button').click(function (ev) {
-    $('#modal__knowmore').slideDown(300);
+// управление всплывающим окном
+// pressButton - class кнопки, которую надо нажимать для открытия окна
+// closeButton - class кнопки, закрывающей окно
+// popWin - id всплывающего окна
+function showPopWindow(pressButton, closeButton, popWin) {
+  $(pressButton).click(function (ev) {
+    $(popWin).slideDown(300);
     //$('.bg_popup').fadeIn(300);
     $('body').css('overflow-y', 'hidden');
   });
 
-  $('.modal__knowmore_close').click(function () {
-    $('#modal__knowmore').slideUp(300);
+  $(closeButton).click(function () {
+    $(popWin).slideUp(300);
     $('body').css('overflow-y', 'auto');
   });
 
   $('.bg_popup').click(function (ev) {
-    $('#modal__knowmore').slideUp(300);
+    $(popWin).slideUp(300);
     //$('.bg_popup').fadeOut(300);
     $('body').css('overflow-y', 'auto');
   });
+}
 
+$(document).ready(function () { // обработка клика по кнопке central-container__personal_button
+  showPopWindow('.central-container__personal_button', '.modal__knowmore_close', '#modal__knowmore');
 });
 
 $(document).ready(function () { // обработка клика по кнопке deal-container__boxes_button
-  $('.deal-container__boxes_button').click(function (ev) {
-    $('#modal__price').slideDown(300);
-    //$('.bg_popup').fadeIn(300);
-    $('body').css('overflow-y', 'hidden');
-  });
-
-  $('.modal__price_close').click(function () {
-    $('#modal__price').slideUp(300);
-    $('body').css('overflow-y', 'auto');
-  });
-
-  $('.bg_popup').click(function (ev) {
-    $('#modal__price').slideUp(300);
-    //$('.bg_popup').fadeOut(300);
-    $('body').css('overflow-y', 'auto');
-  });
-
+  showPopWindow('.deal-container__boxes_button', '.modal__price_close', '#modal__price');
 });
 
 $(document).ready(function () { // обработка клика по кнопке examples-container__project-button
-  $('.examples-container__project-button').click(function (ev) {
-    //console.log(ev.target);
-    $('#modal__project').slideDown(300);
-    //$('.bg_popup').fadeIn(300);
-    $('body').css('overflow-y', 'hidden');
-  });
-
-  $('.modal__project_close').click(function () {
-    $('#modal__project').slideUp(300);
-    $('body').css('overflow-y', 'auto');
-  });
-
-  /*$('.bg_popup').click(function (ev) {
-    $('#modal__project').slideUp(300);
-    $('.bg_popup').fadeOut(300);
-    $('body').css('overflow-y', 'auto');
-  });*/
-
+  showPopWindow('.examples-container__project-button', '.modal__project_close', '#modal__project');
 });
 
 
@@ -439,7 +396,6 @@ $(document).ready(function () { // отправляю данные по зака
           type: 'POST',
           url: 'mail.php',
           data: th.serialize(),
-          // eslint-disable-next-line func-names
         }).done((msg) => {
 
           th.trigger('reset');

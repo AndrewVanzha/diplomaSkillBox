@@ -65,7 +65,7 @@
     <section class="central-container__personal">
       <div class="fixed-container central-container__personal_order central-container__personal_win">
         <div class="central-image">
-          <svg class="svg-1930" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="920px" height="660px" viewBox="-20 20 905 550">
+          <svg class="svg-1930" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="920px" height="660px" viewBox="-45 20 905 550">
             <defs>
               <linearGradient id="PSgrad_0" x1="0%" x2="22.495%" y1="97.437%" y2="0%">
                 <stop offset="0%" stop-color="rgb(255,143,90)" stop-opacity="1" />
@@ -144,31 +144,31 @@
         <h2 class="examples-container__anno">Примеры моих работ</h2>
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-pic">
               <a href="#" class="unit-box" target="_blank">
                 <img class="site-pic1" src="img/pic-1.png" alt="мой сайт №1">
                 <h3 class="site-title">Сайт психолога Веры Антоновой</h3>
               </a>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-pic">
               <a href="#" class="unit-box" target="_blank">
                 <img class="site-pic2" src="img/pic-2.png" alt="мой сайт №2">
                 <h3 class="site-title">Сайт магазина детской одежды</h3>
               </a>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-pic">
               <a href="#" class="unit-box" target="_blank">
                 <img class="site-pic3" src="img/pic-3.png" alt="мой сайт №3">
                 <h3 class="site-title">Сайт магазина "Рыболов"</h3>
               </a>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-pic">
               <a href="#" class="unit-box" target="_blank">
                 <img class="site-pic4" src="img/pic-4.png" alt="мой сайт №4">
                 <h3 class="site-title">Сайт #4</h3>
               </a>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-pic">
               <a href="#" class="unit-box" target="_blank">
                 <img class="site-pic5" src="img/pic-5.png" alt="мой сайт №5">
                 <h3 class="site-title">>Сайт #5</h3>
@@ -194,20 +194,13 @@
 
     <section class="price-container" id="price-block">
       <div class="price-container__anno">
-        <h2 class="price-container__anno_header">Адаптивная верстка под все устройства и браузеры от 1000 рублей всего
+        <h2 class="price-container__anno_header">Адаптивная верстка под все устройства и&nbsp;браузеры от 1000 рублей всего
           за 4 часа.*</h2>
         <div class="price-container__anno_div">
           <span class="price-container__anno_sign">*</span>
           <span class="price-container__anno_sub">Сроки и стоимость могут отличаться от заявленных и рассчитываются
-            индивидуально в зависимости от сложности задачи</span>
+            индивидуально в&nbsp;зависимости&nbsp;от&nbsp;сложности задачи</span>
         </div>
-        <!--<table class="price-container__anno_tab">
-          <tr>
-            <td class="price-container__anno_sign">*</td>
-            <td class="price-container__anno_sub">Сроки и стоимость могут отличаться от заявленных и рассчитываются
-              индивидуально в зависимости от сложности задачи</td>
-          </tr>
-        </table>-->
       </div>
 
       <div class="central-container__whitetag animated infinite fadeInLeft1">#</div>
@@ -221,7 +214,6 @@
 
   <footer>
     <div class="fixed-container footer-container">
-      <!--div class="footer-container__leftblock"-->
         <nav class="footer-line__nav">
           <ul class="footer-line__nav-list">
             <li><a href="#deal-block">Услуги</a></li>
@@ -229,7 +221,6 @@
             <li><a href="#price-block">Стоимость</a></li>
           </ul>
         </nav>
-      <!--/div-->
 
       <div class="footer-container__centralblock">
         <a class="footer-container__phonebox" href="tel:+74999955555">
@@ -408,8 +399,11 @@
   <div class="bg_popup"></div>
 
   <script>
-    var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
+    var swiper = new Swiper('.swiper-container', { // https://www.youtube.com/watch?v=OjVK055CTNI
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
       paginationClickable: true,
       loop: true,
       slidesPerView: numPic,

@@ -195,6 +195,7 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding-top: 16px;
   /*border: 1px solid darkblue;*/
 }
 
@@ -367,15 +368,7 @@ body {
   margin: 0;
   padding: 13px 38px 12px 38px;
 }
-/*
-.header-line__phone_button p {
-  margin: 0;
-  padding: 12px 0;
-  letter-spacing: 0.6px;
-  font: 400 16px Arial;
-  color: rgb(248, 35, 112);
-}
-*/
+
 .header-line__telsign {
   display: inline-block;
   border-radius: 50%;
@@ -449,7 +442,7 @@ body {
 
 .central-container__personal_title {
   margin: 0;
-  padding: 202px 0 0 0;
+  padding: 204px 0 0 0;
   font-size: 76px;
   font-weight: 900;
   letter-spacing: .03em;
@@ -515,59 +508,9 @@ body {
 }
 
 
-
-
-
-/*.central-container__personal_pics-1930 {
-  display: block;
-  width: 800px;
-  height: 688px;
-  position: absolute;
-  top: 26px;
-  left: 0px;
-}
-
-.central-container__personal_pics-1930_pic {
-  height: 635px;
-  position: relative;
-  left: 112px;
-  top: -640px;
-}
-
-.central-container__personal_pics-1024 {
-  display: none;
-  width: 530px;
-  height: 643px;
-  position: absolute;
-  top: 5px;
-  left: 0px;
-}
-
-.central-container__personal_pics-1024_pic {
-  height: 634px;
-  position: relative;
-  left: 80px;
-  top: -638px;
-}
-
-.central-container__personal_pics-320 {
-  display: none;
-  width: 320px;
-  height: 370px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.central-container__personal_pics-320_pic {
-  position: relative;
-  top: -332px;
-}*/
-
 .deal-container {
   margin: 0;
-  padding: 0;
-  padding-bottom: 96px;
+  padding: 0 0 95px 0;
   /*outline: 1px solid darkmagenta;*/
 }
 
@@ -585,7 +528,7 @@ h2 {
 }
 
 .deal-container__anno {
-  padding-top: 86px;
+  padding-top: 88px;
 }
 
 .deal-container__boxes {
@@ -675,7 +618,7 @@ h2 {
   margin: 0 auto;
   overflow: hidden;
   padding-bottom: 101px;
-  /*outline: 1px solid darkblue;*/
+  outline: 1px solid darkblue;
 }
 
 .examples-container__anno {
@@ -686,24 +629,22 @@ h2 {
   position: relative;
 }
 
+.slider-container {
+  max-width: 1230px;
+}
+
 .swiper-container {
-  /*overflow: hidden;*/
   box-sizing: border-box;
-  /*margin: 0;*/
   margin-top: 102px;
   padding: 0 27px 0 23px;
   /*height: 380px;*/
-  height: 100%;
-  width: 100%;
+  /*height: 100%;*/
   /*outline: 1px solid darkorange;*/
+  /*margin: 0 auto;*/
+  /*width: 90%;*/
 }
 
 .swiper-slide {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-size: 18px;
-  background-color: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -729,10 +670,20 @@ h2 {
 .swiper-slide a img {
   margin: 0;
   padding: 0;
-  width: 365px;
-  /*width: auto;*/
+  max-width: 100%;
   height: 290px;
   object-fit: none;
+  /*object-fit: cover;*/
+}
+
+.slide-pic {
+  margin: 0;
+  padding: 2px;
+  min-height: 290px;
+  text-align: center;
+  font-size: 18px;
+  background-color: inherit;
+  outline: 1px solid darkmagenta;
 }
 
 .site-pic1 {
@@ -796,6 +747,7 @@ h2 {
   width: 18px;
   height: 18px;
   background: rgb(255, 78, 46);
+  /*margin: 0 10px;*/
 }
 
 .hide-element {
@@ -1358,9 +1310,9 @@ h2 {
 
 .copyright-bar p {
   margin: 0;
-  padding: 29px 0 36px 0;
+  padding: 29px 15px 36px 0;
   color: rgb(255, 255, 255);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.001em;
   text-align: center;
 }
 
@@ -2217,14 +2169,6 @@ h2 {
     padding-top: 25px;
   }
 
-  /*.central-container__personal_pics-1930 {
-    display: none;
-  }
-
-  .central-container__personal_pics-1024 {
-    display: block;
-  }*/
-
   .central-container__personal_text {
     margin-top: 23px;
   }
@@ -2846,27 +2790,6 @@ h2 {
     /*margin: 0 auto;*/
     /*margin-top: 22px;*/
   }
-
-  /*.central-container__personal_pics-1930 {
-    display: none;
-  }
-
-  .central-container__personal_pics-1024 {
-    display: none;
-  }
-
-  .central-container__personal_pics-320 {
-    display: block;
-    order: 0;
-    position: static;
-    margin: 0 auto;
-    width: auto;
-  }
-
-  .central-container__personal_pics-320 svg {
-    display: block;
-    margin: 0 auto;
-  }*/
 
   .deal-container {
     /*height: 830px;*/
