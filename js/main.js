@@ -141,7 +141,7 @@ function setLeftPaddingForPictures() { // управление левым бло
 
 }
 
-function manageSwiperPaginationAndButtons() { // управление окном pagination и кнопками в слайдере
+/*function manageSwiperPaginationAndButtons() { // управление окном pagination и кнопками в слайдере
   if (windowWidth > 1250) {
     if (!($('div.swiper-pagination').is('.hide-element'))) {
       $('div.swiper-pagination').addClass('hide-element'); // убираю pagination на большом экране
@@ -157,18 +157,49 @@ function manageSwiperPaginationAndButtons() { // управление окном
       $('.swiper-button-prev').addClass('hide-element'); // убираю стрелку слева на большом экране
     }
   }
-}
+}*/
 
 $(document).ready(function () {
+  var swiper = new Swiper('.swiper-container', { // https://www.youtube.com/watch?v=OjVK055CTNI
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    paginationClickable: true,
+    loop: true,
+    breakpoints: {
+      240: {
+        //slidesPerView: 1,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+      },
+      790: {
+        slidesPerView: 2,
+        spaceBetween: 25
+      },
+      1250: {
+        slidesPerView: 3,
+        spaceBetween: 25
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    freeMode: true,
+  });
+
+
   windowWidth = $(window).width();
   //console.log(windowWidth);
-  if (windowWidth <= 370) {
+  /*if (windowWidth <= 370) {
     $('.unit-box img').css({ // задаю размеры картинки для слайдера для узкого экрана
       'width': '320px',
       'height': 'auto',
       'background-size': 'auto'
     });
-  }
+  }*/
 
   if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
     //console.log('ww');
@@ -187,7 +218,7 @@ $(document).ready(function () {
   setLeftPaddingForPictures();
   moveFXinCentralContainer();
   changeTelClasses();
-  manageSwiperPaginationAndButtons();
+  //manageSwiperPaginationAndButtons();
   //setLeftEdgePopupMenu();
   //manageHeaderPhoneLine();
   //managePersonalImg();
@@ -211,7 +242,7 @@ $(window).resize(function () {
   setLeftPaddingForPictures();
   moveFXinCentralContainer();
   changeTelClasses();
-  manageSwiperPaginationAndButtons();
+  //manageSwiperPaginationAndButtons();
   //setLeftEdgePopupMenu();
   //manageHeaderPhoneLine();
   //managePersonalImg();
@@ -402,7 +433,7 @@ $(document).ready(function () { // отправляю данные по зака
           console.log(msg);
           showDataOK();
           setTimeout(function() {
-            str.trigger('reset');
+            th.trigger('reset');
           }, (delayShow+100));
         });
 
