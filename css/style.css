@@ -216,15 +216,6 @@ body {
   color: rgb(31, 31, 36);
 }
 
-/*.header-line__block {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 1170px;
-  margin: 0 auto;
-}*/
-
 .header-line__nav {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -232,8 +223,8 @@ body {
 }
 
 .header-line__nav-list {
+  display: block;
   margin: 0;
-  /*padding: 29px 0 2px 0;*/
   padding: 2px 0 2px 0;
   cursor: pointer;
 }
@@ -244,10 +235,6 @@ body {
   margin: 0;
   padding: 18px 27px 18px 0;
 }
-
-/*.header-line__nav ul li:not(:last-of-type) {
-    padding-right: 27px;
-}*/
 
 .header-line__nav-list a {
   padding: 0;
@@ -1967,7 +1954,7 @@ h2 {
   }
 }*/
 
-@media (max-width: 1250px) {
+@media screen and (max-width: 1250px) {
   .header-line {
     position: relative;
   }
@@ -1999,18 +1986,14 @@ h2 {
     /*outline: 1px solid salmon;*/
   }
 
-  .header-line__nav-list {
-    display: none;
-  }
-
   .header-line__nav ul li {
     display: block;
     padding-top: 3px;
     padding-bottom: 3px;
   }
 
-  .header-line__nav-popup {
-    /*display: block;*/
+  .header-line__nav-list {
+    display: none;
     position: absolute;
     top: -5px;
     left: 89px;
@@ -2019,7 +2002,7 @@ h2 {
     border: 1px solid rgb(0, 0, 0);
   }
 
-  .header-line__nav-popup a {
+  .header-line__nav-list a {
     display: block;
     padding: 1px 0;
     cursor: pointer;
@@ -2027,7 +2010,7 @@ h2 {
     color: rgb(31, 31, 36);
   }
 
-  .header-line__nav-popup a::after {
+  .header-line__nav-list a::after {
     content: "";
     display: block;
     height: 1px;
@@ -2036,14 +2019,14 @@ h2 {
     background-color: rgb(252, 85, 124);
   }
 
-  .header-line__nav-popup a:hover {
+  .header-line__nav-list a:hover {
     color: rgb(252, 85, 124);
     -webkit-transition: color .3s linear;
     -moz-transition: color .3s linear;
     transition: color .3s linear;
   }
 
-  .header-line__nav-popup a:hover::after {
+  .header-line__nav-list a:hover::after {
     width: 100%;
     -webkit-transition: .3s linear;
     -moz-transition: .3s linear;
@@ -2804,9 +2787,9 @@ h2 {
     /*margin: 0 auto;*/
   }
 
-  .central-container__personal_order {
-    /*margin: 0 auto;*/
-  }
+  /*.central-container__personal_order {
+    margin: 0 auto;
+  }*/
 
   .central-container__personal_text {
     margin-top: 8px;
@@ -3152,7 +3135,7 @@ h2 {
 
 }
 
-@media (max-width: 790px) {
+@media screen and (max-width: 790px) {
   .fixed-container {
     padding-left: 20px;
     padding-right: 20px;
@@ -3913,7 +3896,7 @@ h2 {
 
 }
 
-@media (max-width: 590px) {
+@media screen and (max-width: 590px) {
   .header-line__nav {
     width: 7px;
     height: 2px;
