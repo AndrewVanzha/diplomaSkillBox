@@ -171,13 +171,17 @@ $(document).ready(function () {
     loop: true,
     breakpoints: {
       240: {
-        //slidesPerView: 1,
-        slidesPerView: 'auto',
-        spaceBetween: 15,
+        slidesPerView: 1,
+        //slidesPerView: 'auto',
+        spaceBetween: 3,
       },
       790: {
         slidesPerView: 2,
-        spaceBetween: 25
+        spaceBetween: 30
+      },
+      1020: {
+        slidesPerView: 2,
+        spaceBetween: 5
       },
       1250: {
         slidesPerView: 3,
