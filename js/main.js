@@ -9,26 +9,6 @@ var telWidth = 320;
 var delayShow = 5000; // задержка при демонстрации окон
 var paddingShift = 14;
 
-/*
-function setLeftEdgePopupMenu() { // управление левым краем всплывающего меню
-  windowWidth = $(window).width();
-  if (windowWidth <= 1250) {
-    var el = $('.header-line__nav');
-    var varOffset = el.offset();
-    $('.popup-box').css({
-      top: varOffset.top + 70,
-      left: varOffset.left + 5
-    });
-    //console.log(varOffset.left);
-  } else {
-    $('.popup-box').css({
-      'left': 0
-    });
-    //console.log(windowWidth);
-  }
-
-}
-*/
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
@@ -61,30 +41,6 @@ function changeTelClasses() { // переключение классов в те
 
 }
 
-/*
-function manageHeaderPhoneLine() { // управление телефонным блоком в заголовке
-  if (windowWidth <= 790) {
-    $('.header-line__phone').addClass('fa fa-phone');
-    $('.header-line__phone').attr({
-      'aria-hidden': 'true'
-    });
-  } else {
-    $('.header-line__phone').removeClass('fa fa-phone');
-    $('.header-line__phone').removeAttr('aria-hidden');
-  }
-
-}
-*/
-/*
-function managePersonalImg() { //  управление картинкой с автором
-  if (windowWidth <= 980) {
-    $('.central-container__personal_pics-320 img').attr('src', 'img/man-320.png');
-  } else {
-    $('.central-container__personal-authorpic div img').attr('src', 'img/man.png');
-  }
-
-}
-*/
 function setLeftPaddingForPictures() { // управление левым блоком в персональном разделе и символами
   var leftEdge0 = 120;
   var leftEdge1 = 10;
@@ -142,25 +98,69 @@ function setLeftPaddingForPictures() { // управление левым бло
 
 }
 
-/*function manageSwiperPaginationAndButtons() { // управление окном pagination и кнопками в слайдере
-  if (windowWidth > 1250) {
-    if (!($('div.swiper-pagination').is('.hide-element'))) {
-      $('div.swiper-pagination').addClass('hide-element'); // убираю pagination на большом экране
-    }
-    $('.swiper-button-next').removeClass('hide-element');
-    $('.swiper-button-prev').removeClass('hide-element');
-  } else { // windowWidth <= 1250
-    $('div.swiper-pagination').removeClass('hide-element');
-    if (!($('div.swiper-button-next').is('.hide-element'))) {
-      $('.swiper-button-next').addClass('hide-element'); // убираю стрелку справа на большом экране
-    }
-    if (!($('div.swiper-button-prev').is('.hide-element'))) {
-      $('.swiper-button-prev').addClass('hide-element'); // убираю стрелку слева на большом экране
-    }
+// показать всплывающее окно
+function showPopWindow(popWin) { // popWin - всплывающее окно
+  $(popWin).addClass('show_modal');
+  $('body').css('overflow-y', 'hidden');
+  //$('.bg_popup').css('display', 'block');
+}
+
+// закрыть всплывающее окно
+function closePopWindow(popWin) { // popWin - всплывающее окно
+  //console.log(popWin);
+  $(popWin).removeClass('show_modal');
+  $('body').css('overflow-y', 'auto');
+  //$('.bg_popup').css('display', 'none');
+}
+
+
+
+/*$(document).mouseup(function(ev) { // второй вариант гашения popup
+  let popup = $('.modal_win');
+  //console.log(ev.target);
+  if(popup.is(ev.target)) {
+    //console.log('!!');
+    closePopWindow(ev.target);
   }
-}*/
+});*/
+
 
 $(document).ready(function () {
+
+  $('.central-container__personal_button').click(function (ev) { // обработка клика по кнопке central-container__personal_button
+    showPopWindow('#modal__knowmore');
+  });
+
+  $('.deal-container__boxes_button').click(function (ev) {
+    showPopWindow('#modal__price');
+  });
+
+  $('.examples-container__project-button').click(function (ev) {
+    showPopWindow('#modal__project');
+  });
+
+  $('.modal__win_close').click(function () {
+    let $this = $('.modal__win_close');
+    closePopWindow($this.closest('.show_modal'));
+  });
+
+  $('body').click(function(ev) {
+    let $this = $(this);
+    //console.log($(ev.target).get(0).closest('.modal_body'));
+    if($(ev.target).get(0).closest('.modal_body') === null) {
+      //console.log('!!');
+      closePopWindow(ev.target);
+    }
+  });
+
+  /*var elLink = document.querySelector('body');
+  elLink.addEventListener('click', showTarget);
+  elLink.addEventListener('click', function (ev) {
+    console.log('ev.target=');
+    console.log(ev.target);
+  });*/
+
+
   var swiper = new Swiper('.swiper-container', { // https://www.youtube.com/watch?v=OjVK055CTNI
     pagination: {
       el: '.swiper-pagination',
@@ -197,98 +197,27 @@ $(document).ready(function () {
 
 
   windowWidth = $(window).width();
-  //console.log(windowWidth);
-  /*if (windowWidth <= 370) {
-    $('.unit-box img').css({ // задаю размеры картинки для слайдера для узкого экрана
-      'width': '320px',
-      'height': 'auto',
-      'background-size': 'auto'
-    });
-  }*/
-
-  /*if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
-    //console.log('ww');
-    switchPopup = false;
-    $('.header-line__nav ul')
-      .removeClass('header-line__nav-popup_')
-      .addClass('header-line__nav-list_');
-    $('.header-line__nav-popupmenu').hide();
-  } else {
-    switchPopup = true;
-    $('.header-line__nav ul')
-      .removeClass('header-line__nav-popup_')
-      .addClass('header-line__nav-list_');
-  }*/
-
   setLeftPaddingForPictures();
   moveFXinCentralContainer();
   changeTelClasses();
-  //manageSwiperPaginationAndButtons();
-  //setLeftEdgePopupMenu();
-  //manageHeaderPhoneLine();
-  //managePersonalImg();
-});
 
-$(window).resize(function () {
-  windowWidth = $(window).width();
-  /*if (windowWidth >= 1250 && ($('div').is('.popup-box'))) {
-    $('div.popup-box').remove(); // убираю popup-меню на большом экране
-  }*/
 
-  /*if (windowWidth >= 1250) {  // убираю popup-меню на большом экране
-    //console.log('rr');
-    switchPopup = false;
-    $('.header-line__nav ul')
-      .removeClass('header-line__nav-popup_')
-      .addClass('header-line__nav-list_');
-    $('.header-line__nav-popupmenu').hide();
-  }*/
-
-  setLeftPaddingForPictures();
-  moveFXinCentralContainer();
-  changeTelClasses();
-  //manageSwiperPaginationAndButtons();
-  //setLeftEdgePopupMenu();
-  //manageHeaderPhoneLine();
-  //managePersonalImg();
-});
-
-/*
-$(function () { // работоспособная - вариант обработки)
-  $('.header-line__nav').click(function () { // переключаю классы по клику для узкого экрана
+  $('.header-line__nav-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
+    event.preventDefault();
     windowWidth = $(window).width();
-    //setLeftEdgePopupMenu();
-    //console.log('burger');
-    if (windowWidth < 1250) {
-      switchPopup = switchPopup? false : true;
-      $('.header-line__nav ul')
-        .toggleClass('header-line__nav-popup')
-        .toggleClass('header-line__nav-list');
-    } else {
-      switchPopup = false;
-    }
+    var id  = $(this).attr('href');
+    var top = $(id).offset().top;
+    $('body, html').animate({ scrollTop: top }, 900);
+    //console.log(id);
   });
-});
 
-$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
-  $('.header-line__nav').on('click', 'a', function (event) {
-      event.preventDefault();
-      var id  = $(this).attr('href');
-      var top = $(id).offset().top;
-      $('body, html').animate({scrollTop: top}, 900);
-      console.log(id);
-  });
-});
-*/
-
-$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
-  $('.header-line__nav-list').on('click', 'a', function (event) {
-      event.preventDefault();
-      windowWidth = $(window).width();
-      var id  = $(this).attr('href');
-      var top = $(id).offset().top;
-      $('body, html').animate({ scrollTop: top }, 900);
-      //console.log(id);
+  $('.header-line__nav-popupmenu-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
+    event.preventDefault();
+    windowWidth = $(window).width();
+    var id  = $(this).attr('href');
+    var top = $(id).offset().top;
+    $('body, html').animate({ scrollTop: top }, 900);
+    $('.header-line__nav-popupmenu').hide();
   });
 
   $('.footer-line__nav-list').on('click', 'a', function (event) {
@@ -297,10 +226,8 @@ $(document).ready(function(){ // движение поля зрения к те�
     var id  = $(this).attr('href');
     var top = $(id).offset().top;
     $('body, html').animate({ scrollTop: top }, 900);
-});
-});
+  });
 
-$(document).ready(function() {
   $('.header-line__nav').click(function() { // отработка клика по бургеру
     windowWidth = $(window).width();
     if (windowWidth < (1250-paddingShift)) {
@@ -309,82 +236,14 @@ $(document).ready(function() {
       $('.header-line__nav-popupmenu').hide();
     }
   });
-});
 
-$(document).ready(function(){ // движение поля зрения к теме согласно выбранной ссылке
-  $('.header-line__nav-popupmenu-list').on('click', 'a', function (event) {
-      event.preventDefault();
-      windowWidth = $(window).width();
-      var id  = $(this).attr('href');
-      var top = $(id).offset().top;
-      $('body, html').animate({ scrollTop: top }, 900);
-      $('.header-line__nav-popupmenu').hide();
-  });
-});
-
-
-// управление всплывающим окном
-// pressButton - class кнопки, которую надо нажимать для открытия окна
-// closeButton - class кнопки, закрывающей окно
-// popWin - id всплывающего окна
-function showPopWindow(pressButton, closeButton, popWin) {
-  $(pressButton).click(function (ev) {
-    $(popWin).slideDown(300);
-    //$('.bg_popup').fadeIn(300);
-    $('body').css('overflow-y', 'hidden');
-  });
-
-  $(closeButton).click(function () {
-    $(popWin).slideUp(300);
-    $('body').css('overflow-y', 'auto');
-  });
-
-  $('.bg_popup').click(function (ev) {
-    $(popWin).slideUp(300);
-    //$('.bg_popup').fadeOut(300);
-    $('body').css('overflow-y', 'auto');
-  });
-}
-
-$(document).ready(function () { // обработка клика по кнопке central-container__personal_button
-  showPopWindow('.central-container__personal_button', '.modal__knowmore_close', '#modal__knowmore');
-});
-
-$(document).ready(function () { // обработка клика по кнопке deal-container__boxes_button
-  showPopWindow('.deal-container__boxes_button', '.modal__price_close', '#modal__price');
-});
-
-$(document).ready(function () { // обработка клика по кнопке examples-container__project-button
-  showPopWindow('.examples-container__project-button', '.modal__project_close', '#modal__project');
-});
-
-
-$(document).ready(function(){
   $('.tel-label input').focus(function () {
     //console.log('zz');
     $(this).inputmask({ "mask": "+7 (999) 999-9999" });
   });
-});
 
-function showDataOK() {
-  console.log('data ok');
-  var formW = $('.modal__project_regform').width();
-  console.log(formW);
-  $('.modal__project_regform-ok').css({
-    'display': 'block',
-    'left': formW*.1,
-    'width': formW*.8
-  });
-  setTimeout(function () {
-    $('.modal__project_regform-ok').css({
-      'display': 'none'
-    });
-    $('#modal__project').slideUp(300);
-  }, delayShow);
-}
 
-$(document).ready(function () { // отправляю данные по заказу проекта
-  $('.modal__project_regform').each(function () {
+  $('.modal__project_regform').each(function () { // отправляю данные по заказу проекта
     $(this).validate({
       errorPlacement(error, element) {
         return true;
@@ -449,8 +308,50 @@ $(document).ready(function () { // отправляю данные по зака
     });
   });
 
+  $('.popup__form_button').click(function () { // отправляю данные по телефонному звонку
+    $('.modal__phone_regform').submit(function (ev) {
+      ev.preventDefault();
+      var str = $(this);
+      //console.log(str);
+
+      $.ajax({
+        type: "POST",
+        url: "phonefix.php",
+        data: str.serialize(),
+        success: function (msg) {
+          //console.log(msg);
+          /*let jsonData = JSON.parse(msg);
+          console.log(jsonData);*/
+          showTelMess(msg);
+          setTimeout(function() {
+            str.trigger('reset');
+          }, (delayShow+100));
+        }
+      });
+
+      return false;
+    });
+  });
+
 });
 
+
+function showDataOK() {
+  console.log('data ok');
+  var formW = $('.modal__project_regform').width();
+  console.log(formW);
+  $('.modal__project_regform-ok').css({
+    'display': 'block',
+    'left': formW*.1,
+    'width': formW*.8
+  });
+  setTimeout(function () {
+    $('.modal__project_regform-ok').css({
+      'display': 'none'
+    });
+    $('#modal__project').slideUp(300);
+  }, delayShow);
+}
 
 
 function showTelMess(message) {
@@ -476,49 +377,21 @@ function showTelMess(message) {
   }, delayShow);
 }
 
-$(document).ready(function ($) { // отправляю данные по телефонному звонку
-  $('.popup__form_button').click(function () {
-    $('.modal__phone_regform').submit(function (ev) {
-      ev.preventDefault();
-      var str = $(this);
-      //console.log(str);
 
-      $.ajax({
-        type: "POST",
-        url: "phonefix.php",
-        data: str.serialize(),
-        success: function (msg) {
-          //console.log(msg);
-          /*let jsonData = JSON.parse(msg);
-          console.log(jsonData);*/
-          showTelMess(msg);
-          setTimeout(function() {
-            str.trigger('reset');
-          }, (delayShow+100));
-        }
-      });
-
-      return false;
-    });
-  });
+$(window).resize(function () {
+  windowWidth = $(window).width();
+  setLeftPaddingForPictures();
+  moveFXinCentralContainer();
+  changeTelClasses();
 });
 
-/*
+
+
 function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
 }
 
-var elLink = document.querySelector('body'); 
-elLink.addEventListener('click', showTarget);
-console.log(elLink);
-//console.log(elLink.childNodes.length);
 
-$('body').click(function(e) {
-  console.log(this);
-  console.log($(this).children().children().children());
-  console.log($(this).children().children().children().text());
-});
-*/
 /*
 $('body').click(function(e) {
   var pos = $(this).offset();

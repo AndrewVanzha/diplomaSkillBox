@@ -1392,6 +1392,8 @@ h2 {
   right: 0;
   top: 0;
   bottom: 0;
+  justify-content: center;
+  align-items: center;
   z-index: 5;
   padding-top: 2px;
   width: 100%;
@@ -1670,15 +1672,16 @@ h2 {
 
 /*.modal__knowmore_content ul {*/
 .modal__knowmore_body {
-  padding: 2px 34px;
+  margin: 0;
+  padding: 18px 34px;
   list-style-position: outside;
   list-style-image: none;
   list-style-type: disc;
 }
 
 .modal__knowmore_body li {
-  margin: 7px 0;
-  padding: 0 15px;
+  margin: 0;
+  padding: 7px 15px;
   font-size: 20px;
   font-weight: 500;
   color: rgb(155, 20, 20);
@@ -1802,7 +1805,8 @@ h2 {
 }
 
 .show_modal {
-  display: block;
+  /*display: block*/;
+  display: flex;
 }
 
 .modal__project_close {
@@ -1925,12 +1929,13 @@ h2 {
 .bg_popup {
   display: none;
   position: fixed;
-  z-index: 99;
+  /*z-index: 99;*/
+  z-index: 3;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, .4);
+  /*background-color: rgba(0, 0, 0, .4);*/
 }
 
 .error {
@@ -1939,12 +1944,6 @@ h2 {
 
 
 /* адаптивный раздел */
-/*@media (max-width: 1920px) {
-  .central-container__personal {
-    width: auto;
-  }
-}*/
-
 @media screen and (max-width: 1250px) {
   .header-line {
     position: relative;
