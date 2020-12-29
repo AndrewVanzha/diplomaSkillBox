@@ -4,95 +4,73 @@
 // https://learn.javascript.ru/multi-insert
 // https://learn.javascript.ru/event-delegation
 
-//const elementButton = document.getElementsByClassName("footer-container__phone_button")[0]; // кнопка Заказать звонок
 const callButton = document.getElementsByClassName("call-button"); // кнопки Заказать звонок
-//console.log(callButton);
-const elementMenu = document.getElementById("modal__phone"); // попап-меню
-let styleMenu = elementMenu.style;
-let elements = [];
+const formElements = document.querySelectorAll(".popup__formbox-input"); // попап-меню
+//console.log(formElements);
 
-callButton[0].addEventListener('click', function() {
-  document.getElementById('modal__phone').classList.add('show_modal');
-  //console.log('top');
-});
-callButton[1].addEventListener('click', function() {
-  document.getElementById('modal__phone').classList.add('show_modal');
-  //console.log('top a');
-});
-callButton[2].addEventListener('click', function() {
-  document.getElementById('modal__phone').classList.add('show_modal');
-  //console.log('bottom');
-});
+for(let ix=0; ix<3; ix++) {
+  //console.log(ix);
+  callButton[ix].addEventListener('click', function() {
+    document.getElementById('modal__phone').classList.add('show_modal');
+    document.getElementsByTagName('BODY')[0].classList.add('stop_scroll');
+  });
+}
 
 document.querySelector('.modal__phone_close').addEventListener('click', function() {
   document.getElementById('modal__phone').classList.remove('show_modal');
+  document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
 });
-
 //console.log('**');
 
 let selectedInput;
-//const inputSelect = document.querySelector('body');
-const inputSelect = document.querySelector('.modal__phone_content');
-//let inputBoxes = document.querySelectorAll('.popup__formbox');
-//let inputSelect = document.querySelector('.popup__form_inputblock');
-//console.log(inputSelect);
-//console.log(inputBoxes);
+const inputSelect = document.querySelector('.modal_win');
 
 //inputSelect.onclick = function (event) {
 inputSelect.onmousemove = function (event) {
-  //console.log('#');
-  let target = event.target; // где был клик?
-  selectedInput = target;
-  //console.log(target);
-  //console.log(this);
-  //console.log(target.classList);
+  selectedInput = event.target; // где было движение?
+  //console.log(selectedInput);
 
-  //if (target.classList[2] == 'name-box') console.log(target.classList[2]);
-
-  if (target.classList[0] != 'popup__formbox-input') { // click не на input? тогда убрать всю подсветку
-    if (selectedInput) { // убрать существующую подсветку, если есть
-      if (selectedInput.value == '') { // в исходное состояние, если пустая строка
-        selectedInput.parentElement.classList.remove('popup__formbox-solidborder'); // убрал сплошную рамку у родителя
-        selectedInput.parentElement.classList.add('popup__formbox-greyborder'); // добавил серую рамку у родителя
-        selectedInput.classList.remove('popup__formbox-inputactive'); // убрал белый цвет фона
-        selectedInput.classList.add('popup__formbox-inputneutral'); // добавил серый цвет фона
-        selectedInput.nextElementSibling.classList.remove('popup__formbox-textactive'); // убрал заголовок с границы у последующего элемента
-        selectedInput.nextElementSibling.classList.add('popup__formbox-textneutral'); // спустил заголовок на поле у последующего элемента
-      }
+  [].forEach.call(formElements, function (el) {  // пробежаться по всем input
+    if (el.value == '') { // в исходное состояние, если пустая строка
+      downlight3(el);
+    } else {
+      highlight3(el); // подсветить, если есть что-то в input
     }
-    return;
-  }
+  });
 
-  highlight3(target); // подсветить input
+  if (selectedInput.classList[0] == 'popup__formbox-input') { // движение на input?
+    //console.log(selectedInput);
+    highlight3(selectedInput); // тогда ввести иллюминацию
+
+  } else {
+    [].forEach.call(formElements, function (el) { // иначе пробежаться по всем input
+      if(el.nextElementSibling.value) {
+        highlight3(el); // подсветить, если есть что-то в input
+      } else {
+        if (el.value == '') {
+          downlight3(el); // в исходное состояние, если пустая строка
+        }
+      }
+    });
+  }
 };
 
-function highlight3(box) {
-  //console.log('selectedInput');
-  //console.log(selectedInput);
-  if (selectedInput) { // убрать существующую подсветку, если есть
-    //console.log(selectedInput.value);
-    if (selectedInput.value == '') { // в исходное состояние, если пустая строка
-      selectedInput.parentElement.classList.remove('popup__formbox-solidborder'); // убрал сплошную рамку у родителя
-      selectedInput.parentElement.classList.add('popup__formbox-greyborder'); // добавил серую рамку у родителя
-      selectedInput.classList.remove('popup__formbox-inputactive'); // убрал белый цвет фона
-      selectedInput.classList.add('popup__formbox-inputneutral'); // добавил серый цвет фона
-      selectedInput.nextElementSibling.classList.remove('popup__formbox-textactive'); // убрал заголовок с границы у последующего элемента
-      selectedInput.nextElementSibling.classList.add('popup__formbox-textneutral'); // спустил заголовок на поле у последующего элемента
-    }
-  }
-  selectedInput = box;
-  //console.log(selectedInput);
-  //console.log(selectedInput.parentElement);
-  //console.log(selectedInput.nextElementSibling);
+function highlight3 (box) { // подсветить input - на вход элемент input
+  box.parentElement.classList.remove('popup__formbox-greyborder'); // убрал серую рамку у родителя
+  box.parentElement.classList.add('popup__formbox-solidborder'); // добавил сплошную рамку у родителя
+  box.classList.remove('popup__formbox-inputneutral'); // убрал серый цвет фона
+  box.classList.add('popup__formbox-inputactive'); // добавил белый цвет фона
+  box.nextElementSibling.classList.remove('popup__formbox-textneutral'); // убрал заголовок с поля у последующего элемента
+  box.nextElementSibling.classList.add('popup__formbox-textactive'); // поднял заголовок на границу у последующего элемента
+}
 
-  // подсветить новый input
-  selectedInput.parentElement.classList.remove('popup__formbox-greyborder'); // убрал серую рамку у родителя
-  selectedInput.parentElement.classList.add('popup__formbox-solidborder'); // добавил сплошную рамку у родителя
-  selectedInput.classList.remove('popup__formbox-inputneutral'); // убрал серый цвет фона
-  selectedInput.classList.add('popup__formbox-inputactive'); // добавил белый цвет фона
-  selectedInput.nextElementSibling.classList.remove('popup__formbox-textneutral'); // убрал заголовок с поля у последующего элемента
-  selectedInput.nextElementSibling.classList.add('popup__formbox-textactive'); // поднял заголовок на границу у последующего элемента
-
+function downlight3 (box) { // убрать подсветку input - на вход элемент input
+  box.parentElement.classList.remove('popup__formbox-solidborder'); // убрал сплошную рамку у родителя
+  box.parentElement.classList.add('popup__formbox-greyborder'); // добавил серую рамку у родителя
+  box.classList.remove('popup__formbox-inputactive'); // убрал белый цвет фона
+  box.classList.add('popup__formbox-inputneutral'); // добавил серый цвет фона
+  box.nextElementSibling.classList.remove('popup__formbox-textactive'); // убрал заголовок с границы у последующего элемента
+  box.nextElementSibling.classList.add('popup__formbox-textneutral'); // спустил заголовок на поле у последующего элемента
 }
 
 Inputmask().mask(document.querySelector(".label-style input"));

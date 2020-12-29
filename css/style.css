@@ -169,7 +169,11 @@ body {
   /*max-width: 1920px;*/
   font-family: Roboto, "Myriad Pro", Arial;
   font-size: 16px;
-  /*overflow: hidden;*/
+  /*overflow: auto;*/
+}
+
+.let_scroll {
+  overflow-y: auto;
 }
 
 .fixed-container {
@@ -183,7 +187,6 @@ body {
   display: table;
   clear: both;
 }
-
 
 /* верхняя полоса */
 .header-line {
@@ -1516,17 +1519,19 @@ h2 {
 }
 
 .popup__formbox-inputneutral {
-	background-color: rgb(249, 249, 249);
+  background-color: rgb(249, 249, 249);
 }
 
 .popup__formbox-inputactive {
   /*background-color: rgb(255, 255, 255);*/
-  border: 1px solid rgb(115, 115, 115);
+  //border: 1px solid rgb(115, 115, 115);
+  outline: 1px solid rgb(115, 115, 115);
 }
 
 /*.modal__phone_regform label input:valid {
   border: 1px solid rgb(115, 115, 115);
 }*/
+
 .popup__formbox-text {
 	position: absolute;
 	left: 12px;
@@ -1568,7 +1573,7 @@ h2 {
 	margin: 18px auto 22px auto;
 	padding: 10px 25px 11px 25px;
 	/*background-color: rgb(0, 136, 204);*/
-  background-color: rgb(255,47,150);
+  background-color: rgb(255, 78, 46);
 	color: rgb(255, 255, 255);
 	cursor: pointer;
 	border: none;
@@ -1578,13 +1583,13 @@ h2 {
 }
 
 .popup__form_button:hover {
-	background-color: rgb(88, 141, 206);
+	/*background-color: rgb(88, 141, 206);*/
+  background-color: rgb(255,47,150);
 }
 
 .modal__phone__regform-button {
   display: block;
-  margin: 0 auto;
-  margin-top: 2px;
+  margin: 2px auto 0 auto;
   padding: 12px 45px;
   font-size: 20px;
   font-weight: 600;
@@ -1802,6 +1807,10 @@ h2 {
 @keyframes animateUnFold {
   from { transform: scale(0); opacity: 0 } 
   to { transform: scale(1); opacity: 1 }
+}
+
+.stop_scroll {
+  overflow: hidden;
 }
 
 .show_modal {

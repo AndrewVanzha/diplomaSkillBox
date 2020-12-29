@@ -99,31 +99,38 @@ function setLeftPaddingForPictures() { // управление левым бло
 }
 
 // показать всплывающее окно
-function showPopWindow(popWin) { // popWin - всплывающее окно
+function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
   $(popWin).addClass('show_modal');
-  $('body').css('overflow-y', 'hidden');
+  //$('body').css('overflow', 'hidden');
+  $('body').addClass('stop_scroll');
   //$('.bg_popup').css('display', 'block');
 }
 
 // закрыть всплывающее окно
-function closePopWindow(popWin) { // popWin - всплывающее окно
+function closePopWindow(popWin) { // popWin - всплывающее окно #modal__phone
   //console.log(popWin);
   $(popWin).removeClass('show_modal');
-  $('body').css('overflow-y', 'auto');
+  //$('body').css('overflow', 'auto');
+  $('body').removeClass('stop_scroll');
   //$('.bg_popup').css('display', 'none');
 }
 
 
+function moveView(elem) {
+  var id  = $(elem).attr('href');
+  var top = $(id).offset().top;
+  $('body, html').animate({ scrollTop: top }, 900);
+  $('.header-line__nav-popupmenu').hide();
+}
 
-/*$(document).mouseup(function(ev) { // второй вариант гашения popup
+$(document).mouseup(function(ev) {
   let popup = $('.modal_win');
   //console.log(ev.target);
   if(popup.is(ev.target)) {
     //console.log('!!');
     closePopWindow(ev.target);
   }
-});*/
-
+});
 
 $(document).ready(function () {
 
@@ -144,20 +151,13 @@ $(document).ready(function () {
     closePopWindow($this.closest('.show_modal'));
   });
 
-  $('body').click(function(ev) {
+  /*$('body').click(function(ev) { // второй вариант гашения popup
     let $this = $(this);
     //console.log($(ev.target).get(0).closest('.modal_body'));
     if($(ev.target).get(0).closest('.modal_body') === null) {
       //console.log('!!');
       closePopWindow(ev.target);
     }
-  });
-
-  /*var elLink = document.querySelector('body');
-  elLink.addEventListener('click', showTarget);
-  elLink.addEventListener('click', function (ev) {
-    console.log('ev.target=');
-    console.log(ev.target);
   });*/
 
 
@@ -205,27 +205,21 @@ $(document).ready(function () {
   $('.header-line__nav-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
     event.preventDefault();
     windowWidth = $(window).width();
-    var id  = $(this).attr('href');
-    var top = $(id).offset().top;
-    $('body, html').animate({ scrollTop: top }, 900);
+    moveView($(this));
     //console.log(id);
   });
 
   $('.header-line__nav-popupmenu-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
     event.preventDefault();
     windowWidth = $(window).width();
-    var id  = $(this).attr('href');
-    var top = $(id).offset().top;
-    $('body, html').animate({ scrollTop: top }, 900);
+    moveView($(this));
     $('.header-line__nav-popupmenu').hide();
   });
 
   $('.footer-line__nav-list').on('click', 'a', function (event) {
     event.preventDefault();
     windowWidth = $(window).width();
-    var id  = $(this).attr('href');
-    var top = $(id).offset().top;
-    $('body, html').animate({ scrollTop: top }, 900);
+    moveView($(this));
   });
 
   $('.header-line__nav').click(function() { // отработка клика по бургеру
@@ -287,7 +281,7 @@ $(document).ready(function () {
       },
       submitHandler(form) {
         let th = $(form);
-        console.log(th);
+        //console.log(th);
 
         $.ajax({
           type: 'POST',
@@ -296,10 +290,11 @@ $(document).ready(function () {
         }).done((msg) => {
 
           th.trigger('reset');
-          console.log(msg);
+          //console.log(msg);
           showDataOK();
           setTimeout(function() {
             th.trigger('reset');
+            closePopWindow(th.parent('#modal__phone'));
           }, (delayShow+100));
         });
 
@@ -308,29 +303,28 @@ $(document).ready(function () {
     });
   });
 
-  $('.popup__form_button').click(function () { // отправляю данные по телефонному звонку
-    $('.modal__phone_regform').submit(function (ev) {
-      ev.preventDefault();
-      var str = $(this);
-      //console.log(str);
+  $('.modal__phone_regform').submit(function (ev) { // отправляю данные по телефонному звонку
+    ev.preventDefault();
+    var str = $(this);
+    //console.log(str);
 
-      $.ajax({
-        type: "POST",
-        url: "phonefix.php",
-        data: str.serialize(),
-        success: function (msg) {
-          //console.log(msg);
-          /*let jsonData = JSON.parse(msg);
-          console.log(jsonData);*/
-          showTelMess(msg);
-          setTimeout(function() {
-            str.trigger('reset');
-          }, (delayShow+100));
-        }
-      });
-
-      return false;
+    $.ajax({
+      type: "POST",
+      url: "phonefix.php",
+      data: str.serialize(),
+      success: function (msg) {
+        //console.log(msg);
+        /*let jsonData = JSON.parse(msg);
+        console.log(jsonData);*/
+        showTelMess(msg);
+        setTimeout(function() {
+          str.trigger('reset');
+          closePopWindow(str.parent('#modal__phone'));
+        }, (delayShow+100));
+      }
     });
+
+    return false;
   });
 
 });
@@ -339,7 +333,7 @@ $(document).ready(function () {
 function showDataOK() {
   console.log('data ok');
   var formW = $('.modal__project_regform').width();
-  console.log(formW);
+  //console.log(formW);
   $('.modal__project_regform-ok').css({
     'display': 'block',
     'left': formW*.1,
@@ -391,6 +385,13 @@ function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
 }
 
+
+/*var elLink = document.querySelector('body');
+elLink.addEventListener('click', showTarget);
+elLink.addEventListener('click', function (ev) {
+  console.log('ev.target=');
+  console.log(ev.target);
+});*/
 
 /*
 $('body').click(function(e) {
