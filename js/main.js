@@ -1,23 +1,22 @@
 // https://nubex.ru/blogs20/postsByTag/?catId=1401
 // https://www.youtube.com/watch?v=BnWjIPii9Ac WP
 
+
 var windowWidth;
 var switchPopup = false;
-var desktopWidth = 1920 - 13;
-var tabletWidth = 1024 - 13; // 1024
 var telWidth = 320;
 var delayShow = 5000; // задержка при демонстрации окон
-var paddingShift = 14;
+var paddingShift = 14; // ширина полосы скролла справа
 
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
+  //console.log(windowWidth);
   if (windowWidth < (1250-paddingShift)) {
     $('.central-container__personal_order').removeClass('fixed-container');
     //console.log(varOffset.left);
   } else {
     $('.central-container__personal_order').addClass('fixed-container');
-    //console.log(windowWidth);
   }
 
 }
@@ -41,77 +40,19 @@ function changeTelClasses() { // переключение классов в те
 
 }
 
-function setLeftPaddingForPictures() { // управление левым блоком в персональном разделе и символами
-  var leftEdge0 = 120;
-  var leftEdge1 = 10;
-  var windowSVG = $('.central-container__personal_pics-320').width();
-  //console.log(windowSVG);
-  //console.log(windowWidth);
-
-  if (windowWidth > 1920) {
-    var paddingLeft = (1920 - 1170) / 2;
-    var leftEdge = windowWidth / 2 + leftEdge0;
-    //console.log(leftEdge);
-    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': leftEdge
-    });
-  } else if (windowWidth <= 1920 && windowWidth > 1170) {
-    var paddingLeft = (windowWidth - 1170) / 2 - 150 * 0;
-    var leftEdge = windowWidth / 2 + leftEdge0;
-    //console.log(leftEdge);
-    $('.central-container__personal_pics-1930').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': leftEdge
-    });
-    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': leftEdge
-    });
-  } else if (windowWidth <= 1170 && windowWidth > 981) { // 1005? 1024px
-    var leftEdge = (710-404)/(1170-980)*(windowWidth-980) + 404;
-    $('.central-container__personal_pics-1024').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': leftEdge
-    });
-    $('.central-container__personal_pics-320').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': leftEdge
-    });
-  } else if (windowWidth <= 980 && windowWidth > 591) {
-    var paddingLeft = (windowWidth - 580 - 10) / 2;
-    var leftEdge = windowWidth / 2 + leftEdge1;
-    //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowSVG/3
-    });
-  } else if (windowWidth < 590 && windowWidth > 471) {
-    var leftEdge = windowWidth / 2 + leftEdge1;
-    //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowSVG/4
-    });
-    $('.central-container__personal_pics-320 svg').attr('width', '470px');
-  } else {  // windowWidth <= 470
-    var leftEdge = windowWidth / 2 + leftEdge1;
-    //console.log(windowSVG);
-    $('.central-container__personal_pics-320_pic').css({ // двигаю край правого блока с картинкой в персональном разделе
-      'left': windowWidth/4-2
-    });
-    $('.central-container__personal_pics-320 svg').attr('width', '360px');
-  }
-
-}
-
 // показать всплывающее окно
 function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
   $(popWin).addClass('show_modal');
-  //$('body').css('overflow', 'hidden');
   $('body').addClass('stop_scroll');
+  $('.swiper-button-next').css('right', '-17px');
   //$('.bg_popup').css('display', 'block');
 }
 
 // закрыть всплывающее окно
 function closePopWindow(popWin) { // popWin - всплывающее окно #modal__phone
-  //console.log(popWin);
   $(popWin).removeClass('show_modal');
-  //$('body').css('overflow', 'auto');
   $('body').removeClass('stop_scroll');
+  $('.swiper-button-next').css('right', '-32px');
   //$('.bg_popup').css('display', 'none');
 }
 
@@ -151,7 +92,7 @@ $(document).ready(function () {
     closePopWindow($this.closest('.show_modal'));
   });
 
-  /*$('body').click(function(ev) { // второй вариант гашения popup
+  /*$('body').click(function(ev) { // второй вариант гашения popup, конфликтует со скриптами на body
     let $this = $(this);
     //console.log($(ev.target).get(0).closest('.modal_body'));
     if($(ev.target).get(0).closest('.modal_body') === null) {
@@ -183,7 +124,7 @@ $(document).ready(function () {
         slidesPerView: 2,
         spaceBetween: 5
       },
-      1250: {
+      1251: {
         slidesPerView: 3,
         spaceBetween: 25
       }
@@ -197,7 +138,6 @@ $(document).ready(function () {
 
 
   windowWidth = $(window).width();
-  setLeftPaddingForPictures();
   moveFXinCentralContainer();
   changeTelClasses();
 
@@ -206,7 +146,6 @@ $(document).ready(function () {
     event.preventDefault();
     windowWidth = $(window).width();
     moveView($(this));
-    //console.log(id);
   });
 
   $('.header-line__nav-popupmenu-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
@@ -232,7 +171,6 @@ $(document).ready(function () {
   });
 
   $('.tel-label input').focus(function () {
-    //console.log('zz');
     $(this).inputmask({ "mask": "+7 (999) 999-9999" });
   });
 
@@ -374,7 +312,6 @@ function showTelMess(message) {
 
 $(window).resize(function () {
   windowWidth = $(window).width();
-  setLeftPaddingForPictures();
   moveFXinCentralContainer();
   changeTelClasses();
 });
