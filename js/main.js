@@ -11,7 +11,13 @@ var paddingShift = 14; // ширина полосы скролла справа
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
-  //console.log(windowWidth);
+  let innerWidth = $('body').innerWidth();
+  console.log(windowWidth);
+  console.log(innerWidth);
+  var actualInnerWidth = document.body.clientWidth;
+  console.log(actualInnerWidth);
+  var actualInnerWidth = document.body.scrollWidth;
+  console.log(actualInnerWidth);
   if (windowWidth < (1250-paddingShift)) {
     $('.central-container__personal_order').removeClass('fixed-container');
     //console.log(varOffset.left);
@@ -52,7 +58,7 @@ function showPopWindow(popWin) { // popWin - всплывающее окно #mo
 function closePopWindow(popWin) { // popWin - всплывающее окно #modal__phone
   $(popWin).removeClass('show_modal');
   $('body').removeClass('stop_scroll');
-  $('.swiper-button-next').css('right', '-32px');
+  $('.swiper-button-next').css('right', '-28px');
   //$('.bg_popup').css('display', 'none');
 }
 
@@ -116,7 +122,7 @@ $(document).ready(function () {
         //slidesPerView: 'auto',
         spaceBetween: 3,
       },
-      790: {
+      791: {
         slidesPerView: 2,
         spaceBetween: 30
       },
