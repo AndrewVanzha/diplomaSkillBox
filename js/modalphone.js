@@ -13,12 +13,14 @@ for(let ix=0; ix<3; ix++) {
   callButton[ix].addEventListener('click', function() {
     document.getElementById('modal__phone').classList.add('show_modal');
     document.getElementsByTagName('BODY')[0].classList.add('stop_scroll');
+    document.getElementsByClassName('header-line__div')[0].classList.add('header-line__div_adpadd');
   });
 }
 
 document.querySelector('.modal__phone_close').addEventListener('click', function() {
   document.getElementById('modal__phone').classList.remove('show_modal');
   document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
+  document.getElementsByClassName('header-line__div')[0].classList.remove('header-line__div_adpadd');
 });
 //console.log('**');
 
@@ -53,6 +55,7 @@ inputSelect.onmousemove = function (event) {
       }
     });
   }
+
 };
 
 function highlight3 (box) { // подсветить input - на вход элемент input

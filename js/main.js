@@ -6,21 +6,14 @@ var windowWidth;
 var switchPopup = false;
 var telWidth = 320;
 var delayShow = 5000; // задержка при демонстрации окон
-var paddingShift = 14; // ширина полосы скролла справа
+var paddingShift = 14; // расчетная ширина полосы скролла справа
 
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
-  let innerWidth = $('body').innerWidth();
-  console.log(windowWidth);
-  console.log(innerWidth);
-  var actualInnerWidth = document.body.clientWidth;
-  console.log(actualInnerWidth);
-  var actualInnerWidth = document.body.scrollWidth;
-  console.log(actualInnerWidth);
-  if (windowWidth < (1250-paddingShift)) {
+  //console.log(windowWidth);
+  if (windowWidth <= (1250-paddingShift)) {
     $('.central-container__personal_order').removeClass('fixed-container');
-    //console.log(varOffset.left);
   } else {
     $('.central-container__personal_order').addClass('fixed-container');
   }
@@ -32,15 +25,11 @@ function changeTelClasses() { // переключение классов в те
   if (windowWidth <= 790) {
     $('.header-line__phone-box a').removeClass('header-line__phone_button');
     $('.header-line__phone-box a').addClass('header-line__telsign fa fa-phone');
-    $('.header-line__phone-box a p').css({
-      'display' : 'none'
-    });
+    //$('.header-line__phone-box a p').css({ 'display' : 'none' });
   } else {
     $('.header-line__phone-box a').removeClass('header-line__telsign fa fa-phone');
     $('.header-line__phone-box a').addClass('header-line__phone_button');
-    $('.header-line__phone-box a p').css({
-      'display' : 'block'
-    });
+    //$('.header-line__phone-box a p').css({ 'display' : 'block' });
     //console.log(windowWidth);
   }
 
@@ -48,6 +37,7 @@ function changeTelClasses() { // переключение классов в те
 
 // показать всплывающее окно
 function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
+  //console.log('+');
   $(popWin).addClass('show_modal');
   $('body').addClass('stop_scroll');
   $('.swiper-button-next').css('right', '-17px');
@@ -59,6 +49,7 @@ function closePopWindow(popWin) { // popWin - всплывающее окно #m
   $(popWin).removeClass('show_modal');
   $('body').removeClass('stop_scroll');
   $('.swiper-button-next').css('right', '-28px');
+  $('.header-line__div').removeClass('header-line__div_adpadd');
   //$('.bg_popup').css('display', 'none');
 }
 
@@ -80,6 +71,14 @@ $(document).mouseup(function(ev) {
 });
 
 $(document).ready(function () {
+
+  $('body').addClass('stop_scroll');
+  paddingShift = $(window).width();
+  //console.log(paddingShift);
+  $('body').removeClass('stop_scroll');
+  $('body').addClass('let_scroll');
+  paddingShift = paddingShift - $(window).width();
+  //console.log(paddingShift);
 
   $('.central-container__personal_button').click(function (ev) { // обработка клика по кнопке central-container__personal_button
     showPopWindow('#modal__knowmore');
@@ -328,13 +327,6 @@ function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
 }
 
-
-/*var elLink = document.querySelector('body');
-elLink.addEventListener('click', showTarget);
-elLink.addEventListener('click', function (ev) {
-  console.log('ev.target=');
-  console.log(ev.target);
-});*/
 
 /*
 $('body').click(function(e) {
