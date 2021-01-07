@@ -4,9 +4,8 @@
 
 var windowWidth;
 var switchPopup = false;
-var telWidth = 320;
 var delayShow = 5000; // задержка при демонстрации окон
-var paddingShift = 14; // расчетная ширина полосы скролла справа
+var paddingShift = 15; // расчетная ширина полосы скролла справа, инициация 15
 
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
@@ -20,16 +19,33 @@ function moveFXinCentralContainer() { // уборка fixed-container в central
 
 }
 
+function redTagsLook() {
+  let whiteTags = document.querySelectorAll('.central-container__whitetag');
+  //console.log(whiteTags);
+  [].forEach.call(whiteTags, function (el) {  // пробежаться по всем whiteTags
+    let coordX = el.getBoundingClientRect().x;
+    coordX += el.getBoundingClientRect().width + el.getBoundingClientRect().height; // самый правый край элемента
+    if(windowWidth < coordX) {
+      //el.style.display = "none";
+      el.classList.add("hide_tag");
+      console.log(coordX);
+      console.log(el);
+      console.log(el.classList);
+    } else {
+      //el.style.display = "block";
+      el.classList.remove("hide_tag");
+    }
+  });
+}
+
 function changeTelClasses() { // переключение классов в телефонном блоке header-line__phone-box
   windowWidth = $(window).width();
   if (windowWidth <= 790) {
     $('.header-line__phone-box a').removeClass('header-line__phone_button');
     $('.header-line__phone-box a').addClass('header-line__telsign fa fa-phone');
-    //$('.header-line__phone-box a p').css({ 'display' : 'none' });
   } else {
     $('.header-line__phone-box a').removeClass('header-line__telsign fa fa-phone');
     $('.header-line__phone-box a').addClass('header-line__phone_button');
-    //$('.header-line__phone-box a p').css({ 'display' : 'block' });
     //console.log(windowWidth);
   }
 
@@ -145,6 +161,7 @@ $(document).ready(function () {
   windowWidth = $(window).width();
   moveFXinCentralContainer();
   changeTelClasses();
+  redTagsLook();
 
 
   $('.header-line__nav-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
@@ -319,6 +336,7 @@ $(window).resize(function () {
   windowWidth = $(window).width();
   moveFXinCentralContainer();
   changeTelClasses();
+  redTagsLook();
 });
 
 
