@@ -29,8 +29,8 @@ function redTagsLook() {
       //el.style.display = "none";
       el.classList.add("hide_tag");
       console.log(coordX);
-      console.log(el);
-      console.log(el.classList);
+      //console.log(el);
+      //console.log(el.classList);
     } else {
       //el.style.display = "block";
       el.classList.remove("hide_tag");
@@ -135,7 +135,7 @@ $(document).ready(function () {
       240: {
         slidesPerView: 1,
         //slidesPerView: 'auto',
-        spaceBetween: 3,
+        spaceBetween: 10,
       },
       791: {
         slidesPerView: 2,
