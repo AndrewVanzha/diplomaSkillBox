@@ -53,7 +53,7 @@ function changeTelClasses() { // переключение классов в те
 
 // показать всплывающее окно
 function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
-  //console.log('+');
+  //console.log(popWin);
   $(popWin).addClass('show_modal');
   $('body').addClass('stop_scroll');
   $('.swiper-button-next').css('right', '-17px');
@@ -108,8 +108,10 @@ $(document).ready(function () {
     showPopWindow('#modal__project');
   });
 
-  $('.modal__win_close').click(function () {
-    let $this = $('.modal__win_close');
+  $('.modal__win_close').click(function () { // закрыть popup-окно
+    //let $this = $('.modal__win_close');
+    let $this = $(this);
+    console.log($this);
     closePopWindow($this.closest('.show_modal'));
   });
 
@@ -249,12 +251,13 @@ $(document).ready(function () {
           data: th.serialize(),
         }).done((msg) => {
 
-          th.trigger('reset');
+          //th.trigger('reset');
           //console.log(msg);
           showDataOK();
           setTimeout(function() {
             th.trigger('reset');
-            closePopWindow(th.parent('#modal__phone'));
+            closePopWindow(th.closest('.show_modal'));
+            //closePopWindow(th.parent('#modal__phone'));
           }, (delayShow+100));
         });
 
@@ -294,16 +297,16 @@ function showDataOK() {
   console.log('data ok');
   var formW = $('.modal__project_regform').width();
   //console.log(formW);
-  $('.modal__project_regform-ok').css({
-    'display': 'block',
-    'left': formW*.1,
-    'width': formW*.8
-  });
-  setTimeout(function () {
-    $('.modal__project_regform-ok').css({
-      'display': 'none'
+  $('.modal__project_regform-ok')
+    .css({
+      'left': formW*.1,
+      'width': formW*.8
     });
-    $('#modal__project').slideUp(300);
+    $('.modal__project_regform-ok').show();
+  setTimeout(function () {
+    //$('.modal__project_regform-ok').removeClass('show_tag');
+    $('.modal__project_regform-ok').hide();
+    $('#modal__project').removeClass('show_modal');
   }, delayShow);
 }
 
@@ -317,16 +320,15 @@ function showTelMess(message) {
 
   $('.modal__phone_regform-ok')
       .css({
-    'display': 'block',
+    //'display': 'block',
     'left': formW*.1,
     'right': formW*.1
-  })
+    })
       .html(message);
+  $('.modal__phone_regform-ok').show();
   setTimeout(function () {
-    $('.modal__phone_regform-ok').css({
-      'display': 'none'
-    });
-    //$('#modal__phone').slideUp(300);
+    $('.modal__phone_regform-ok').hide();
+    //$('.modal__phone_regform-ok').css({'display': 'none'});
     $('#modal__phone').removeClass('show_modal');
   }, delayShow);
 }

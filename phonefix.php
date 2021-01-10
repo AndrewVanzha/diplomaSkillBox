@@ -1,4 +1,6 @@
 <?php
+/* Обработчик данных по телефонному звонку
+*/
 
 $post = (!empty($_POST)) ? true : false;
 
@@ -46,10 +48,8 @@ if($post) {
   }*/
 
   if(!$error) {
-    $name_tema = "=?utf-8?b?". base64_encode($name) ."?=";
-
-    $subject1 = "=?utf-8?b?". base64_encode($subject) ."?=";
-      
+    //$name_tema = "=?utf-8?b?". base64_encode($name) ."?=";
+    //$subject1 = "=?utf-8?b?". base64_encode($subject) ."?=";
     $mess ="\n\nИмя: ".$name."\n\nФамилия: ".$surname."\n\nТелефон: " .$tel."\n\nE-mail: " .$email."\n\n";
 
     $header = "MIME-Version: 1.0" . PHP_EOL .
@@ -57,7 +57,8 @@ if($post) {
       'From: '.adopt($subject).' <'.$admin_email.'>' . PHP_EOL .
       'Reply-To: '.$admin_email.'' . PHP_EOL;
 
-    $mail = mail($admin_email, $subject1, $mess, $header);
+    //$mail = mail($admin_email, $subject1, $mess, $header);
+    $mail = mail($email, adopt($subject), $mess, $header);
 
     /*if($mail) {
       echo 'OK-2';
