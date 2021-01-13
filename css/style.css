@@ -3488,7 +3488,7 @@ h2 {
 
   .footer-container {
     flex-wrap: wrap;
-    justify-content: start;
+    /*justify-content: space-between;*/
     align-content: center;
     padding: 0 5px 0 19px;
     margin-top: 41px;
@@ -3947,6 +3947,12 @@ h2 {
 
 }
 
+@media screen and (max-width: 655px) {
+  .footer-container {
+    justify-content: flex-start;
+  }
+}
+
 @media screen and (max-width: 590px) {
   .header-line__nav ul li {
     padding-right: 1px;
@@ -4127,10 +4133,6 @@ h2 {
   .site-pic4,
   .site-pic5 {
     object-position: -5px -5px;
-  }
-
-  .deal-container__boxes_button {
-    margin-left: 5px;
   }
 
   .examples-container__anno {
