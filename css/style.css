@@ -243,6 +243,30 @@ body {
   background-color: #ff8f5a;
 }
 
+.burger_crossbar-1 {
+  position: absolute;
+  transform: rotate(35deg);
+  left: 0;
+  top: 15px;
+  background-image: linear-gradient(35deg, #ff3195, #ff8f5a);
+  transition: .5s;
+  -webkit-transition: .5s;
+}
+
+.burger_crossbar-2 {
+  position: absolute;
+  transform: rotate(-35deg);
+  left: 0;
+  top: 15px;
+  background-image: linear-gradient(-35deg, #ff3195, #ff8f5a);
+  transition: .5s;
+  -webkit-transition: .5s;
+}
+
+.header-line__nav .burger_crossbar-3 {
+  display: none;
+}
+
 .header-line__nav-list {
   display: block;
   margin: 0;
@@ -2140,6 +2164,7 @@ h2 {
     flex-wrap: nowrap;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
     position: relative;
     top: 0;
     left: 10px;
@@ -3237,6 +3262,11 @@ h2 {
     height: 3px;
   }
 
+  .burger_crossbar-1,
+  .burger_crossbar-2 {
+    top: 8px;
+  }
+  
   .header-line__phone {
     margin-right: 1px;
     padding-bottom: 0;
