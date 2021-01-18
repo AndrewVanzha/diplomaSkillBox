@@ -19,7 +19,10 @@ function moveFXinCentralContainer() { // уборка fixed-container в central
 
 }
 
-function redTagsLook() {
+/**
+ * прячу белые теги, которые вылезают за правый край окна
+ */
+function whiteTagsLook() {
   let whiteTags = document.querySelectorAll('.central-container__whitetag');
   //console.log(whiteTags);
   [].forEach.call(whiteTags, function (el) {  // пробежаться по всем whiteTags
@@ -29,8 +32,6 @@ function redTagsLook() {
       //el.style.display = "none";
       el.classList.add("hide_tag");
       console.log(coordX);
-      //console.log(el);
-      //console.log(el.classList);
     } else {
       //el.style.display = "block";
       el.classList.remove("hide_tag");
@@ -163,7 +164,7 @@ $(document).ready(function () {
   windowWidth = $(window).width();
   moveFXinCentralContainer();
   changeTelClasses();
-  redTagsLook();
+  whiteTagsLook();
 
 
   $('.header-line__nav-list').on('click', 'a', function (event) { // движение поля зрения к теме согласно выбранной ссылке
@@ -344,7 +345,7 @@ $(window).resize(function () {
   windowWidth = $(window).width();
   moveFXinCentralContainer();
   changeTelClasses();
-  redTagsLook();
+  whiteTagsLook();
   if (windowWidth < (1250-paddingShift)) {
   } else {
     $('.header-line__nav-popupmenu').hide();
