@@ -4,59 +4,64 @@
 // https://learn.javascript.ru/multi-insert
 // https://learn.javascript.ru/event-delegation
 
-const callButton = document.getElementsByClassName("call-button"); // кнопки Заказать звонок
-const formElements = document.querySelectorAll(".popup__formbox-input"); // попап-меню
-//console.log(formElements);
+window.addEventListener('DOMContentLoaded', function () {
+  const callButton = document.getElementsByClassName("call-button"); // кнопки Заказать звонок
+  const formElements = document.querySelectorAll(".popup__formbox-input"); // попап-меню
+  //console.log(formElements);
 
-for(let ix=0; ix<3; ix++) {
-  //console.log(ix);
-  callButton[ix].addEventListener('click', function() {
-    document.getElementById('modal__phone').classList.add('show_modal');
-    document.getElementsByTagName('BODY')[0].classList.add('stop_scroll');
-    document.getElementsByClassName('header-line__div')[0].classList.add('header-line__div_adpadd');
-  });
-}
-
-document.querySelector('.modal__phone_close').addEventListener('click', function() {
-  document.getElementById('modal__phone').classList.remove('show_modal');
-  document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
-  document.getElementsByClassName('header-line__div')[0].classList.remove('header-line__div_adpadd');
-});
-//console.log('**');
-
-let selectedInput;
-const inputSelect = document.querySelector('.modal_win');
-
-//inputSelect.onclick = function (event) {
-inputSelect.onmousemove = function (event) {
-  selectedInput = event.target; // где было движение?
-  //console.log(selectedInput);
-
-  [].forEach.call(formElements, function (el) {  // пробежаться по всем input
-    if (el.value == '') { // в исходное состояние, если пустая строка
-      downlight3(el);
-    } else {
-      highlight3(el); // подсветить, если есть что-то в input
-    }
-  });
-
-  if (selectedInput.classList[0] == 'popup__formbox-input') { // движение на input?
-    //console.log(selectedInput);
-    highlight3(selectedInput); // тогда ввести иллюминацию
-
-  } else {
-    [].forEach.call(formElements, function (el) { // иначе пробежаться по всем input
-      if(el.nextElementSibling.value) {
-        highlight3(el); // подсветить, если есть что-то в input
-      } else {
-        if (el.value == '') {
-          downlight3(el); // в исходное состояние, если пустая строка
-        }
-      }
+  for(let ix=0; ix<3; ix++) {
+    //console.log(ix);
+    callButton[ix].addEventListener('click', function() {
+      document.getElementById('modal__phone').classList.add('show_modal');
+      document.getElementsByTagName('BODY')[0].classList.add('stop_scroll');
+      document.getElementsByClassName('header-line__div')[0].classList.add('header-line__div_adpadd');
     });
   }
 
-};
+  document.querySelector('.modal__phone_close').addEventListener('click', function() {
+    document.getElementById('modal__phone').classList.remove('show_modal');
+    document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
+    document.getElementsByClassName('header-line__div')[0].classList.remove('header-line__div_adpadd');
+  });
+  //console.log('**');
+
+  let selectedInput;
+  const inputSelect = document.querySelector('.modal_win');
+
+  //inputSelect.onclick = function (event) {
+  inputSelect.onmousemove = function (event) {
+    selectedInput = event.target; // где было движение?
+    //console.log(selectedInput);
+
+    //formElements.forEach(function(el) {}); тоже работает
+    [].forEach.call(formElements, function (el) {  // пробежаться по всем input
+      if (el.value == '') { // в исходное состояние, если пустая строка
+        downlight3(el);
+      } else {
+        highlight3(el); // подсветить, если есть что-то в input
+      }
+    });
+
+    if (selectedInput.classList[0] == 'popup__formbox-input') { // движение на input?
+      //console.log(selectedInput);
+      highlight3(selectedInput); // тогда ввести иллюминацию
+
+    } else {
+      [].forEach.call(formElements, function (el) { // иначе пробежаться по всем input
+        if(el.nextElementSibling.value) {
+          highlight3(el); // подсветить, если есть что-то в input
+        } else {
+          if (el.value == '') {
+            downlight3(el); // в исходное состояние, если пустая строка
+          }
+        }
+      });
+    }
+
+  };
+
+});
+
 
 function highlight3 (box) { // подсветить input - на вход элемент input
   box.parentElement.classList.remove('popup__formbox-greyborder'); // убрал серую рамку у родителя
