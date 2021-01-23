@@ -268,15 +268,24 @@ body {
 }
 
 .header-line__nav-list a:hover,
-.footer-line__nav-list a:hover {
+.header-line__nav-list a:active,
+.header-line__nav-list a:focus,
+.footer-line__nav-list a:hover,
+.footer-line__nav-list a:active,
+.footer-line__nav-list a:focus {
   color: rgb(252, 85, 124);
   -webkit-transition: color .3s linear;
   -moz-transition: color .3s linear;
   transition: color .3s linear;
+  outline: none;
 }
 
 .header-line__nav-list a:hover::after,
-.footer-line__nav-list a:hover::after {
+.header-line__nav-list a:active::after,
+.header-line__nav-list a:focus::after,
+.footer-line__nav-list a:hover::after,
+.footer-line__nav-list a:active::after,
+.footer-line__nav-list a:focus::after {
   width: 100%;
   -webkit-transition: .3s linear;
   -moz-transition: .3s linear;
@@ -335,7 +344,9 @@ body {
   transition: .5s linear;
 }
 
-.telbook-call:hover {
+.telbook-call:hover,
+.telbook-call:active,
+.telbook-call:focus {
   background-color: rgb(248, 35, 112);
   color: rgb(255, 255, 255);
 }
@@ -419,10 +430,6 @@ body {
   display: none;
 }
 
-/*.central-container__personal_order {
-  order: 1;
-}*/
-
 .central-container__personal_leftcol {
   margin: 0;
   padding: 0;
@@ -456,7 +463,9 @@ body {
   transition: .5s linear;
 }
 
-.central-container__personal_button:hover {
+.central-container__personal_button:hover,
+.central-container__personal_button:active,
+.central-container__personal_button:focus {
   background-color: rgb(255, 47, 158);
 }
 
@@ -589,7 +598,9 @@ h2 {
   transition: .5s linear;
 }
 
-.deal-container__boxes_button:hover {
+.deal-container__boxes_button:hover,
+.deal-container__boxes_button:active,
+.deal-container__boxes_button:focus {
   background-color: rgb(255, 47, 158);
 }
 
@@ -741,10 +752,6 @@ h2 {
   background: rgb(255, 78, 46);
 }
 
-/*.swiper-pagination-bullet-active {
-  background: rgb(46, 78, 255);
-}*/
-
 .swiper-pagination-show {
   display: none;
 }
@@ -764,7 +771,9 @@ h2 {
   transition: .5s linear;
 }
 
-.examples-container__project-button:hover {
+.examples-container__project-button:hover,
+.examples-container__project-button:active,
+.examples-container__project-button:focus {
   background-color: rgb(255, 47, 158);
 }
 
@@ -1496,14 +1505,18 @@ h2 {
   background-color: rgb(252, 85, 124);
 }
 
-.header-line__nav-popupmenu-list li a:hover {
+.header-line__nav-popupmenu-list li a:hover,
+.header-line__nav-popupmenu-list li a:active,
+.header-line__nav-popupmenu-list li a:focus {
   color: rgb(252, 85, 124);
   -webkit-transition: color .3s linear;
   -moz-transition: color .3s linear;
   transition: color .3s linear;
 }
 
-.header-line__nav-popupmenu-list li a:hover::after {
+.header-line__nav-popupmenu-list li a:hover::after,
+.header-line__nav-popupmenu-list li a:active::after,
+.header-line__nav-popupmenu-list li a:focus::after {
   width: 100%;
   -webkit-transition: .3s linear;
   -moz-transition: .3s linear;
@@ -1580,10 +1593,19 @@ h2 {
   display: table;
   clear: both;
 }
-
-.modal__phone_close:hover,
+.modal__phone_close:focus,
 .modal__phone_close:focus {
-  color: rgb(0, 0, 0);
+  outline: none;
+  border: none;
+}
+
+.modal__phone_close:hover .modal__phone_close-intA,
+.modal__phone_close:hover .modal__phone_close-intB,
+.modal__phone_close:active .modal__phone_close-intA,
+.modal__phone_close:active .modal__phone_close-intB,
+.modal__phone_close:focus .modal__phone_close-intA,
+.modal__phone_close:focus .modal__phone_close-intB {
+  background-color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
 }
@@ -1700,7 +1722,9 @@ h2 {
   font-weight: 700;
 }
 
-.popup__form_button:hover {
+.popup__form_button:hover,
+.popup__form_button:active,
+.popup__form_button:focus {
   /*background-color: rgb(88, 141, 206);*/
   background-color: rgb(255, 47, 150);
 }
@@ -1794,10 +1818,12 @@ h2 {
 }
 
 .modal__knowmore_close:hover,
+.modal__knowmore_close:active,
 .modal__knowmore_close:focus {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 .modal__knowmore_header {
@@ -1884,10 +1910,12 @@ h2 {
 }
 
 .modal__price_close:hover,
+.modal__price_close:active,
 .modal__price_close:focus {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 .modal__price_header {
@@ -1984,10 +2012,12 @@ h2 {
 }
 
 .modal__project_close:hover,
+.modal__project_close:active,
 .modal__project_close:focus {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 .modal__project_header {
@@ -2178,14 +2208,18 @@ h2 {
     background-color: rgb(252, 85, 124);
   }
 
-  .header-line__nav-list a:hover {
+  .header-line__nav-list a:hover,
+  .header-line__nav-list a:active,
+  .header-line__nav-list a:focus {
     color: rgb(252, 85, 124);
     -webkit-transition: color .3s linear;
     -moz-transition: color .3s linear;
     transition: color .3s linear;
   }
 
-  .header-line__nav-list a:hover::after {
+  .header-line__nav-list a:hover::after,
+  header-line__nav-list a:active::after,
+  header-line__nav-list a:focus::after {
     width: 100%;
     -webkit-transition: .3s linear;
     -moz-transition: .3s linear;

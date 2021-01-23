@@ -7,6 +7,13 @@ var switchPopup = false;
 var delayShow = 5000; // задержка при демонстрации окон
 var paddingShift = 15; // расчетная ширина полосы скролла справа, инициация 15
 
+let previousActiveElement;
+let specKeys = {
+  Esc: 27,
+  Enter: 13,
+  Space: 32,
+};
+
 
 function moveFXinCentralContainer() { // уборка fixed-container в central-container__personal_order
   windowWidth = $(window).width();
@@ -54,11 +61,26 @@ function changeTelClasses() { // переключение классов в те
 
 // показать всплывающее окно
 function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
-  //console.log(popWin);
+  //console.log($(popWin).find('.modal__win_close'));
   $(popWin).addClass('show_modal');
   $('body').addClass('stop_scroll');
   $('.swiper-button-next').css('right', '-17px');
   //$('.bg_popup').css('display', 'block');
+
+  previousActiveElement = document.activeElement;
+  Array.from(document.body.children).forEach((child) => { // блокирую все, кроме выбранного меню
+    //console.log(child);
+    if(child !== $(popWin)[0]) {
+      child.inert = true;
+    } else {
+      child.inert = false;
+    }
+  });
+
+  setTimeout(() => {
+    $(popWin).find('.modal__win_close').focus(); // фокус на крестик закрытия
+  }, 100);
+
 }
 
 // закрыть всплывающее окно
@@ -68,6 +90,20 @@ function closePopWindow(popWin) { // popWin - всплывающее окно #m
   $('.swiper-button-next').css('right', '-28px');
   $('.header-line__div').removeClass('header-line__div_adpadd');
   //$('.bg_popup').css('display', 'none');
+
+  Array.from(document.body.children).forEach((child) => { // снимаю блокировку со всего, кроме выбранного меню
+    //console.log(child);
+    if(child !== $(popWin)[0]) {
+      child.inert = false;
+    } else {
+      child.inert = true;
+    }
+  });
+
+  setTimeout(() => {
+    previousActiveElement.focus(); // возвращаю фокус на старое место
+  }, 100);
+
 }
 
 
@@ -88,10 +124,9 @@ $(document).mouseup(function(ev) {
 });
 
 $(document).ready(function () {
-
   $('body').addClass('stop_scroll');
   paddingShift = $(window).width();
-  //console.log(paddingShift);
+
   $('body').removeClass('stop_scroll');
   $('body').addClass('let_scroll');
   paddingShift = paddingShift - $(window).width();
@@ -109,11 +144,18 @@ $(document).ready(function () {
     showPopWindow('#modal__project');
   });
 
-  $('.modal__win_close').click(function () { // закрыть popup-окно
+  $('.modal__win_close').click(function () { // закрыть popup-окно по клику
     //let $this = $('.modal__win_close');
     let $this = $(this);
-    console.log($this);
+    //console.log($this);
     closePopWindow($this.closest('.show_modal'));
+  });
+
+  $('.modal__win_close').keydown(function (ev) { // закрыть popup-окно по кнопке
+    let $this = $(this);
+    if(ev.keyCode==specKeys.Enter || ev.keyCode==specKeys.Space) { // закрытие меню по клавишам
+      closePopWindow($this.closest('.show_modal'));
+    }
   });
 
   /*$('body').click(function(ev) { // второй вариант гашения popup, конфликтует со скриптами на body

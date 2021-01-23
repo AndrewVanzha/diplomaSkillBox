@@ -6,24 +6,75 @@
 
 window.addEventListener('DOMContentLoaded', function () {
   const callButton = document.getElementsByClassName("call-button"); // кнопки Заказать звонок
-  const formElements = document.querySelectorAll(".popup__formbox-input"); // попап-меню
-  //console.log(formElements);
+  const formElements = document.querySelectorAll(".popup__formbox-input"); // input в попап-меню
+  const telPopupMenu = document.querySelector('#modal__phone'); // попап-меню
+  const closeTelMenu = document.querySelector('.modal__phone_close'); // значок закрытия меню
+  let prevActiveElement;
+  let keys = {
+    Esc: 27,
+    Enter: 13,
+    Space: 32,
+  };
+
+  function closeTelWin() {
+    document.getElementById('modal__phone').classList.remove('show_modal');
+    document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
+    document.getElementsByClassName('header-line__div')[0].classList.remove('header-line__div_adpadd');
+
+    Array.from(document.body.children).forEach((child) => { // снимаю блокировку со всего, кроме выбранного меню
+      if(child !== telPopupMenu) {
+        child.inert = false;
+      } else {
+        child.inert = true;
+      }
+    });
+
+    setTimeout(() => { // возвращаю фокус на старое место
+      prevActiveElement.focus();
+    }, 100);
+  }
 
   for(let ix=0; ix<3; ix++) {
-    //console.log(ix);
     callButton[ix].addEventListener('click', function() {
+      //telPopupMenu.inert = true;
+      prevActiveElement = document.activeElement;
+
       document.getElementById('modal__phone').classList.add('show_modal');
       document.getElementsByTagName('BODY')[0].classList.add('stop_scroll');
       document.getElementsByClassName('header-line__div')[0].classList.add('header-line__div_adpadd');
+
+      Array.from(document.body.children).forEach((child) => { // блокирую все, кроме выбранного меню
+        if(child !== telPopupMenu) {
+          child.inert = true;
+        } else {
+          child.inert = false;
+        }
+      });
+
+      setTimeout(() => { // фокус на крестик закрытия
+        closeTelMenu.focus();
+      }, 100);
+
+      document.addEventListener('keydown', function(ev) {
+        //console.log(ev);
+        if(ev.keyCode == keys.Esc) { // закрытие меню по клавише Esc
+          closeTelWin();
+        }
+      });
     });
   }
 
   document.querySelector('.modal__phone_close').addEventListener('click', function() {
-    document.getElementById('modal__phone').classList.remove('show_modal');
-    document.getElementsByTagName('BODY')[0].classList.remove('stop_scroll');
-    document.getElementsByClassName('header-line__div')[0].classList.remove('header-line__div_adpadd');
+    closeTelWin();
   });
-  //console.log('**');
+
+  document.querySelector('.modal__phone_close').addEventListener('keydown', function(ev) {
+    //console.log(ev);
+    if(ev.keyCode==keys.Enter || ev.keyCode==keys.Space) { // закрытие меню по клавишам
+      closeTelWin();
+    }
+  });
+
 
   let selectedInput;
   const inputSelect = document.querySelector('.modal_win');
@@ -31,7 +82,6 @@ window.addEventListener('DOMContentLoaded', function () {
   //inputSelect.onclick = function (event) {
   inputSelect.onmousemove = function (event) {
     selectedInput = event.target; // где было движение?
-    //console.log(selectedInput);
 
     //formElements.forEach(function(el) {}); тоже работает
     [].forEach.call(formElements, function (el) {  // пробежаться по всем input

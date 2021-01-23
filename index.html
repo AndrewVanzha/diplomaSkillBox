@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="libs/swiper.min.js"></script>
   <script src="libs/jquery.validate.min.js"></script>
+  <script src="libs/inert.js"></script>
 
   <script src="js/main.js" defer></script>
   <script src="js/modalphone.js" defer></script>
@@ -253,7 +254,7 @@
   <div id="modal__phone" class="modal_win">
     <div class="modal__phone_content modal_body">
       <div class="modal__phone_header">
-        <div class="modal__phone_close">
+        <div class="modal__phone_close" tabindex="0">
           <div class="modal__phone_close-intA">
             <div class="modal__phone_close-intB"></div>
           </div>
@@ -299,7 +300,7 @@
   <div id="modal__knowmore" class="modal_win">
     <div class="modal__knowmore_content modal_body">
       <div class="modal__knowmore_header">
-        <span class="modal__knowmore_close modal__win_close">X</span>
+        <span class="modal__knowmore_close modal__win_close" tabindex="0">X</span>
         <h2>Что я делаю</h2>
       </div>
       <ul class="modal__knowmore_body">
@@ -317,7 +318,7 @@
   <div id="modal__price" class="modal_win">
     <div class="modal__price_content modal_body">
       <div class="modal__price_header">
-        <span class="modal__price_close modal__win_close">X</span>
+        <span class="modal__price_close modal__win_close" tabindex="0">X</span>
         <h2>Стоимость работ</h2>
       </div>
       <div class="modal__price_body">
@@ -333,7 +334,7 @@
   <div id="modal__project" class="modal_win">
     <div class="modal__project_content modal_body">
       <div class="modal__project_header">
-        <span class="modal__project_close modal__win_close">X</span>
+        <span class="modal__project_close modal__win_close" tabindex="0">X</span>
         <h2>Заказать проект</h2>
       </div>
       <div class="modal__project_body">
