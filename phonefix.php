@@ -22,7 +22,7 @@ function ValidateTel($valueTel) {
 $admin_email = "andreww1762@gmail.com";
 $error = '';
 if($post) {
-  $email = trim($_POST['user_email']);
+  //$email = trim($_POST['user_email']);
   $email = htmlspecialchars($_POST['user_email']);
   $name = htmlspecialchars($_POST['user_name']);
   $surname = htmlspecialchars($_POST['user_surname']);
