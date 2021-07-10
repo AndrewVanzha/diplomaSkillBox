@@ -60,7 +60,7 @@ function changeTelClasses() { // переключение классов в те
 }
 
 // показать всплывающее окно
-function showPopWindow(popWin) { // popWin - всплывающее окно #modal__phone
+function showPopWindow(popWin) { // popWin - всплывающее окно, все кроме #modal__phone
   //console.log($(popWin).find('.modal__win_close'));
   $(popWin).addClass('show_modal');
   $('body').addClass('stop_scroll');
@@ -68,6 +68,8 @@ function showPopWindow(popWin) { // popWin - всплывающее окно #mo
   //$('.bg_popup').css('display', 'block');
 
   previousActiveElement = document.activeElement;
+  //console.log(previousActiveElement);
+  //console.log(document.body.children);
   Array.from(document.body.children).forEach((child) => { // блокирую все, кроме выбранного меню
     //console.log(child);
     if(child !== $(popWin)[0]) {
@@ -107,7 +109,7 @@ function closePopWindow(popWin) { // popWin - всплывающее окно #m
 }
 
 
-function moveView(elem) {
+function moveView(elem) { // функция перемещения к elem
   var id  = $(elem).attr('href');
   var top = $(id).offset().top;
   $('body, html').animate({ scrollTop: top }, 900);
@@ -403,6 +405,7 @@ function showTarget(ev) {
   console.log('target: ', ev.target, '\ncurrent Target: ', ev.currentTarget);
 }
 
+// https://web-standards.ru/articles/focus-and-inert/  
 
 /*
 $('body').click(function(e) {

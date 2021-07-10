@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }, 100);
   }
 
-  for(let ix=0; ix<3; ix++) {
+  for(let ix=0; ix<3; ix++) { // вешаю обработчик на все 3 кнопки call-button
     callButton[ix].addEventListener('click', function() {
       //telPopupMenu.inert = true;
       prevActiveElement = document.activeElement;
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
   let selectedInput;
-  const inputSelect = document.querySelector('.modal_win');
+  const inputSelect = document.querySelector('.modal_win'); // выберет 1й с id="modal__phone"
 
   //inputSelect.onclick = function (event) {
   inputSelect.onmousemove = function (event) {
